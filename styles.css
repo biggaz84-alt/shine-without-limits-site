@@ -39,30 +39,31 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(229, 246, 255, 0.92);
+  background: rgba(229, 246, 255, 0.94);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(16, 76, 158, 0.12);
   box-shadow: 0 8px 24px rgba(14, 80, 150, 0.08);
 }
 
 .header-inner {
-  min-height: 86px;
+  min-height: 76px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 28px;
+  padding: 10px 0;
 }
 
 .site-logo {
-  width: 360px;
-  max-width: 45vw;
+  width: 292px;
+  max-width: 42vw;
   display: block;
 }
 
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
@@ -70,9 +71,9 @@ a {
 .main-nav a {
   text-decoration: none;
   color: #0b469c;
-  font-weight: 800;
-  font-size: 0.96rem;
-  padding: 9px 13px;
+  font-weight: 900;
+  font-size: 0.95rem;
+  padding: 8px 12px;
   border-radius: 999px;
   transition: 0.2s ease;
 }
@@ -86,7 +87,7 @@ a {
 /* HERO */
 
 .hero-banner {
-  padding: 24px 0 18px;
+  padding: 22px 0 14px;
 }
 
 .hero-banner-image {
@@ -103,7 +104,7 @@ a {
 .section-heading {
   text-align: center;
   max-width: 780px;
-  margin: 0 auto 28px;
+  margin: 0 auto 24px;
 }
 
 .section-heading p,
@@ -127,7 +128,7 @@ a {
 /* CATEGORY SECTION */
 
 .category-section {
-  padding: 34px 0 26px;
+  padding: 30px 0 24px;
 }
 
 .category-grid {
@@ -161,7 +162,7 @@ a {
 /* BEST SELLERS */
 
 .best-sellers {
-  padding: 34px 0 36px;
+  padding: 30px 0 34px;
 }
 
 .product-grid {
@@ -404,12 +405,12 @@ a {
 @media (max-width: 1100px) {
   .header-inner {
     flex-direction: column;
-    padding: 14px 0;
-    gap: 12px;
+    padding: 12px 0;
+    gap: 10px;
   }
 
   .site-logo {
-    max-width: 560px;
+    max-width: 430px;
     width: 100%;
   }
 
@@ -447,12 +448,21 @@ a {
     position: static;
   }
 
+  .header-inner {
+    min-height: auto;
+    padding: 10px 0;
+  }
+
+  .site-logo {
+    max-width: 300px;
+  }
+
   .main-nav {
     gap: 6px;
   }
 
   .main-nav a {
-    font-size: 0.88rem;
+    font-size: 0.86rem;
     padding: 8px 10px;
     background: rgba(255, 255, 255, 0.55);
   }
