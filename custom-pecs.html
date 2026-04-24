@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build Your Custom PECS Set | Shine Without Limits</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="images/header-logo.png" alt="Shine Without Limits logo" class="site-logo" />
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="products.html#pecs-products">PECS Cards</a>
+        <a href="custom-pecs.html">Build Your Set</a>
+        <a href="products.html#faq">FAQ</a>
+        <a href="#builder-contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="products-hero">
+      <div class="container">
+        <div class="products-hero-box">
+          <p class="eyebrow">Custom PECS builder</p>
+          <h1>Build Your Custom PECS Set</h1>
+          <p>
+            Tick the cards you would like, choose your bundle size, add any custom requests,
+            then send your list by email. We’ll reply with confirmation, price and postage.
+          </p>
+
+          <p class="price-note">
+            This builder sends an enquiry only. Final price, card count, colours, postage and details
+            will be confirmed by email before your order is agreed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pecs-builder-section">
+      <div class="container builder-layout">
+
+        <div class="builder-main">
+
+          <div class="section-heading builder-heading">
+            <p>Pick your cards</p>
+            <h2>Choose from the list below</h2>
+          </div>
+
+          <form id="pecsBuilderForm" class="pecs-builder-form">
+
+            <div class="builder-options-panel">
+              <label for="bundleSize">Bundle size</label>
+              <select id="bundleSize" name="bundleSize">
+                <option value="6 cards">6 cards</option>
+                <option value="12 cards" selected>12 cards</option>
+                <option value="24 cards">24 cards</option>
+                <option value="Custom amount">Custom amount</option>
+              </select>
+            </div>
+
+            <div class="builder-category">
+              <h3>Everyday Cards</h3>
+              <div class="builder-card-grid">
+                <label class="builder-card">
+                  <input type="checkbox" value="Drink" />
+                  <span class="builder-icon">🥤</span>
+                  <span>Drink</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Food" />
+                  <span class="builder-icon">🍔</span>
+                  <span>Food</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Toilet" />
+                  <span class="builder-icon">🚽</span>
+                  <span>Toilet</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Home" />
+                  <span class="builder-icon">🏠</span>
+                  <span>Home</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Car" />
+                  <span class="builder-icon">🚗</span>
+                  <span>Car</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Park" />
+                  <span class="builder-icon">🌳</span>
+                  <span>Park</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="School" />
+                  <span class="builder-icon">🎒</span>
+                  <span>School</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Bed" />
+                  <span class="builder-icon">🛏️</span>
+                  <span>Bed</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Bath" />
+                  <span class="builder-icon">🛁</span>
+                  <span>Bath</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Snack" />
+                  <span class="builder-icon">🍪</span>
+                  <span>Snack</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="builder-category">
+              <h3>Emotion Cards</h3>
+              <div class="builder-card-grid">
+                <label class="builder-card">
+                  <input type="checkbox" value="Happy" />
+                  <span class="builder-icon">😊</span>
+                  <span>Happy</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Sad" />
+                  <span class="builder-icon">😢</span>
+                  <span>Sad</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Angry" />
+                  <span class="builder-icon">😠</span>
+                  <span>Angry</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Calm" />
+                  <span class="builder-icon">😌</span>
+                  <span>Calm</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Excited" />
+                  <span class="builder-icon">🤩</span>
+                  <span>Excited</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Worried" />
+                  <span class="builder-icon">😟</span>
+                  <span>Worried</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Proud" />
+                  <span class="builder-icon">🌟</span>
+                  <span>Proud</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Tired" />
+                  <span class="builder-icon">😴</span>
+                  <span>Tired</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="builder-category">
+              <h3>Action Cards</h3>
+              <div class="builder-card-grid">
+                <label class="builder-card">
+                  <input type="checkbox" value="Help" />
+                  <span class="builder-icon">🆘</span>
+                  <span>Help</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="More" />
+                  <span class="builder-icon">➕</span>
+                  <span>More</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Finished" />
+                  <span class="builder-icon">✅</span>
+                  <span>Finished</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Wait" />
+                  <span class="builder-icon">⏳</span>
+                  <span>Wait</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Stop" />
+                  <span class="builder-icon">✋</span>
+                  <span>Stop</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Go" />
+                  <span class="builder-icon">▶️</span>
+                  <span>Go</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Eat" />
+                  <span class="builder-icon">🍽️</span>
+                  <span>Eat</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Play" />
+                  <span class="builder-icon">🧸</span>
+                  <span>Play</span>
+                </label>
+
+                <label class="builder-card">
+                  <input type="checkbox" value="Sleep" />
+                  <span class="builder-icon">🌙</span>
+                  <span>Sleep</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="builder-custom-box">
+              <label for="customCards">Custom card requests</label>
+              <textarea id="customCards" name="customCards" rows="5" placeholder="Example: Nana’s house, favourite teddy, blue cup, swimming, my school, calm space"></textarea>
+            </div>
+
+            <div class="builder-custom-box">
+              <label for="extraNotes">Extra notes</label>
+              <textarea id="extraNotes" name="extraNotes" rows="5" placeholder="Add any notes about colours, routine needs, names, wording, or anything important."></textarea>
+            </div>
+
+          </form>
+        </div>
+
+        <aside class="builder-summary" aria-live="polite">
+          <div class="summary-card">
+            <p class="eyebrow">Your bundle</p>
+            <h2>Selected Cards</h2>
+
+            <div class="summary-count">
+              <span id="selectedCount">0</span>
+              <small>cards selected</small>
+            </div>
+
+            <ul id="selectedList" class="selected-list">
+              <li>No cards selected yet.</li>
+            </ul>
+
+            <div class="summary-actions">
+              <a href="#" id="sendCardList" class="main-btn">Send My Card List</a>
+              <button type="button" id="clearSelections" class="clear-btn">Clear selections</button>
+            </div>
+
+            <p class="summary-note">
+              Your email app will open with your selected list already filled in.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <section class="about-section" id="builder-contact">
+      <div class="container">
+        <div class="about-box">
+          <h2>Need help choosing?</h2>
+          <p>
+            No problem. Send an email with what you’re trying to support,
+            such as routines, emotions, toilet training, food choices, school, days out or communication needs.
+          </p>
+          <br />
+          <a href="mailto:shinewithoutlimits@hotmail.com?subject=Custom%20PECS%20Help%20Choosing" class="main-btn">Ask for Help Choosing</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <img src="images/header-logo.png" alt="Shine Without Limits logo" class="footer-logo" />
+      <p>© 2026 Shine Without Limits. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const checkboxes = document.querySelectorAll('.builder-card input[type="checkbox"]');
+    const selectedCount = document.getElementById('selectedCount');
+    const selectedList = document.getElementById('selectedList');
+    const bundleSize = document.getElementById('bundleSize');
+    const customCards = document.getElementById('customCards');
+    const extraNotes = document.getElementById('extraNotes');
+    const sendCardList = document.getElementById('sendCardList');
+    const clearSelections = document.getElementById('clearSelections');
+
+    function getSelectedCards() {
+      return Array.from(checkboxes)
+        .filter((checkbox) => checkbox.checked)
+        .map((checkbox) => checkbox.value);
+    }
+
+    function updateSummary() {
+      const cards = getSelectedCards();
+      selectedCount.textContent = cards.length;
+      selectedList.innerHTML = "";
+
+      if (cards.length === 0) {
+        const emptyItem = document.createElement("li");
+        emptyItem.textContent = "No cards selected yet.";
+        selectedList.appendChild(emptyItem);
+      } else {
+        cards.forEach((card) => {
+          const item = document.createElement("li");
+          item.textContent = card;
+          selectedList.appendChild(item);
+        });
+      }
+    }
+
+    function buildEmailLink() {
+      const cards = getSelectedCards();
+      const selectedCardsText = cards.length
+        ? cards.map((card) => "- " + card).join("%0D%0A")
+        : "- No standard cards selected";
+
+      const customText = customCards.value.trim()
+        ? encodeURIComponent(customCards.value.trim()).replace(/%0A/g, "%0D%0A")
+        : "None added";
+
+      const notesText = extraNotes.value.trim()
+        ? encodeURIComponent(extraNotes.value.trim()).replace(/%0A/g, "%0D%0A")
+        : "None added";
+
+      const subject = "Custom PECS Card Set Enquiry";
+
+      const body =
+        "Hello Shine Without Limits,%0D%0A%0D%0A" +
+        "I would like to enquire about a custom PECS card set.%0D%0A%0D%0A" +
+        "Bundle size: " + encodeURIComponent(bundleSize.value) + "%0D%0A%0D%0A" +
+        "Selected cards:%0D%0A" +
+        selectedCardsText + "%0D%0A%0D%0A" +
+        "Custom card requests:%0D%0A" +
+        customText + "%0D%0A%0D%0A" +
+        "Extra notes:%0D%0A" +
+        notesText + "%0D%0A%0D%0A" +
+        "Thank you.";
+
+      sendCardList.href =
+        "mailto:shinewithoutlimits@hotmail.com?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        body;
+    }
+
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
+        updateSummary();
+        buildEmailLink();
+      });
+    });
+
+    bundleSize.addEventListener("change", buildEmailLink);
+    customCards.addEventListener("input", buildEmailLink);
+    extraNotes.addEventListener("input", buildEmailLink);
+
+    clearSelections.addEventListener("click", () => {
+      checkboxes.forEach((checkbox) => {
+        checkbox.checked = false;
+      });
+      customCards.value = "";
+      extraNotes.value = "";
+      bundleSize.value = "12 cards";
+      updateSummary();
+      buildEmailLink();
+    });
+
+    updateSummary();
+    buildEmailLink();
+  </script>
+
+</body>
+</html>
