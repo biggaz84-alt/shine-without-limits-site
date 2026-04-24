@@ -7,156 +7,186 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <img src="images/top-strip.png" alt="Shine Without Limits top strip" class="top-strip-image" />
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="images/top-strip.png" alt="Shine Without Limits logo" class="site-logo" />
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#pecs">PECS Cards</a>
+        <a href="#custom">Custom Orders</a>
+        <a href="#about">About</a>
+      </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-overlay">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <h1>
-            Helping Little<br />
-            <span>Voices Shine</span>
-          </h1>
+  <main id="home">
 
-          <div class="hero-divider"></div>
-
-          <p>
-            PECS Cards, Clothing &amp; Inclusive Products for Children &amp; Families
-          </p>
-
-          <a href="#" class="btn hero-btn">Shop Now!</a>
-        </div>
-
-        <div class="hero-banner-wrap">
-          <img src="images/shop-banner.png" alt="Shine Without Limits banner" class="hero-banner-image" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <main>
-    <section class="best-sellers section-clouds">
+    <section class="hero-banner">
       <div class="container">
-        <div class="section-heading-wrap">
-          <div class="heading-line"></div>
-          <h2 class="section-title">Best Sellers</h2>
-          <div class="heading-line"></div>
-        </div>
-
-        <div class="best-grid">
-          <article class="best-item">
-            <img src="images/emotions.jpg" alt="Emotions PECS Set" class="best-image" />
-            <h3>Emotions PECS Set</h3>
-            <div class="best-price">£14.99</div>
-            <a href="#" class="btn small">Shop Now!</a>
-          </article>
-
-          <article class="best-item">
-            <img src="images/shirt.jpg" alt="Kids T-Shirt" class="best-image" />
-            <h3>Kids T-Shirt</h3>
-            <div class="best-price">£12.99</div>
-            <a href="#" class="btn small">Shop Now!</a>
-          </article>
-
-          <article class="best-item">
-            <img src="images/routine.jpg" alt="Daily Routine PECS Set" class="best-image" />
-            <h3>Daily Routine PECS Set</h3>
-            <div class="best-price">£16.99</div>
-            <a href="#" class="btn small">Shop Now!</a>
-          </article>
-
-          <article class="best-item">
-            <img src="images/fidget.jpg" alt="Fidget Sensory Toys" class="best-image" />
-            <h3>Fidget Sensory Toys</h3>
-            <div class="best-price">£9.99</div>
-            <a href="#" class="btn small alt-btn">Learn More</a>
-          </article>
-        </div>
+        <img
+          src="images/header-version.png"
+          alt="Shine Without Limits helping little voices shine"
+          class="hero-banner-image"
+        />
       </div>
     </section>
 
-    <section class="promo-tiles section-clouds">
+    <section class="category-section" id="shop">
       <div class="container">
-        <div class="promo-grid">
-          <a href="#" class="promo-card">
-            <img src="images/pecs-category.jpg" alt="PECS Cards" class="promo-image" />
+        <div class="section-heading">
+          <p>Shop by category</p>
+          <h1>Bright, practical support for children and families</h1>
+        </div>
+
+        <div class="category-grid">
+          <a href="#pecs" class="category-card">
+            <img src="images/pecs-category.jpg" alt="PECS Cards" />
           </a>
 
-          <a href="#" class="promo-card">
-            <img src="images/clothing-category.jpg" alt="Inclusive Clothing" class="promo-image" />
+          <a href="#clothing" class="category-card">
+            <img src="images/clothing-category.jpg" alt="Inclusive clothing" />
           </a>
 
-          <a href="#" class="promo-card">
-            <img src="images/custom-category.jpg" alt="Custom Orders" class="promo-image" />
+          <a href="#custom" class="category-card">
+            <img src="images/custom-category.jpg" alt="Custom orders" />
           </a>
         </div>
       </div>
     </section>
 
-    <section class="about-section section-clouds">
+    <section class="best-sellers" id="pecs">
       <div class="container">
-        <div class="about-panel">
-          <img src="images/about.jpg" alt="About Shine Without Limits" class="about-image" />
+        <div class="section-heading">
+          <p>Popular products</p>
+          <h2>Best Sellers</h2>
+        </div>
 
-          <div class="about-content">
-            <h2>About Shine Without Limits</h2>
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="images/emotions.jpg" alt="Emotions PECS Set" />
+            <div class="product-content">
+              <h3>Emotions PECS Set</h3>
+              <p>Simple visual emotion cards to support communication and understanding.</p>
+              <div class="product-bottom">
+                <span>£14.99</span>
+                <a href="#" class="small-btn">Shop Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="images/routine.jpg" alt="Daily Routine PECS Set" />
+            <div class="product-content">
+              <h3>Daily Routine PECS Set</h3>
+              <p>Helpful daily visuals for home, school, transitions and routines.</p>
+              <div class="product-bottom">
+                <span>£16.99</span>
+                <a href="#" class="small-btn">Shop Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="images/fidget.jpg" alt="Fidget sensory toys" />
+            <div class="product-content">
+              <h3>Fidget Sensory Toys</h3>
+              <p>Fun little sensory supports designed for busy hands and calm moments.</p>
+              <div class="product-bottom">
+                <span>£9.99</span>
+                <a href="#" class="small-btn">View More</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" id="clothing">
+            <img src="images/shirt.jpg" alt="Kids autism friendly t-shirt" />
+            <div class="product-content">
+              <h3>Kids T-Shirt</h3>
+              <p>Colourful, positive clothing designs made to celebrate individuality.</p>
+              <div class="product-bottom">
+                <span>£12.99</span>
+                <a href="#" class="small-btn">Shop Now</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="custom-section" id="custom">
+      <div class="container">
+        <div class="custom-panel">
+          <div class="custom-copy">
+            <p class="eyebrow">Made for real life</p>
+            <h2>Need custom PECS cards?</h2>
             <p>
-              Dedicated to creating products that support communication and confidence.
-              From PECS cards to fun apparel, we’re here to help every child shine bright.
+              Custom cards can be made for routines, emotions, places, food, toilet training,
+              school, days out, family needs and anything else that helps communication feel easier.
             </p>
-            <a href="#" class="btn small">Our Story</a>
+            <a href="#" class="main-btn">Ask About Custom Orders</a>
+          </div>
+
+          <div class="custom-image-wrap">
+            <img src="images/about.jpg" alt="Custom PECS cards and inclusive support" />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="trust-row section-clouds">
+    <section class="trust-section">
       <div class="container">
         <div class="trust-grid">
-          <div class="trust-item">
-            <div class="trust-icon">🚚</div>
-            <div>
-              <h4>Fast Shipping</h4>
-              <p>Quick dispatch on your orders</p>
-            </div>
+          <div class="trust-card">
+            <div class="trust-icon">💛</div>
+            <h3>Made with care</h3>
+            <p>Every product is created with children and families in mind.</p>
           </div>
 
-          <div class="trust-item">
-            <div class="trust-icon">🛡️</div>
-            <div>
-              <h4>Quality Products</h4>
-              <p>Made with care and attention</p>
-            </div>
+          <div class="trust-card">
+            <div class="trust-icon">🧩</div>
+            <h3>Visual support</h3>
+            <p>Helpful communication tools for everyday routines and choices.</p>
           </div>
 
-          <div class="trust-item">
-            <div class="trust-icon">💬</div>
-            <div>
-              <h4>Customer Support</h4>
-              <p>Helpful service when you need it</p>
-            </div>
+          <div class="trust-card">
+            <div class="trust-icon">🎨</div>
+            <h3>Bright designs</h3>
+            <p>Friendly, colourful products that feel positive and approachable.</p>
           </div>
 
-          <div class="trust-item">
-            <div class="trust-icon">💳</div>
-            <div>
-              <h4>Secure Payment</h4>
-              <p>Safe and simple checkout later on</p>
-            </div>
+          <div class="trust-card">
+            <div class="trust-icon">📦</div>
+            <h3>Small business</h3>
+            <p>Personal service, flexible options and products made with purpose.</p>
           </div>
         </div>
       </div>
     </section>
+
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-box">
+          <h2>About Shine Without Limits</h2>
+          <p>
+            Shine Without Limits creates PECS cards, sensory supports and inclusive products
+            to help little voices shine in their own way. The goal is simple: colourful,
+            practical products that support communication, confidence and everyday life.
+          </p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
     <div class="container footer-inner">
+      <img src="images/logo.png" alt="Shine Without Limits logo" />
       <p>© 2026 Shine Without Limits. All rights reserved.</p>
     </div>
   </footer>
+
 </body>
 </html>
