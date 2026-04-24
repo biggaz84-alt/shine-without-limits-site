@@ -12,13 +12,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: #12396f;
   background:
-    radial-gradient(circle at 8% 12%, rgba(255, 190, 38, 0.22) 0 8%, transparent 18%),
-    radial-gradient(circle at 90% 18%, rgba(68, 162, 255, 0.18) 0 12%, transparent 24%),
-    radial-gradient(circle at 18% 88%, rgba(255, 255, 255, 0.86) 0 12%, transparent 26%),
-    radial-gradient(circle at 78% 78%, rgba(255, 255, 255, 0.72) 0 10%, transparent 24%),
-    linear-gradient(rgba(226, 247, 255, 0.88), rgba(226, 247, 255, 0.88)),
+    radial-gradient(circle at 8% 12%, rgba(255, 190, 38, 0.12) 0 7%, transparent 18%),
+    radial-gradient(circle at 90% 18%, rgba(68, 162, 255, 0.10) 0 12%, transparent 24%),
+    linear-gradient(rgba(226, 247, 255, 0.38), rgba(226, 247, 255, 0.38)),
     url("images/clouds-bg.png");
-  background-size: auto, auto, auto, auto, cover, cover;
+  background-size: auto, auto, cover, cover;
   background-attachment: fixed;
   background-position: center;
   line-height: 1.5;
@@ -32,10 +30,10 @@ body::before {
   pointer-events: none;
   z-index: -1;
   background:
-    radial-gradient(ellipse at 12% 34%, rgba(255, 255, 255, 0.5) 0 8%, transparent 18%),
-    radial-gradient(ellipse at 88% 42%, rgba(255, 255, 255, 0.45) 0 8%, transparent 18%),
-    radial-gradient(ellipse at 48% 96%, rgba(255, 255, 255, 0.38) 0 12%, transparent 24%);
-  opacity: 0.9;
+    radial-gradient(ellipse at 12% 34%, rgba(255, 255, 255, 0.32) 0 8%, transparent 18%),
+    radial-gradient(ellipse at 88% 42%, rgba(255, 255, 255, 0.28) 0 8%, transparent 18%),
+    radial-gradient(ellipse at 48% 96%, rgba(255, 255, 255, 0.24) 0 12%, transparent 24%);
+  opacity: 0.45;
 }
 
 img {
@@ -58,20 +56,20 @@ a {
   top: 0;
   z-index: 50;
   background:
-    radial-gradient(circle at 7% 20%, rgba(255, 188, 35, 0.16), transparent 20%),
-    linear-gradient(90deg, rgba(232, 248, 255, 0.96), rgba(225, 246, 255, 0.95));
+    radial-gradient(circle at 7% 20%, rgba(255, 188, 35, 0.12), transparent 20%),
+    linear-gradient(90deg, rgba(232, 248, 255, 0.90), rgba(225, 246, 255, 0.88));
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(16, 76, 158, 0.12);
   box-shadow: 0 8px 24px rgba(14, 80, 150, 0.08);
 }
 
 .header-inner {
-  min-height: 82px;
+  min-height: 112px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  padding: 10px 0;
+  padding: 12px 0;
 }
 
 .logo-link {
@@ -82,7 +80,7 @@ a {
 
 .site-logo {
   width: 430px;
-  max-width: 52vw;
+  max-width: 42vw;
   display: block;
 }
 
@@ -636,7 +634,7 @@ a {
   }
 
   .site-logo {
-    max-width: 320px;
+    max-width: 340px;
   }
 
   .main-nav {
