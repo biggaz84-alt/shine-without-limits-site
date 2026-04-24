@@ -627,8 +627,10 @@ a {
 }
 
 .footer-inner img {
-  width: 190px;
+  width: 260px;
+  max-width: 90%;
   display: block;
+  border-radius: 18px;
 }
 
 /* RESPONSIVE */
