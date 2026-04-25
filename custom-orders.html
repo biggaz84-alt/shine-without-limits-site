@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Custom Orders | Shine Without Limits</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .custom-orders-page {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)),
+        url("images/clouds-section.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding-bottom: 70px;
+    }
+
+    .custom-hero {
+      width: min(1180px, calc(100% - 36px));
+      margin: 42px auto 34px;
+      padding: 52px 34px;
+      border-radius: 36px;
+      background: rgba(255, 255, 255, 0.76);
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 20px 55px rgba(10, 82, 160, 0.18);
+      text-align: center;
+    }
+
+    .custom-pill {
+      display: inline-flex;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #fff2b8;
+      color: #835000;
+      font-weight: 1000;
+      margin-bottom: 16px;
+    }
+
+    .custom-hero h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 5.2rem);
+      line-height: 0.95;
+      letter-spacing: -2px;
+      color: #0b58ae;
+    }
+
+    .custom-hero p {
+      width: min(760px, 100%);
+      margin: 22px auto 0;
+      color: #416894;
+      font-size: 1.12rem;
+      line-height: 1.7;
+      font-weight: 700;
+    }
+
+    .custom-options {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto 42px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .custom-card {
+      padding: 24px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 3px solid rgba(255, 255, 255, 0.92);
+      box-shadow: 0 16px 42px rgba(10, 82, 160, 0.14);
+      display: grid;
+      gap: 14px;
+    }
+
+    .custom-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      background: #f7fbff;
+      border-radius: 24px;
+      padding: 12px;
+    }
+
+    .custom-card h2 {
+      margin: 0;
+      color: #0b58ae;
+      font-size: 1.55rem;
+    }
+
+    .custom-card p {
+      margin: 0;
+      color: #416894;
+      line-height: 1.6;
+      font-weight: 700;
+    }
+
+    .custom-card strong {
+      color: #ff970f;
+      font-size: 1.25rem;
+    }
+
+    .custom-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff970f, #ffb300);
+      color: white;
+      text-decoration: none;
+      font-weight: 1000;
+      box-shadow: 0 14px 30px rgba(255, 151, 15, 0.3);
+      margin-top: 8px;
+    }
+
+    .custom-info {
+      width: min(980px, calc(100% - 36px));
+      margin: 0 auto 70px;
+      padding: 34px;
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 3px solid rgba(255, 255, 255, 0.92);
+      box-shadow: 0 16px 42px rgba(10, 82, 160, 0.14);
+      text-align: center;
+    }
+
+    .custom-info h2 {
+      margin: 0;
+      color: #0b58ae;
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      line-height: 1;
+    }
+
+    .custom-info p {
+      color: #416894;
+      font-weight: 700;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .custom-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 26px;
+      text-align: left;
+    }
+
+    .custom-step {
+      padding: 20px;
+      border-radius: 24px;
+      background: rgba(247, 251, 255, 0.9);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+    }
+
+    .custom-step b {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #fff2b8;
+      color: #835000;
+      margin-bottom: 10px;
+    }
+
+    .custom-step h3 {
+      margin: 0 0 8px;
+      color: #0b58ae;
+    }
+
+    .custom-step p {
+      margin: 0;
+      font-size: 0.98rem;
+    }
+
+    @media (max-width: 900px) {
+      .custom-options,
+      .custom-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .custom-hero,
+      .custom-options,
+      .custom-info {
+        width: min(100% - 20px, 1180px);
+      }
+
+      .custom-hero,
+      .custom-info {
+        padding: 24px;
+        border-radius: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="images/header-logo.png" alt="Shine Without Limits logo" class="site-logo" />
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="custom-pecs.html">PECS Cards</a>
+        <a href="custom-orders.html">Custom Orders</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="custom-orders-page">
+    <section class="custom-hero">
+      <span class="custom-pill">Made your way</span>
+      <h1>Custom Orders</h1>
+      <p>
+        Need something more personal? Order custom PECS cards, personalised bundles,
+        sensory items, labels, colour themes or gift-style sets made around your needs.
+      </p>
+    </section>
+
+    <section class="custom-options">
+      <article class="custom-card">
+        <img src="images/custom-pecs.jpg" alt="Custom PECS cards" />
+        <h2>Custom PECS Cards</h2>
+        <p>
+          Choose specific words, symbols, routines, emotions, places or activities.
+          Ideal for building a set that fits daily life.
+        </p>
+        <strong>Personalised request</strong>
+        <a
+          class="custom-button"
+          href="mailto:shinewithoutlimits@hotmail.com?subject=Custom%20PECS%20Card%20Order&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20to%20request%20custom%20PECS%20cards.%0A%0AName%3A%0AWhat%20cards%20I%20need%3A%0AColours%20or%20style%20preferred%3A%0AQuantity%3A%0ADelivery%20address%3A%0AAny%20notes%3A"
+        >
+          Request PECS cards
+        </a>
+      </article>
+
+      <article class="custom-card">
+        <img src="images/personalised-bundle.jpg" alt="Personalised bundle" />
+        <h2>Personalised Bundles</h2>
+        <p>
+          Ask for a full themed set, such as morning routine, school, bedtime,
+          emotions, food and drink, or going out.
+        </p>
+        <strong>Bundle request</strong>
+        <a
+          class="custom-button"
+          href="mailto:shinewithoutlimits@hotmail.com?subject=Personalised%20Bundle%20Order&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20to%20request%20a%20personalised%20bundle.%0A%0AName%3A%0ABundle%20theme%3A%0AApprox%20number%20of%20items%3A%0AColours%20or%20style%20preferred%3A%0ADelivery%20address%3A%0AAny%20notes%3A"
+        >
+          Request a bundle
+        </a>
+      </article>
+
+      <article class="custom-card">
+        <img src="images/custom-category.jpg" alt="Other custom orders" />
+        <h2>Other Custom Items</h2>
+        <p>
+          Need something different? Ask about custom sensory items, keyrings,
+          labels, small gifts, classroom sets or clothing ideas.
+        </p>
+        <strong>Custom quote</strong>
+        <a
+          class="custom-button"
+          href="mailto:shinewithoutlimits@hotmail.com?subject=Custom%20Order%20Request&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20to%20request%20a%20custom%20order.%0A%0AName%3A%0AWhat%20I%20would%20like%3A%0AColours%20or%20style%20preferred%3A%0AQuantity%3A%0ADelivery%20address%3A%0AAny%20notes%3A"
+        >
+          Ask about custom work
+        </a>
+      </article>
+    </section>
+
+    <section class="custom-info">
+      <h2>How custom orders work</h2>
+      <p>
+        Custom orders are handled by email so details can be checked before anything is made.
+        That keeps it simple, personal and clear.
+      </p>
+
+      <div class="custom-steps">
+        <article class="custom-step">
+          <b>1</b>
+          <h3>Send your idea</h3>
+          <p>Tell us what you need, including words, symbols, colours or bundle theme.</p>
+        </article>
+
+        <article class="custom-step">
+          <b>2</b>
+          <h3>Confirm details</h3>
+          <p>We check the order details, quantity and any personal touches before making it.</p>
+        </article>
+
+        <article class="custom-step">
+          <b>3</b>
+          <h3>Made with care</h3>
+          <p>Your custom order is created, packed and prepared for delivery.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <img src="images/header-logo.png" alt="Shine Without Limits logo" />
+      <p>© 2026 Shine Without Limits. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
