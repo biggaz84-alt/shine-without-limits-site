@@ -1,4 +1,3 @@
-@ -1,3 +1,640 @@
 * {
   box-sizing: border-box;
   margin: 0;
@@ -639,27 +638,94 @@ a {
 /* CUSTOM PECS BUILDER */
 
 .pecs-builder-section {
-@ -80,19 +717,6 @@
-  cursor: pointer;
-  user-select: none;
-  position: relative;
+  padding: 24px 0 44px;
 }
 
-.builder-card input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
+.builder-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 24px;
+  align-items: start;
 }
 
-.builder-card span {
-  display: block;
+.builder-main,
+.summary-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 4px solid rgba(255, 255, 255, 0.92);
+  border-radius: 28px;
+  box-shadow: 0 14px 30px rgba(18, 57, 111, 0.12);
+}
+
+.builder-main {
+  padding: 24px;
+}
+
+.builder-heading {
+  margin-bottom: 18px;
+}
+
+.builder-options-panel {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.builder-options-panel label,
+.builder-custom-box label {
+  color: #0b469c;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.builder-options-panel select,
+.builder-custom-box textarea {
+  width: 100%;
+  border: 3px solid rgba(15, 75, 166, 0.16);
+  border-radius: 18px;
+  background: #ffffff;
+  color: #12396f;
+  font: inherit;
+  font-weight: 700;
+  padding: 13px 14px;
+  outline: none;
+}
+
+.builder-options-panel select:focus,
+.builder-custom-box textarea:focus {
+  border-color: rgba(255, 146, 0, 0.7);
+  box-shadow: 0 0 0 4px rgba(255, 186, 37, 0.16);
+}
+
+.builder-category {
+  margin-top: 24px;
+}
+
+.builder-category h3 {
+  color: #0b469c;
+  font-size: 1.45rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.builder-card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
 }
 
 .builder-card {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
   min-height: 112px;
   border-radius: 20px;
   background: linear-gradient(135deg, #ffffff, #edf9ff);
-@ -105,6 +729,16 @@
+  border: 3px solid rgba(15, 75, 166, 0.12);
+  padding: 12px 8px;
+  text-align: center;
+  color: #0b469c;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(15, 75, 166, 0.08);
   transition: 0.18s ease;
 }
 
@@ -676,7 +742,105 @@ a {
 .builder-card:hover {
   transform: translateY(-2px);
   border-color: rgba(255, 146, 0, 0.5);
-@ -210,7 +844,55 @@
+}
+
+.builder-card:has(input:checked) {
+  background: linear-gradient(135deg, #fff0cf, #ffffff);
+  border-color: #ff9200;
+  box-shadow: 0 12px 24px rgba(238, 132, 0, 0.18);
+}
+
+.builder-icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.builder-custom-box {
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.builder-summary {
+  position: sticky;
+  top: 154px;
+}
+
+.summary-card {
+  padding: 22px;
+}
+
+.summary-card h2 {
+  color: #0b469c;
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.summary-count {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  color: #ff8a00;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.summary-count span {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.summary-count small {
+  color: #375d8d;
+  font-size: 1rem;
+}
+
+.selected-list {
+  list-style: none;
+  display: grid;
+  gap: 7px;
+  max-height: 280px;
+  overflow: auto;
+  margin-bottom: 18px;
+  padding-right: 4px;
+}
+
+.selected-list li {
+  background: #eef8ff;
+  border: 2px solid rgba(15, 75, 166, 0.1);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: #12396f;
+  font-weight: 800;
+  font-size: 0.94rem;
+}
+
+.summary-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.clear-btn {
+  border: 2px solid rgba(15, 75, 166, 0.18);
+  background: #ffffff;
+  color: #0b469c;
+  font-weight: 900;
+  border-radius: 999px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.clear-btn:hover {
+  background: #eef8ff;
+}
+
+.summary-note {
+  margin-top: 14px;
+  color: #446996;
+  font-size: 0.92rem;
   font-weight: 700;
 }
 
@@ -732,7 +896,14 @@ a {
   .builder-layout {
     grid-template-columns: 1fr;
   }
-@ -225,6 +907,114 @@
+
+  .builder-summary {
+    position: static;
+  }
+
+  .builder-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 720px) {
@@ -847,3 +1018,17 @@ a {
   .builder-main,
   .summary-card {
     border-radius: 22px;
+  }
+
+  .builder-main {
+    padding: 16px;
+  }
+
+  .builder-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .builder-card {
+    min-height: 104px;
+  }
+}
