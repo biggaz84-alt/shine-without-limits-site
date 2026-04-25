@@ -7,7 +7,7 @@
   <title>Customer Information | Shine Without Limits</title>
   <meta
     name="description"
-    content="Customer information for Shine Without Limits including ordering, payment, delivery, returns, launch pricing and product safety notes."
+    content="Customer information for Shine Without Limits including ordering, PayPal payment, delivery, returns, launch pricing and product safety notes."
   />
 
   <link rel="stylesheet" href="styles.css" />
@@ -129,6 +129,20 @@
       white-space: nowrap;
     }
 
+    .payment-highlight {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #fff2b8, #ffffff);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+    }
+
+    .payment-highlight p {
+      margin: 0;
+      color: #0b58ae;
+      font-weight: 900;
+    }
+
     .info-buttons {
       display: flex;
       justify-content: center;
@@ -207,7 +221,7 @@
       <h1>Ordering, Payment & Safety</h1>
       <p>
         Helpful information about ordering from Shine Without Limits, including launch prices,
-        payment, delivery, returns, custom orders and product safety notes.
+        PayPal payment, delivery, returns, custom orders and product safety notes.
       </p>
     </section>
 
@@ -261,16 +275,28 @@
       </article>
 
       <article class="info-card">
-        <h2>Payment</h2>
+        <h2>PayPal payment</h2>
         <p>
-          Payment is confirmed after your order details have been checked. This is especially useful for custom PECS cards,
-          personalised bundles and made-to-order products.
+          Payment is taken by PayPal after your order details, postage and final total have been confirmed by email.
+          Please do not send payment until your order has been checked and confirmed.
         </p>
-        <ul>
-          <li>PayPal payment option available.</li>
-          <li>Final total confirmed before payment.</li>
-          <li>No custom order is started until details are agreed.</li>
-        </ul>
+
+        <div class="payment-highlight">
+          <p>
+            Once your order is confirmed, payment can be made securely through PayPal.
+          </p>
+        </div>
+
+        <div class="info-buttons">
+          <a
+            href="https://paypal.me/shinewithoutlimits"
+            class="info-button"
+            target="_blank"
+            rel="noopener"
+          >
+            Pay by PayPal
+          </a>
+        </div>
       </article>
 
       <article class="info-card">
@@ -324,6 +350,19 @@
         </ul>
       </article>
 
+      <article class="info-card">
+        <h2>Before you pay</h2>
+        <p>
+          Please wait for confirmation before sending any PayPal payment. This helps make sure the correct products,
+          postage and custom details are agreed first.
+        </p>
+        <ul>
+          <li>Order checked by email first.</li>
+          <li>Final total confirmed before payment.</li>
+          <li>PayPal link supplied for easy payment.</li>
+        </ul>
+      </article>
+
       <article class="info-card full-width">
         <h2>Need help before ordering?</h2>
         <p>
@@ -341,6 +380,15 @@
 
           <a href="products.html" class="info-button secondary">
             View Products
+          </a>
+
+          <a
+            href="https://paypal.me/shinewithoutlimits"
+            class="info-button secondary"
+            target="_blank"
+            rel="noopener"
+          >
+            PayPal Link
           </a>
         </div>
       </article>
