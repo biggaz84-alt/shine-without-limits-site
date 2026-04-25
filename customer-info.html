@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Customer Information | Shine Without Limits</title>
+  <meta
+    name="description"
+    content="Customer information for Shine Without Limits including ordering, payment, delivery, returns and product safety notes."
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .info-page {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)),
+        url("images/clouds-section.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding-bottom: 70px;
+    }
+
+    .info-hero {
+      width: min(1180px, calc(100% - 36px));
+      margin: 42px auto 34px;
+      padding: 52px 34px;
+      border-radius: 36px;
+      background: rgba(255, 255, 255, 0.76);
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 20px 55px rgba(10, 82, 160, 0.18);
+      text-align: center;
+    }
+
+    .info-pill {
+      display: inline-flex;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #fff2b8;
+      color: #835000;
+      font-weight: 1000;
+      margin-bottom: 16px;
+    }
+
+    .info-hero h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 5.2rem);
+      line-height: 0.95;
+      letter-spacing: -2px;
+      color: #0b58ae;
+    }
+
+    .info-hero p {
+      width: min(760px, 100%);
+      margin: 22px auto 0;
+      color: #416894;
+      font-size: 1.12rem;
+      line-height: 1.7;
+      font-weight: 700;
+    }
+
+    .info-grid {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto 70px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .info-card {
+      padding: 30px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.84);
+      border: 3px solid rgba(255, 255, 255, 0.92);
+      box-shadow: 0 16px 42px rgba(10, 82, 160, 0.14);
+    }
+
+    .info-card h2 {
+      margin: 0 0 12px;
+      color: #0b58ae;
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      line-height: 1;
+    }
+
+    .info-card p,
+    .info-card li {
+      color: #416894;
+      line-height: 1.65;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .info-card ul {
+      margin: 14px 0 0;
+      padding-left: 22px;
+    }
+
+    .info-card strong {
+      color: #0b58ae;
+    }
+
+    .info-card.full-width {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+
+    .info-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .info-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff970f, #ffb300);
+      color: white;
+      text-decoration: none;
+      font-weight: 1000;
+      box-shadow: 0 14px 30px rgba(255, 151, 15, 0.3);
+    }
+
+    .info-button.secondary {
+      background: #ffffff;
+      color: #0b58ae;
+      box-shadow: 0 14px 30px rgba(10, 82, 160, 0.12);
+    }
+
+    @media (max-width: 900px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .info-hero,
+      .info-grid {
+        width: min(100% - 20px, 1180px);
+      }
+
+      .info-hero,
+      .info-card {
+        padding: 24px;
+        border-radius: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="images/header-logo.png" alt="Shine Without Limits logo" class="site-logo" />
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="custom-pecs.html">PECS Cards</a>
+        <a href="custom-orders.html">Custom Orders</a>
+        <a href="customer-info.html">Info</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="info-page">
+    <section class="info-hero">
+      <span class="info-pill">Customer information</span>
+      <h1>Ordering, Delivery & Safety</h1>
+      <p>
+        Helpful information about ordering from Shine Without Limits, including payment,
+        custom orders, delivery, returns and product safety notes.
+      </p>
+    </section>
+
+    <section class="info-grid">
+      <article class="info-card">
+        <h2>How ordering works</h2>
+        <p>
+          Orders are currently handled by email so every product and custom request can be checked properly before payment.
+        </p>
+        <ul>
+          <li>Choose a product or build a PECS card bundle.</li>
+          <li>Send your order request by email.</li>
+          <li>We confirm the details, price, postage and timescale.</li>
+          <li>Payment details are sent after everything is agreed.</li>
+        </ul>
+      </article>
+
+      <article class="info-card">
+        <h2>Payment</h2>
+        <p>
+          Payment is confirmed after your order details have been checked. This is especially useful for custom PECS cards,
+          personalised bundles and made-to-order products.
+        </p>
+        <ul>
+          <li>PayPal payment option available.</li>
+          <li>Final total confirmed before payment.</li>
+          <li>No custom order is started until details are agreed.</li>
+        </ul>
+      </article>
+
+      <article class="info-card">
+        <h2>Delivery</h2>
+        <p>
+          Delivery times can vary depending on the product, quantity and whether the order is personalised.
+        </p>
+        <ul>
+          <li>Estimated timescale confirmed by email.</li>
+          <li>Postage cost confirmed before payment.</li>
+          <li>Custom orders may take longer than ready-made items.</li>
+        </ul>
+      </article>
+
+      <article class="info-card">
+        <h2>Returns & custom items</h2>
+        <p>
+          If there is a problem with your order, please get in touch so it can be looked into.
+        </p>
+        <ul>
+          <li>Ready-made items may be returnable if unused and in suitable condition.</li>
+          <li>Personalised or custom-made items may not be returnable unless faulty.</li>
+          <li>Any issue should be reported as soon as possible after delivery.</li>
+        </ul>
+      </article>
+
+      <article class="info-card">
+        <h2>Product safety</h2>
+        <p>
+          Some sensory items and small products may contain small parts or be unsuitable for unsupervised use.
+        </p>
+        <ul>
+          <li>Adult supervision is recommended where appropriate.</li>
+          <li>Products are not intended to be chewed unless clearly stated.</li>
+          <li>Check items regularly and stop use if damaged.</li>
+          <li>Colours and finish may vary slightly on handmade or 3D printed items.</li>
+        </ul>
+      </article>
+
+      <article class="info-card">
+        <h2>Custom PECS cards</h2>
+        <p>
+          Custom PECS cards can be made for routines, emotions, places, food choices, school needs, days out,
+          toilet training and family-specific communication.
+        </p>
+        <ul>
+          <li>Choose from ready-made options.</li>
+          <li>Add your own words or ideas.</li>
+          <li>Build your own bundle using the PECS card builder.</li>
+        </ul>
+      </article>
+
+      <article class="info-card full-width">
+        <h2>Need help before ordering?</h2>
+        <p>
+          Send a message with what you need and we’ll help work out the best option.
+        </p>
+
+        <div class="info-buttons">
+          <a href="mailto:shinewithoutlimits@hotmail.com?subject=Shine%20Without%20Limits%20Order%20Question" class="info-button">
+            Email Shine Without Limits
+          </a>
+
+          <a href="custom-pecs.html" class="info-button secondary">
+            Build a PECS Bundle
+          </a>
+
+          <a href="products.html" class="info-button secondary">
+            View Products
+          </a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <img src="images/header-logo.png" alt="Shine Without Limits logo" />
+      <p>© 2026 Shine Without Limits. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
