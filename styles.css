@@ -1032,3 +1032,73 @@ a {
     min-height: 104px;
   }
 }
+/* ================================
+   FINAL CLOUD FOOTER FIX
+================================ */
+
+footer,
+.footer,
+.site-footer {
+  width: 100%;
+  min-height: 230px;
+  padding: 70px 20px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)),
+    url("images/clouds-section.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .footer-inner,
+.footer .footer-inner,
+.site-footer .footer-inner,
+footer > div,
+.footer > div,
+.site-footer > div {
+  width: min(900px, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  text-align: center;
+}
+
+footer img,
+.footer img,
+.site-footer img {
+  width: 170px;
+  max-width: 45%;
+  height: auto;
+  object-fit: contain;
+}
+
+footer p,
+.footer p,
+.site-footer p {
+  margin: 0;
+  color: #22549a;
+  font-weight: 900;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 700px) {
+  footer .footer-inner,
+  .footer .footer-inner,
+  .site-footer .footer-inner,
+  footer > div,
+  .footer > div,
+  .site-footer > div {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  footer img,
+  .footer img,
+  .site-footer img {
+    width: 150px;
+    max-width: 70%;
+  }
+}
