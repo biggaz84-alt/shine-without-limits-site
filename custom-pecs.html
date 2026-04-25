@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Custom PECS Cards | Shine Without Limits</title>
+  <title>Build Your PECS Set | Shine Without Limits</title>
 
   <style>
     :root {
@@ -88,17 +88,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: visible;
+      overflow: hidden;
       text-decoration: none;
       border-radius: 26px;
       background: transparent;
     }
 
-    .logo-link img {
-      width: 100%;
-      height: 100%;
+    .logo-link img,
+    .logo-link .site-logo {
+      width: 455px;
+      height: 112px;
       object-fit: contain;
       object-position: center;
+      transform: scale(2.7);
+      transform-origin: center;
     }
 
     .nav {
@@ -159,12 +162,47 @@
     }
 
     .page-hero p {
-      width: min(760px, 100%);
+      width: min(780px, 100%);
       margin: 22px auto 0;
       color: var(--text);
       font-size: 1.12rem;
       line-height: 1.7;
       font-weight: 700;
+    }
+
+    .price-strip {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .price-card {
+      padding: 22px;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 12px 30px rgba(10, 82, 160, 0.12);
+      text-align: center;
+    }
+
+    .price-card h3 {
+      margin: 0 0 8px;
+      color: var(--blue);
+      font-size: 1.35rem;
+    }
+
+    .price-card p {
+      margin: 0;
+      color: var(--text);
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .price-card strong {
+      color: var(--orange);
+      font-size: 1.6rem;
     }
 
     .builder-section {
@@ -193,60 +231,6 @@
       color: var(--text);
       font-weight: 700;
       line-height: 1.6;
-    }
-
-    .bundle-options {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-bottom: 28px;
-    }
-
-    .bundle-option {
-      border: 3px solid rgba(255,255,255,0.95);
-      cursor: pointer;
-      text-align: left;
-      padding: 22px;
-      border-radius: 26px;
-      background: rgba(255, 255, 255, 0.82);
-      box-shadow: 0 12px 30px rgba(10, 82, 160, 0.12);
-      display: grid;
-      gap: 9px;
-      color: var(--dark);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .bundle-option:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(10, 82, 160, 0.18);
-    }
-
-    .bundle-option.active {
-      outline: 4px solid var(--orange);
-      background: #ffffff;
-    }
-
-    .bundle-option strong {
-      font-size: 1.25rem;
-      color: var(--blue);
-    }
-
-    .bundle-option span {
-      color: var(--text);
-      line-height: 1.45;
-      font-weight: 700;
-    }
-
-    .bundle-option b {
-      color: var(--blue);
-      font-size: 1.05rem;
-    }
-
-    .bundle-option em {
-      font-style: normal;
-      font-weight: 1000;
-      font-size: 1.8rem;
-      color: var(--orange);
     }
 
     .builder-layout {
@@ -520,7 +504,7 @@
       }
 
       .builder-layout,
-      .bundle-options,
+      .price-strip,
       .info-strip {
         grid-template-columns: 1fr;
       }
@@ -534,6 +518,7 @@
       .header-inner,
       .page-hero,
       .builder-section,
+      .price-strip,
       .info-strip {
         width: min(100% - 20px, 1180px);
       }
@@ -572,35 +557,20 @@
       .footer-inner img {
         width: 150px;
       }
-    }
-    .site-logo {
-  width: 455px;
-  height: 112px;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-}
-/* BIG HEADER LOGO FIX */
-.logo-link {
-  width: 455px !important;
-  height: 112px !important;
-  max-width: 44vw !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  overflow: hidden !important;
-  background: transparent !important;
-}
 
-.logo-link img,
-.logo-link .site-logo {
-  width: 455px !important;
-  height: 112px !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  transform: scale(3.2) !important;
-  transform-origin: center !important;
-}
+      .logo-link {
+        width: 300px;
+        height: 82px;
+        max-width: 90vw;
+      }
+
+      .logo-link img,
+      .logo-link .site-logo {
+        width: 300px;
+        height: 82px;
+        transform: scale(2.4);
+      }
+    }
   </style>
 </head>
 
@@ -617,7 +587,6 @@
         <a href="custom-pecs.html" class="active">PECS Cards</a>
         <a href="custom-orders.html">Custom Orders</a>
         <a href="customer-info.html">Info</a>
-        <a href="index.html#about">About</a>
         <a href="index.html#contact">Contact</a>
       </nav>
     </div>
@@ -625,51 +594,44 @@
 
   <main>
     <section class="page-hero">
-      <span class="pill">Build your own bundle</span>
-      <h1>Custom PECS Cards</h1>
+      <span class="pill">Build your own set</span>
+      <h1>Build Your PECS Set</h1>
       <p>
-        Choose a bundle size, tick the cards you want, and send your order request.
-        This keeps custom orders simple, clear and easy for families.
+        Choose the PECS cards you want and the total will update automatically.
+        Ready-made cards are £1.50 each. Custom word or simple symbol cards start from £2.00 each and can be requested separately.
       </p>
+    </section>
+
+    <section class="price-strip">
+      <article class="price-card">
+        <h3>Ready-made cards</h3>
+        <p><strong>£1.50</strong><br />per selected card</p>
+      </article>
+
+      <article class="price-card">
+        <h3>Custom cards</h3>
+        <p><strong>£2.00</strong><br />from, for custom wording or simple symbols</p>
+      </article>
+
+      <article class="price-card">
+        <h3>No minimum bundle</h3>
+        <p>Select 1 card or many. Your total updates as you build your set.</p>
+      </article>
     </section>
 
     <section class="builder-section">
       <div class="section-title">
         <span class="pill">Step 1</span>
-        <h2>Choose your bundle</h2>
-        <p>Pick how many cards you want, then select your card designs below.</p>
-      </div>
-
-      <div class="bundle-options">
-        <button class="bundle-option active" data-bundle-name="Starter Bundle" data-limit="10" data-price="8" type="button">
-          <strong>Starter Bundle</strong>
-          <span>A handy first set for everyday communication.</span>
-          <b>10 cards</b>
-          <em>£8</em>
-        </button>
-
-        <button class="bundle-option" data-bundle-name="Everyday Bundle" data-limit="20" data-price="14" type="button">
-          <strong>Everyday Bundle</strong>
-          <span>A bigger mix for routines, needs and daily choices.</span>
-          <b>20 cards</b>
-          <em>£14</em>
-        </button>
-
-        <button class="bundle-option" data-bundle-name="Mega Bundle" data-limit="40" data-price="24" type="button">
-          <strong>Mega Bundle</strong>
-          <span>Best value bundle with plenty of choice.</span>
-          <b>40 cards</b>
-          <em>£24</em>
-        </button>
+        <h2>Choose your cards</h2>
+        <p>Tick the cards you want. The total will update in your basket.</p>
       </div>
 
       <div class="builder-layout">
         <div class="card-picker">
           <div class="picker-top">
-            <h3>Step 2: Tick your cards</h3>
+            <h3>Available cards</h3>
             <p class="counter">
-              <span id="selected-count">0</span> /
-              <span id="bundle-limit">10</span> selected
+              <span id="selected-count">0</span> selected
             </p>
           </div>
 
@@ -761,12 +723,12 @@
         </div>
 
         <aside class="order-summary">
-          <h3>Your bundle</h3>
+          <h3>Your basket</h3>
 
           <div class="summary-box">
-            <strong id="summary-bundle-name">Starter Bundle</strong>
-            <span id="summary-bundle-limit">Up to 10 cards</span>
-            <b id="summary-bundle-price">£8</b>
+            <strong>Ready-made PECS cards</strong>
+            <span id="summary-count">0 cards selected</span>
+            <b id="summary-total">£0.00</b>
           </div>
 
           <div class="selected-list">
@@ -780,7 +742,8 @@
           </a>
 
           <p class="summary-note">
-            Opens your email with the chosen cards already written out.
+            This opens your email with the selected cards and total already written out.
+            Postage and any custom requests are confirmed before payment.
           </p>
         </aside>
       </div>
@@ -788,18 +751,18 @@
 
     <section class="info-strip">
       <article class="info-card">
-        <h3>Clear choices</h3>
-        <p>Customers can see exactly what they have selected before ordering.</p>
+        <h3>Pick any amount</h3>
+        <p>Customers can choose one card or build a bigger set. No forced minimum bundle.</p>
       </article>
 
       <article class="info-card">
-        <h3>Easy custom orders</h3>
-        <p>The order button creates a ready-to-send email with the full card list.</p>
+        <h3>Automatic total</h3>
+        <p>The basket updates as cards are added or removed.</p>
       </article>
 
       <article class="info-card">
-        <h3>Safe test page</h3>
-        <p>This page is separate from the homepage, so your main site stays protected.</p>
+        <h3>Confirm before payment</h3>
+        <p>Postage, custom wording and final total are confirmed by email before payment.</p>
       </article>
     </section>
   </main>
@@ -813,34 +776,30 @@
 
   <script>
     const ORDER_EMAIL = "shinewithoutlimits@hotmail.com";
+    const CARD_PRICE = 1.50;
 
-    const bundleButtons = document.querySelectorAll(".bundle-option");
     const pecChoices = document.querySelectorAll(".pec-choice");
-
     const selectedCount = document.getElementById("selected-count");
-    const bundleLimitText = document.getElementById("bundle-limit");
-    const summaryBundleName = document.getElementById("summary-bundle-name");
-    const summaryBundleLimit = document.getElementById("summary-bundle-limit");
-    const summaryBundlePrice = document.getElementById("summary-bundle-price");
+    const summaryCount = document.getElementById("summary-count");
+    const summaryTotal = document.getElementById("summary-total");
     const selectedCardList = document.getElementById("selected-card-list");
     const emptyMessage = document.getElementById("empty-message");
     const orderButton = document.getElementById("order-button");
 
-    let currentBundle = {
-      name: "Starter Bundle",
-      limit: 10,
-      price: 8
-    };
-
     let selectedCards = [];
 
-    function updateSummary() {
-      selectedCount.textContent = selectedCards.length;
-      bundleLimitText.textContent = currentBundle.limit;
+    function formatMoney(amount) {
+      return `£${amount.toFixed(2)}`;
+    }
 
-      summaryBundleName.textContent = currentBundle.name;
-      summaryBundleLimit.textContent = `Up to ${currentBundle.limit} cards`;
-      summaryBundlePrice.textContent = `£${currentBundle.price}`;
+    function updateSummary() {
+      const total = selectedCards.length * CARD_PRICE;
+
+      selectedCount.textContent = selectedCards.length;
+      summaryCount.textContent = selectedCards.length === 1
+        ? "1 card selected"
+        : `${selectedCards.length} cards selected`;
+      summaryTotal.textContent = formatMoney(total);
 
       selectedCardList.innerHTML = "";
 
@@ -867,44 +826,19 @@
 
       const emailBody = encodeURIComponent(
         `Hi Shine Without Limits,\n\n` +
-        `I would like to order the ${currentBundle.name}.\n\n` +
-        `Cards selected:\n${selectedCards.map((card) => `- ${card}`).join("\n")}\n\n` +
-        `Total: £${currentBundle.price}\n\n` +
+        `I would like to order the following ready-made PECS cards:\n\n` +
+        `${selectedCards.map((card) => `- ${card}`).join("\n")}\n\n` +
+        `Cards selected: ${selectedCards.length}\n` +
+        `Card price: £${CARD_PRICE.toFixed(2)} each\n` +
+        `Card total: ${formatMoney(total)}\n\n` +
         `Name:\n` +
         `Delivery address:\n` +
-        `Any notes:`
+        `Any notes or custom wording requests:\n\n` +
+        `I understand postage and final total will be confirmed by email before payment.`
       );
 
-      orderButton.href = `mailto:${ORDER_EMAIL}?subject=Custom PECS Card Order&body=${emailBody}`;
+      orderButton.href = `mailto:${ORDER_EMAIL}?subject=PECS Card Order Request&body=${emailBody}`;
     }
-
-    bundleButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        bundleButtons.forEach((item) => item.classList.remove("active"));
-        button.classList.add("active");
-
-        currentBundle = {
-          name: button.dataset.bundleName,
-          limit: Number(button.dataset.limit),
-          price: Number(button.dataset.price)
-        };
-
-        if (selectedCards.length > currentBundle.limit) {
-          selectedCards = selectedCards.slice(0, currentBundle.limit);
-
-          pecChoices.forEach((choice) => {
-            const cardName = choice.dataset.name;
-
-            if (!selectedCards.includes(cardName)) {
-              choice.classList.remove("selected");
-              choice.querySelector("b").textContent = "Select";
-            }
-          });
-        }
-
-        updateSummary();
-      });
-    });
 
     pecChoices.forEach((choice) => {
       choice.addEventListener("click", () => {
@@ -915,11 +849,6 @@
           choice.classList.remove("selected");
           choice.querySelector("b").textContent = "Select";
           updateSummary();
-          return;
-        }
-
-        if (selectedCards.length >= currentBundle.limit) {
-          alert(`You can choose up to ${currentBundle.limit} cards in this bundle.`);
           return;
         }
 
