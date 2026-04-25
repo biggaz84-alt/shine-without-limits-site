@@ -1129,7 +1129,7 @@ footer p,
   object-fit: contain !important;
   object-position: center !important;
   display: block !important;
-  transform: scale(2.7) !important;
+  transform: scale(3.2) !important;
   transform-origin: center !important;
 }
 
@@ -1145,6 +1145,6 @@ footer p,
   .site-logo {
     width: 300px !important;
     height: 82px !important;
-    transform: scale(2.4) !important;
+    transform: scale(3.2) !important;
   }
 }
