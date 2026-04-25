@@ -7,7 +7,7 @@
   <title>Customer Information | Shine Without Limits</title>
   <meta
     name="description"
-    content="Customer information for Shine Without Limits including ordering, payment, delivery, returns and product safety notes."
+    content="Customer information for Shine Without Limits including ordering, payment, delivery, returns, launch pricing and product safety notes."
   />
 
   <link rel="stylesheet" href="styles.css" />
@@ -107,6 +107,28 @@
       text-align: center;
     }
 
+    .price-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: #f2f9ff;
+      color: #0b58ae;
+      font-weight: 1000;
+    }
+
+    .price-row span:last-child {
+      color: #ff970f;
+      white-space: nowrap;
+    }
+
     .info-buttons {
       display: flex;
       justify-content: center;
@@ -152,6 +174,11 @@
         padding: 24px;
         border-radius: 26px;
       }
+
+      .price-row {
+        flex-direction: column;
+        gap: 4px;
+      }
     }
   </style>
 </head>
@@ -177,10 +204,10 @@
   <main class="info-page">
     <section class="info-hero">
       <span class="info-pill">Customer information</span>
-      <h1>Ordering, Delivery & Safety</h1>
+      <h1>Ordering, Payment & Safety</h1>
       <p>
-        Helpful information about ordering from Shine Without Limits, including payment,
-        custom orders, delivery, returns and product safety notes.
+        Helpful information about ordering from Shine Without Limits, including launch prices,
+        payment, delivery, returns, custom orders and product safety notes.
       </p>
     </section>
 
@@ -196,6 +223,45 @@
           <li>We confirm the details, price, postage and timescale.</li>
           <li>Payment details are sent after everything is agreed.</li>
         </ul>
+      </article>
+
+      <article class="info-card">
+        <h2>PECS card launch prices</h2>
+        <p>
+          These are introductory launch prices. Larger bespoke sets, personalised images and special requests may be quoted separately.
+        </p>
+
+        <div class="price-list">
+          <div class="price-row">
+            <span>Single ready-made card</span>
+            <span>£1.50</span>
+          </div>
+
+          <div class="price-row">
+            <span>Single custom word/symbol card</span>
+            <span>£2.00</span>
+          </div>
+
+          <div class="price-row">
+            <span>Single personalised/photo card</span>
+            <span>£3.00</span>
+          </div>
+
+          <div class="price-row">
+            <span>Starter Bundle: 10 cards</span>
+            <span>£8</span>
+          </div>
+
+          <div class="price-row">
+            <span>Everyday Bundle: 20 cards</span>
+            <span>£14</span>
+          </div>
+
+          <div class="price-row">
+            <span>Mega Bundle: 40 cards</span>
+            <span>£24</span>
+          </div>
+        </div>
       </article>
 
       <article class="info-card">
@@ -256,7 +322,7 @@
         </p>
         <ul>
           <li>Choose from ready-made options.</li>
-          <li>Add your own words or ideas.</li>
+          <li>Add your own words, symbols or ideas.</li>
           <li>Build your own bundle using the PECS card builder.</li>
         </ul>
       </article>
