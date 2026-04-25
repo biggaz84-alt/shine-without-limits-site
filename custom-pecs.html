@@ -361,6 +361,26 @@
       font-size: 2rem;
     }
 
+    .pricing-message {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: #f2f9ff;
+      color: var(--blue);
+      font-weight: 900;
+      line-height: 1.45;
+    }
+
+    .next-saving {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: #fff8dc;
+      color: #835000;
+      font-weight: 900;
+      line-height: 1.45;
+    }
+
     .selected-list h4 {
       margin: 0 0 10px;
       color: var(--blue);
@@ -597,25 +617,25 @@
       <span class="pill">Build your own set</span>
       <h1>Build Your PECS Set</h1>
       <p>
-        Choose the PECS cards you want and the total will update automatically.
-        Ready-made cards are £1.50 each. Custom word or simple symbol cards start from £2.00 each and can be requested separately.
+        Choose the PECS cards you want and the basket will automatically apply the best available price.
+        Bundle discounts are applied when they work out cheaper.
       </p>
     </section>
 
     <section class="price-strip">
       <article class="price-card">
-        <h3>Ready-made cards</h3>
-        <p><strong>£1.50</strong><br />per selected card</p>
+        <h3>Single cards</h3>
+        <p><strong>£1.50</strong><br />each for 1 to 5 cards</p>
       </article>
 
       <article class="price-card">
-        <h3>Custom cards</h3>
-        <p><strong>£2.00</strong><br />from, for custom wording or simple symbols</p>
+        <h3>Small set discount</h3>
+        <p><strong>£1.25</strong><br />each for 6 to 9 cards</p>
       </article>
 
       <article class="price-card">
-        <h3>No minimum bundle</h3>
-        <p>Select 1 card or many. Your total updates as you build your set.</p>
+        <h3>Bundle discounts</h3>
+        <p>10 cards £8 · 20 cards £14 · 40 cards £24</p>
       </article>
     </section>
 
@@ -623,7 +643,7 @@
       <div class="section-title">
         <span class="pill">Step 1</span>
         <h2>Choose your cards</h2>
-        <p>Tick the cards you want. The total will update in your basket.</p>
+        <p>Tick the cards you want. The basket will calculate the best price automatically.</p>
       </div>
 
       <div class="builder-layout">
@@ -731,6 +751,14 @@
             <b id="summary-total">£0.00</b>
           </div>
 
+          <div class="pricing-message" id="pricing-message">
+            Select cards to see your total.
+          </div>
+
+          <div class="next-saving" id="next-saving">
+            Bundle discounts will appear automatically.
+          </div>
+
           <div class="selected-list">
             <h4>Selected cards</h4>
             <p id="empty-message">No cards selected yet.</p>
@@ -751,13 +779,13 @@
 
     <section class="info-strip">
       <article class="info-card">
-        <h3>Pick any amount</h3>
-        <p>Customers can choose one card or build a bigger set. No forced minimum bundle.</p>
+        <h3>Best price applied</h3>
+        <p>The basket automatically applies bundle discounts when they work out cheaper.</p>
       </article>
 
       <article class="info-card">
-        <h3>Automatic total</h3>
-        <p>The basket updates as cards are added or removed.</p>
+        <h3>Pick any amount</h3>
+        <p>Choose one card or build a bigger set. The total updates as you go.</p>
       </article>
 
       <article class="info-card">
@@ -776,12 +804,13 @@
 
   <script>
     const ORDER_EMAIL = "shinewithoutlimits@hotmail.com";
-    const CARD_PRICE = 1.50;
 
     const pecChoices = document.querySelectorAll(".pec-choice");
     const selectedCount = document.getElementById("selected-count");
     const summaryCount = document.getElementById("summary-count");
     const summaryTotal = document.getElementById("summary-total");
+    const pricingMessage = document.getElementById("pricing-message");
+    const nextSaving = document.getElementById("next-saving");
     const selectedCardList = document.getElementById("selected-card-list");
     const emptyMessage = document.getElementById("empty-message");
     const orderButton = document.getElementById("order-button");
@@ -792,18 +821,125 @@
       return `£${amount.toFixed(2)}`;
     }
 
-    function updateSummary() {
-      const total = selectedCards.length * CARD_PRICE;
+    function calculateBestPrice(cardCount) {
+      if (cardCount === 0) {
+        return {
+          total: 0,
+          label: "No cards selected",
+          savingMessage: "Select cards to see your total.",
+          nextMessage: "Bundle discounts will appear automatically."
+        };
+      }
 
-      selectedCount.textContent = selectedCards.length;
-      summaryCount.textContent = selectedCards.length === 1
+      let normalPrice;
+
+      if (cardCount <= 5) {
+        normalPrice = cardCount * 1.50;
+      } else {
+        normalPrice = cardCount * 1.25;
+      }
+
+      const options = [
+        {
+          total: normalPrice,
+          label: cardCount <= 5 ? "Single-card pricing applied" : "Small set discount applied",
+          savingMessage: cardCount <= 5
+            ? "Single cards are priced at £1.50 each."
+            : "Small set discount applied: £1.25 per card."
+        }
+      ];
+
+      if (cardCount >= 10) {
+        options.push({
+          total: 8 + Math.max(0, cardCount - 10) * 1.50,
+          label: "Starter Bundle pricing applied",
+          savingMessage: "Starter Bundle discount applied: 10 cards for £8."
+        });
+      }
+
+      if (cardCount >= 10) {
+        options.push({
+          total: 14,
+          label: "Everyday Bundle pricing applied",
+          savingMessage: "Everyday Bundle discount applied: best price up to 20 cards."
+        });
+      }
+
+      if (cardCount >= 20) {
+        options.push({
+          total: 14 + Math.max(0, cardCount - 20) * 1.25,
+          label: "Everyday Bundle plus extra cards applied",
+          savingMessage: "Everyday Bundle applied: 20 cards for £14, then £1.25 per extra card."
+        });
+      }
+
+      if (cardCount >= 20) {
+        options.push({
+          total: 24,
+          label: "Mega Bundle pricing applied",
+          savingMessage: "Mega Bundle discount applied: best price up to 40 cards."
+        });
+      }
+
+      if (cardCount > 40) {
+        options.push({
+          total: 24 + (cardCount - 40) * 1.25,
+          label: "Mega Bundle plus extra cards applied",
+          savingMessage: "Mega Bundle applied: 40 cards for £24, then £1.25 per extra card."
+        });
+      }
+
+      const bestOption = options.reduce((best, option) => {
+        return option.total < best.total ? option : best;
+      });
+
+      let nextMessage = "";
+
+      if (cardCount < 6) {
+        const cardsNeeded = 6 - cardCount;
+        nextMessage = `Add ${cardsNeeded} more card${cardsNeeded === 1 ? "" : "s"} to unlock the small set discount.`;
+      } else if (cardCount < 10) {
+        const cardsNeeded = 10 - cardCount;
+        nextMessage = `Add ${cardsNeeded} more card${cardsNeeded === 1 ? "" : "s"} to unlock the Starter Bundle price.`;
+      } else if (cardCount < 14) {
+        const cardsNeeded = 14 - cardCount;
+        nextMessage = `Add ${cardsNeeded} more card${cardsNeeded === 1 ? "" : "s"} to reach the Everyday Bundle best-price zone.`;
+      } else if (cardCount < 20) {
+        nextMessage = "Everyday Bundle discount is already giving you the best price.";
+      } else if (cardCount < 29) {
+        const cardsNeeded = 29 - cardCount;
+        nextMessage = `Add ${cardsNeeded} more card${cardsNeeded === 1 ? "" : "s"} to reach the Mega Bundle best-price zone.`;
+      } else if (cardCount <= 40) {
+        nextMessage = "Mega Bundle discount is already giving you the best price.";
+      } else {
+        nextMessage = "Mega Bundle plus extra-card pricing applied.";
+      }
+
+      return {
+        total: bestOption.total,
+        label: bestOption.label,
+        savingMessage: bestOption.savingMessage,
+        nextMessage
+      };
+    }
+
+    function updateSummary() {
+      const cardCount = selectedCards.length;
+      const pricing = calculateBestPrice(cardCount);
+
+      selectedCount.textContent = cardCount;
+
+      summaryCount.textContent = cardCount === 1
         ? "1 card selected"
-        : `${selectedCards.length} cards selected`;
-      summaryTotal.textContent = formatMoney(total);
+        : `${cardCount} cards selected`;
+
+      summaryTotal.textContent = formatMoney(pricing.total);
+      pricingMessage.textContent = pricing.savingMessage;
+      nextSaving.textContent = pricing.nextMessage;
 
       selectedCardList.innerHTML = "";
 
-      if (selectedCards.length === 0) {
+      if (cardCount === 0) {
         emptyMessage.style.display = "block";
         orderButton.classList.add("disabled");
         orderButton.href = "#";
@@ -828,9 +964,9 @@
         `Hi Shine Without Limits,\n\n` +
         `I would like to order the following ready-made PECS cards:\n\n` +
         `${selectedCards.map((card) => `- ${card}`).join("\n")}\n\n` +
-        `Cards selected: ${selectedCards.length}\n` +
-        `Card price: £${CARD_PRICE.toFixed(2)} each\n` +
-        `Card total: ${formatMoney(total)}\n\n` +
+        `Cards selected: ${cardCount}\n` +
+        `Pricing applied: ${pricing.label}\n` +
+        `Card total: ${formatMoney(pricing.total)}\n\n` +
         `Name:\n` +
         `Delivery address:\n` +
         `Any notes or custom wording requests:\n\n` +
