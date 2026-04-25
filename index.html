@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Shine Without Limits</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
   <header class="site-header">
     <nav class="nav">
-      <a href="#" class="brand">
-        <img src="images/logo.png" alt="Shine Without Limits logo" />
+      <a href="#home" class="brand">
+        <img src="./images/header-logo.png" alt="Shine Without Limits logo" />
         <span>Shine Without Limits</span>
       </a>
 
@@ -24,28 +26,34 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
+  <main id="home">
+    <section class="hero-section">
+      <div class="hero-bg-clouds"></div>
+
       <div class="hero-content">
-        <span class="eyebrow">Colourful communication tools</span>
-        <h1>PEC cards, sensory toys and clothing made to shine.</h1>
-        <p>
-          Bright, friendly and practical products designed to support communication,
-          routine, confidence and everyday moments.
-        </p>
+        <div class="hero-text">
+          <span class="eyebrow">Colourful communication tools</span>
 
-        <div class="hero-buttons">
-          <a href="#custom-pec-cards" class="primary-button">Build a PEC bundle</a>
-          <a href="#products" class="secondary-button">View products</a>
+          <h1>PEC cards, sensory toys and clothing made to shine.</h1>
+
+          <p>
+            Bright, friendly and practical products designed to support communication,
+            routine, confidence and everyday moments.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#custom-pec-cards" class="primary-button">Build a PEC bundle</a>
+            <a href="#products" class="secondary-button">View products</a>
+          </div>
         </div>
-      </div>
 
-      <div class="hero-card">
-        <img src="images/hero.png" alt="Shine Without Limits products" />
+        <div class="hero-image-card">
+          <img src="./images/hero.png" alt="Shine Without Limits hero banner" />
+        </div>
       </div>
     </section>
 
-    <section class="cloud-strip">
+    <section class="cloud-message">
       <p>Made with colour, care and everyday usefulness.</p>
     </section>
 
@@ -54,35 +62,40 @@
         <span class="section-tag">Shop favourites</span>
         <h2>Our Products</h2>
         <p>
-          Start with our most popular product types. Add your own real product photos
-          when ready.
+          Choose from PEC cards, custom bundles, sensory items and colourful clothing.
         </p>
       </div>
 
       <div class="product-grid">
         <article class="product-card">
-          <img src="images/products/pec-cards.png" alt="PEC cards" />
-          <div>
+          <img src="./images/pecs-category.png" alt="PEC cards category" />
+          <div class="product-info">
             <h3>PEC Cards</h3>
-            <p>Colourful cards for emotions, routines, needs, places and activities.</p>
+            <p>
+              Colourful communication cards for emotions, routines, needs, places and activities.
+            </p>
             <strong>From £8</strong>
           </div>
         </article>
 
         <article class="product-card">
-          <img src="images/products/sensory-toys.png" alt="Sensory toys" />
-          <div>
+          <img src="./images/fidget.png" alt="Sensory toys" />
+          <div class="product-info">
             <h3>Sensory Toys</h3>
-            <p>Fun, tactile 3D printed sensory items for little hands and busy brains.</p>
+            <p>
+              Fun tactile items, fidgets and keyrings for busy hands and sensory support.
+            </p>
             <strong>Coming soon</strong>
           </div>
         </article>
 
         <article class="product-card">
-          <img src="images/products/clothing.png" alt="Autism clothing" />
-          <div>
+          <img src="./images/hoodie.png" alt="Inclusive clothing hoodie" />
+          <div class="product-info">
             <h3>T-Shirts & Hoodies</h3>
-            <p>Positive, colourful clothing designs with Shine Without Limits energy.</p>
+            <p>
+              Positive, colourful clothing designs with Shine Without Limits energy.
+            </p>
             <strong>Coming soon</strong>
           </div>
         </article>
@@ -94,8 +107,7 @@
         <span class="section-tag">Build your own bundle</span>
         <h2>Custom PEC Cards</h2>
         <p>
-          Choose your bundle size, tick the cards you want, and send your custom
-          order request.
+          Pick a bundle size, tick the cards you want, then send the order request.
         </p>
       </div>
 
@@ -126,89 +138,92 @@
         <div class="pec-card-picker">
           <div class="picker-top">
             <h3>Choose your cards</h3>
-            <p><span id="selected-count">0</span> / <span id="bundle-limit">10</span> selected</p>
+            <p>
+              <span id="selected-count">0</span> /
+              <span id="bundle-limit">10</span> selected
+            </p>
           </div>
 
           <div class="pec-grid">
             <button class="pec-choice" data-name="Happy" type="button">
-              <img src="images/pec/happy.png" alt="Happy PEC card" />
+              <img src="./images/pec/happy.png" alt="Happy PEC card" />
               <span>Happy</span>
               <small>Emotions</small>
               <b>Select</b>
             </button>
 
             <button class="pec-choice" data-name="Sad" type="button">
-              <img src="images/pec/sad.png" alt="Sad PEC card" />
+              <img src="./images/pec/sad.png" alt="Sad PEC card" />
               <span>Sad</span>
               <small>Emotions</small>
               <b>Select</b>
             </button>
 
             <button class="pec-choice" data-name="Angry" type="button">
-              <img src="images/pec/angry.png" alt="Angry PEC card" />
+              <img src="./images/pec/angry.png" alt="Angry PEC card" />
               <span>Angry</span>
               <small>Emotions</small>
               <b>Select</b>
             </button>
 
             <button class="pec-choice" data-name="Toilet" type="button">
-              <img src="images/pec/toilet.png" alt="Toilet PEC card" />
+              <img src="./images/pec/toilet.png" alt="Toilet PEC card" />
               <span>Toilet</span>
               <small>Needs</small>
               <b>Select</b>
             </button>
 
             <button class="pec-choice" data-name="Drink" type="button">
-              <img src="images/pec/drink.png" alt="Drink PEC card" />
+              <img src="./images/pec/drink.png" alt="Drink PEC card" />
               <span>Drink</span>
               <small>Needs</small>
               <b>Select</b>
             </button>
 
             <button class="pec-choice" data-name="Food" type="button">
-              <img src="images/pec/food.png" alt="Food PEC card" />
+              <img src="./images/pec/food.png" alt="Food PEC card" />
               <span>Food</span>
               <small>Needs</small>
               <b>Select</b>
             </button>
 
             <button class="pec-choice" data-name="Park" type="button">
-              <img src="images/pec/park.png" alt="Park PEC card" />
+              <img src="./images/pec/park.png" alt="Park PEC card" />
               <span>Park</span>
               <small>Places</small>
               <b>Select</b>
             </button>
 
             <button class="pec-choice" data-name="Farm" type="button">
-              <img src="images/pec/farm.png" alt="Farm PEC card" />
+              <img src="./images/pec/farm.png" alt="Farm PEC card" />
               <span>Farm</span>
               <small>Places</small>
               <b>Select</b>
             </button>
 
             <button class="pec-choice" data-name="Walk" type="button">
-              <img src="images/pec/walk.png" alt="Walk PEC card" />
+              <img src="./images/pec/walk.png" alt="Walk PEC card" />
               <span>Walk</span>
               <small>Activities</small>
               <b>Select</b>
             </button>
 
             <button class="pec-choice" data-name="More" type="button">
-              <img src="images/pec/more.png" alt="More PEC card" />
+              <img src="./images/pec/more.png" alt="More PEC card" />
               <span>More</span>
               <small>Communication</small>
               <b>Select</b>
             </button>
 
             <button class="pec-choice" data-name="Finished" type="button">
-              <img src="images/pec/finished.png" alt="Finished PEC card" />
+              <img src="./images/pec/finished.png" alt="Finished PEC card" />
               <span>Finished</span>
               <small>Communication</small>
               <b>Select</b>
             </button>
 
             <button class="pec-choice" data-name="Help" type="button">
-              <img src="images/pec/help.png" alt="Help PEC card" />
+              <img src="./images/pec/help.png" alt="Help PEC card" />
               <span>Help</span>
               <small>Communication</small>
               <b>Select</b>
@@ -236,21 +251,41 @@
           </a>
 
           <p class="summary-note">
-            This opens an email with your chosen cards already written out.
+            This opens an email with your selected cards already written out.
           </p>
         </aside>
       </div>
     </section>
 
+    <section class="featured-section">
+      <div class="featured-card">
+        <img src="./images/starter-bundle.png" alt="Starter PEC bundle" />
+
+        <div>
+          <span class="section-tag">Popular choice</span>
+          <h2>Starter Communication Bundle</h2>
+          <p>
+            A simple first set for everyday communication, emotions, needs and routines.
+            Perfect as the main starting product for your shop.
+          </p>
+          <a href="#custom-pec-cards" class="primary-button">Build yours</a>
+        </div>
+      </div>
+    </section>
+
     <section class="about-section" id="about">
       <div class="about-card">
-        <span class="section-tag">About Shine Without Limits</span>
-        <h2>Helpful, colourful and made with heart.</h2>
-        <p>
-          Shine Without Limits creates practical products for communication,
-          sensory needs and confidence. From PEC cards to sensory toys and clothing,
-          everything is designed to feel bright, friendly and useful.
-        </p>
+        <img src="./images/about.png" alt="PEC cards and products" />
+
+        <div>
+          <span class="section-tag">About Shine Without Limits</span>
+          <h2>Helpful, colourful and made with heart.</h2>
+          <p>
+            Shine Without Limits creates practical products for communication,
+            sensory needs and confidence. From PEC cards to sensory toys and clothing,
+            everything is designed to feel bright, friendly and useful.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -260,15 +295,16 @@
         <p>
           Use the custom PEC card builder above, or send a message for custom requests.
         </p>
+
         <a href="mailto:shinewithoutlimits@hotmail.com" class="primary-button">Email to order</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© Shine Without Limits</p>
+    <p>© Shine Without Limits. Colourful support for everyday communication.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
