@@ -1032,3 +1032,71 @@ a {
     min-height: 104px;
   }
 }
+/* ================================
+   IMAGE POLISH FIX
+   Keeps product images neat, even and not badly zoomed
+================================ */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Product/card images: show full design without cropping */
+.product-card img,
+.card img,
+.bundle-card img,
+.pec-card img,
+.product-image,
+.card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  object-position: center;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 12px;
+  border-radius: 18px;
+}
+
+/* Big homepage/hero banners: cinematic wide look */
+.hero img,
+.hero-image img,
+.banner img,
+.banner-image img,
+.cloud-banner img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 28px;
+}
+
+/* Any image that MUST show the full artwork */
+.full-artwork img,
+.logo-wrap img,
+.brand-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Product grid tidy layout */
+.products-grid,
+.card-grid,
+.bundle-grid,
+.pec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* Prevent cards from looking uneven */
+.product-card,
+.card,
+.bundle-card,
+.pec-card {
+  overflow: hidden;
+  border-radius: 24px;
+}
