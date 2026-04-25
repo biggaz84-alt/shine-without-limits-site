@@ -1102,3 +1102,49 @@ footer p,
     max-width: 70%;
   }
 }
+
+/* ================================
+   MATCH CUSTOM PECS HEADER LOGO
+   Use this on all normal site pages
+================================ */
+
+.logo-link {
+  width: 455px !important;
+  height: 112px !important;
+  max-width: 44vw !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+  border-radius: 26px !important;
+  background: transparent !important;
+}
+
+.logo-link img,
+.logo-link .site-logo,
+.site-logo {
+  width: 455px !important;
+  height: 112px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+  transform: scale(2.7) !important;
+  transform-origin: center !important;
+}
+
+@media (max-width: 650px) {
+  .logo-link {
+    width: 300px !important;
+    height: 82px !important;
+    max-width: 90vw !important;
+  }
+
+  .logo-link img,
+  .logo-link .site-logo,
+  .site-logo {
+    width: 300px !important;
+    height: 82px !important;
+    transform: scale(2.4) !important;
+  }
+}
