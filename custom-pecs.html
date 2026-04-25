@@ -3,405 +3,936 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build Your Custom PECS Set | Shine Without Limits</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
 
+  <title>Custom PECS Cards | Shine Without Limits</title>
+
+  <style>
+    :root {
+      --blue: #0b58ae;
+      --sky: #7fd4ff;
+      --orange: #ff970f;
+      --yellow: #ffe88a;
+      --dark: #12386f;
+      --text: #416894;
+      --white: #ffffff;
+      --soft: rgba(255, 255, 255, 0.82);
+      --border: rgba(255, 255, 255, 0.92);
+      --shadow: 0 20px 55px rgba(10, 82, 160, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      background:
+        linear-gradient(rgba(255,255,255,0.08), rgba(255,255,255,0.08)),
+        url("images/clouds-section.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 14% 38%, rgba(255, 183, 27, 0.32) 0 7%, transparent 21%),
+        radial-gradient(circle at 4% 6%, rgba(255, 255, 255, 0.94) 0 14%, transparent 32%),
+        linear-gradient(90deg, rgba(220, 244, 255, 0.72), rgba(220, 244, 255, 0.72)),
+        url("images/clouds-header.jpg");
+      background-size: auto, auto, auto, cover;
+      background-position: center;
+      border-bottom: 1px solid rgba(16, 76, 158, 0.13);
+      box-shadow:
+        0 10px 26px rgba(14, 80, 150, 0.12),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.78);
+    }
+
+    .header-inner {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+      min-height: 128px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 16px 0;
+    }
+
+    .logo-link {
+      width: 455px;
+      height: 112px;
+      max-width: 44vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-decoration: none;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.38);
+    }
+
+    .logo-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.75);
+    }
+
+    .nav a {
+      text-decoration: none;
+      font-weight: 900;
+      color: var(--blue);
+      padding: 12px 16px;
+      border-radius: 999px;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: #ffffff;
+      color: var(--orange);
+    }
+
+    .page-hero {
+      width: min(1180px, calc(100% - 36px));
+      margin: 40px auto 26px;
+      padding: 46px;
+      border-radius: 36px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 3px solid rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #fff2b8;
+      color: #835000;
+      font-weight: 1000;
+      margin-bottom: 16px;
+    }
+
+    .page-hero h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 5.4rem);
+      line-height: 0.95;
+      letter-spacing: -2px;
+      color: var(--blue);
+    }
+
+    .page-hero p {
+      width: min(760px, 100%);
+      margin: 22px auto 0;
+      color: var(--text);
+      font-size: 1.12rem;
+      line-height: 1.7;
+      font-weight: 700;
+    }
+
+    .builder-section {
+      width: min(1180px, calc(100% - 36px));
+      margin: 32px auto 80px;
+      padding: 28px;
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4rem);
+      color: var(--blue);
+      letter-spacing: -1px;
+    }
+
+    .section-title p {
+      color: var(--text);
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .bundle-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .bundle-option {
+      border: 3px solid rgba(255,255,255,0.95);
+      cursor: pointer;
+      text-align: left;
+      padding: 22px;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 12px 30px rgba(10, 82, 160, 0.12);
+      display: grid;
+      gap: 9px;
+      color: var(--dark);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .bundle-option:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(10, 82, 160, 0.18);
+    }
+
+    .bundle-option.active {
+      outline: 4px solid var(--orange);
+      background: #ffffff;
+    }
+
+    .bundle-option strong {
+      font-size: 1.25rem;
+      color: var(--blue);
+    }
+
+    .bundle-option span {
+      color: var(--text);
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    .bundle-option b {
+      color: var(--blue);
+      font-size: 1.05rem;
+    }
+
+    .bundle-option em {
+      font-style: normal;
+      font-weight: 1000;
+      font-size: 1.8rem;
+      color: var(--orange);
+    }
+
+    .builder-layout {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .card-picker,
+    .order-summary {
+      background: rgba(255,255,255,0.84);
+      border: 3px solid rgba(255,255,255,0.9);
+      border-radius: 30px;
+      padding: 24px;
+      box-shadow: 0 16px 42px rgba(10, 82, 160, 0.14);
+    }
+
+    .picker-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .picker-top h3,
+    .order-summary h3 {
+      margin: 0;
+      color: var(--blue);
+      font-size: 1.55rem;
+    }
+
+    .counter {
+      margin: 0;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #eef8ff;
+      color: var(--blue);
+      font-weight: 1000;
+    }
+
+    .pec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+      gap: 16px;
+    }
+
+    .pec-choice {
+      border: 0;
+      cursor: pointer;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 12px;
+      box-shadow: 0 10px 26px rgba(10, 82, 160, 0.11);
+      display: grid;
+      gap: 8px;
+      text-align: center;
+      transition: transform 0.18s ease, outline 0.18s ease;
+    }
+
+    .pec-choice:hover {
+      transform: translateY(-3px);
+    }
+
+    .pec-choice.selected {
+      outline: 4px solid #79d96d;
+    }
+
+    .pec-choice img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      background: #f7fbff;
+      padding: 8px;
+      border-radius: 18px;
+    }
+
+    .pec-choice span {
+      font-weight: 1000;
+      color: var(--blue);
+    }
+
+    .pec-choice small {
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .pec-choice b {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: #edf6ff;
+      color: var(--blue);
+      font-size: 0.86rem;
+    }
+
+    .pec-choice.selected b {
+      background: #e8ffe5;
+      color: #247b1d;
+    }
+
+    .order-summary {
+      position: sticky;
+      top: 154px;
+    }
+
+    .summary-box {
+      display: grid;
+      gap: 7px;
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #fff2b8, #ffffff);
+      margin: 18px 0;
+    }
+
+    .summary-box strong {
+      color: var(--blue);
+      font-size: 1.18rem;
+    }
+
+    .summary-box span {
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .summary-box b {
+      color: var(--orange);
+      font-size: 2rem;
+    }
+
+    .selected-list h4 {
+      margin: 0 0 10px;
+      color: var(--blue);
+    }
+
+    .selected-list p {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .selected-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+      max-height: 260px;
+      overflow: auto;
+    }
+
+    .selected-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: #f2f9ff;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .selected-list li button {
+      border: 0;
+      background: #ffe4e4;
+      color: #b32121;
+      border-radius: 999px;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .order-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 22px;
+      min-height: 56px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--orange), #ffb300);
+      color: white;
+      text-decoration: none;
+      font-weight: 1000;
+      box-shadow: 0 16px 34px rgba(255, 151, 15, 0.32);
+    }
+
+    .order-button.disabled {
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    .summary-note {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.5;
+      font-weight: 700;
+    }
+
+    .info-strip {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto 70px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .info-card {
+      padding: 22px;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.78);
+      border: 3px solid rgba(255,255,255,0.9);
+      box-shadow: 0 12px 30px rgba(10, 82, 160, 0.12);
+      text-align: center;
+    }
+
+    .info-card h3 {
+      margin: 0 0 8px;
+      color: var(--blue);
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--text);
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .site-footer {
+      width: 100%;
+      min-height: 230px;
+      padding: 70px 20px;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)),
+        url("images/clouds-section.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-inner {
+      width: min(900px, 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      text-align: center;
+    }
+
+    .footer-inner img {
+      width: 170px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .footer-inner p {
+      margin: 0;
+      color: #22549a;
+      font-weight: 900;
+      font-size: 1.05rem;
+    }
+
+    @media (max-width: 950px) {
+      .header-inner,
+      .builder-layout,
+      .bundle-options,
+      .info-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .header-inner {
+        flex-direction: column;
+      }
+
+      .logo-link {
+        max-width: 90vw;
+      }
+
+      .builder-layout {
+        display: grid;
+      }
+
+      .order-summary {
+        position: static;
+      }
+
+      .bundle-options,
+      .info-strip {
+        display: grid;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .header-inner,
+      .page-hero,
+      .builder-section,
+      .info-strip {
+        width: min(100% - 20px, 1180px);
+      }
+
+      .page-hero,
+      .builder-section {
+        padding: 22px;
+        border-radius: 26px;
+      }
+
+      .nav {
+        border-radius: 24px;
+      }
+
+      .nav a {
+        flex: 1;
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 10px;
+      }
+
+      .picker-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .pec-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .footer-inner img {
+        width: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="header-inner">
       <a href="index.html" class="logo-link">
-        <img src="images/header-logo.png" alt="Shine Without Limits logo" class="site-logo" />
+        <img src="images/header-logo.png" alt="Shine Without Limits logo" />
       </a>
 
-      <nav class="main-nav" aria-label="Main navigation">
+      <nav class="nav">
         <a href="index.html">Home</a>
         <a href="products.html">Products</a>
-        <a href="products.html#pecs-products">PECS Cards</a>
-        <a href="custom-pecs.html">Build Your Set</a>
-        <a href="products.html#faq">FAQ</a>
-        <a href="#builder-contact">Contact</a>
+        <a href="custom-pecs.html" class="active">PECS Cards</a>
+        <a href="custom-orders.html">Custom Orders</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-
-    <section class="products-hero">
-      <div class="container">
-        <div class="products-hero-box">
-          <p class="eyebrow">Custom PECS builder</p>
-          <h1>Build Your Custom PECS Set</h1>
-          <p>
-            Tick the cards you would like, choose your bundle size, add any custom requests,
-            then send your list by email. We’ll reply with confirmation, price and postage.
-          </p>
-
-          <p class="price-note">
-            This builder sends an enquiry only. Final price, card count, colours, postage and details
-            will be confirmed by email before your order is agreed.
-          </p>
-        </div>
-      </div>
+    <section class="page-hero">
+      <span class="pill">Build your own bundle</span>
+      <h1>Custom PECS Cards</h1>
+      <p>
+        Choose a bundle size, tick the cards you want, and send your order request.
+        This keeps custom orders simple, clear and easy for families.
+      </p>
     </section>
 
-    <section class="pecs-builder-section">
-      <div class="container builder-layout">
+    <section class="builder-section">
+      <div class="section-title">
+        <span class="pill">Step 1</span>
+        <h2>Choose your bundle</h2>
+        <p>Pick how many cards you want, then select your card designs below.</p>
+      </div>
 
-        <div class="builder-main">
+      <div class="bundle-options">
+        <button class="bundle-option active" data-bundle-name="Starter Bundle" data-limit="10" data-price="8" type="button">
+          <strong>Starter Bundle</strong>
+          <span>A handy first set for everyday communication.</span>
+          <b>10 cards</b>
+          <em>£8</em>
+        </button>
 
-          <div class="section-heading builder-heading">
-            <p>Pick your cards</p>
-            <h2>Choose from the list below</h2>
-          </div>
+        <button class="bundle-option" data-bundle-name="Everyday Bundle" data-limit="20" data-price="14" type="button">
+          <strong>Everyday Bundle</strong>
+          <span>A bigger mix for routines, needs and daily choices.</span>
+          <b>20 cards</b>
+          <em>£14</em>
+        </button>
 
-          <form id="pecsBuilderForm" class="pecs-builder-form">
+        <button class="bundle-option" data-bundle-name="Mega Bundle" data-limit="40" data-price="24" type="button">
+          <strong>Mega Bundle</strong>
+          <span>Best value bundle with plenty of choice.</span>
+          <b>40 cards</b>
+          <em>£24</em>
+        </button>
+      </div>
 
-            <div class="builder-options-panel">
-              <label for="bundleSize">Bundle size</label>
-              <select id="bundleSize" name="bundleSize">
-                <option value="6 cards">6 cards</option>
-                <option value="12 cards" selected>12 cards</option>
-                <option value="24 cards">24 cards</option>
-                <option value="Custom amount">Custom amount</option>
-              </select>
-            </div>
-
-            <div class="builder-category">
-              <h3>Everyday Cards</h3>
-              <div class="builder-card-grid">
-                <label class="builder-card">
-                  <input type="checkbox" value="Drink" />
-                  <span class="builder-icon">🥤</span>
-                  <span>Drink</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Food" />
-                  <span class="builder-icon">🍔</span>
-                  <span>Food</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Toilet" />
-                  <span class="builder-icon">🚽</span>
-                  <span>Toilet</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Home" />
-                  <span class="builder-icon">🏠</span>
-                  <span>Home</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Car" />
-                  <span class="builder-icon">🚗</span>
-                  <span>Car</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Park" />
-                  <span class="builder-icon">🌳</span>
-                  <span>Park</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="School" />
-                  <span class="builder-icon">🎒</span>
-                  <span>School</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Bed" />
-                  <span class="builder-icon">🛏️</span>
-                  <span>Bed</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Bath" />
-                  <span class="builder-icon">🛁</span>
-                  <span>Bath</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Snack" />
-                  <span class="builder-icon">🍪</span>
-                  <span>Snack</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="builder-category">
-              <h3>Emotion Cards</h3>
-              <div class="builder-card-grid">
-                <label class="builder-card">
-                  <input type="checkbox" value="Happy" />
-                  <span class="builder-icon">😊</span>
-                  <span>Happy</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Sad" />
-                  <span class="builder-icon">😢</span>
-                  <span>Sad</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Angry" />
-                  <span class="builder-icon">😠</span>
-                  <span>Angry</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Calm" />
-                  <span class="builder-icon">😌</span>
-                  <span>Calm</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Excited" />
-                  <span class="builder-icon">🤩</span>
-                  <span>Excited</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Worried" />
-                  <span class="builder-icon">😟</span>
-                  <span>Worried</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Proud" />
-                  <span class="builder-icon">🌟</span>
-                  <span>Proud</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Tired" />
-                  <span class="builder-icon">😴</span>
-                  <span>Tired</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="builder-category">
-              <h3>Action Cards</h3>
-              <div class="builder-card-grid">
-                <label class="builder-card">
-                  <input type="checkbox" value="Help" />
-                  <span class="builder-icon">🆘</span>
-                  <span>Help</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="More" />
-                  <span class="builder-icon">➕</span>
-                  <span>More</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Finished" />
-                  <span class="builder-icon">✅</span>
-                  <span>Finished</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Wait" />
-                  <span class="builder-icon">⏳</span>
-                  <span>Wait</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Stop" />
-                  <span class="builder-icon">✋</span>
-                  <span>Stop</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Go" />
-                  <span class="builder-icon">▶️</span>
-                  <span>Go</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Eat" />
-                  <span class="builder-icon">🍽️</span>
-                  <span>Eat</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Play" />
-                  <span class="builder-icon">🧸</span>
-                  <span>Play</span>
-                </label>
-
-                <label class="builder-card">
-                  <input type="checkbox" value="Sleep" />
-                  <span class="builder-icon">🌙</span>
-                  <span>Sleep</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="builder-custom-box">
-              <label for="customCards">Custom card requests</label>
-              <textarea id="customCards" name="customCards" rows="5" placeholder="Example: Nana’s house, favourite teddy, blue cup, swimming, my school, calm space"></textarea>
-            </div>
-
-            <div class="builder-custom-box">
-              <label for="extraNotes">Extra notes</label>
-              <textarea id="extraNotes" name="extraNotes" rows="5" placeholder="Add any notes about colours, routine needs, names, wording, or anything important."></textarea>
-            </div>
-
-          </form>
-        </div>
-
-        <aside class="builder-summary" aria-live="polite">
-          <div class="summary-card">
-            <p class="eyebrow">Your bundle</p>
-            <h2>Selected Cards</h2>
-
-            <div class="summary-count">
-              <span id="selectedCount">0</span>
-              <small>cards selected</small>
-            </div>
-
-            <ul id="selectedList" class="selected-list">
-              <li>No cards selected yet.</li>
-            </ul>
-
-            <div class="summary-actions">
-              <a href="#" id="sendCardList" class="main-btn">Send My Card List</a>
-              <button type="button" id="clearSelections" class="clear-btn">Clear selections</button>
-            </div>
-
-            <p class="summary-note">
-              Your email app will open with your selected list already filled in.
+      <div class="builder-layout">
+        <div class="card-picker">
+          <div class="picker-top">
+            <h3>Step 2: Tick your cards</h3>
+            <p class="counter">
+              <span id="selected-count">0</span> /
+              <span id="bundle-limit">10</span> selected
             </p>
           </div>
-        </aside>
 
-      </div>
-    </section>
+          <div class="pec-grid">
+            <button class="pec-choice" data-name="Happy" type="button">
+              <img src="images/pec/happy.png" alt="Happy PECS card" />
+              <span>Happy</span>
+              <small>Emotions</small>
+              <b>Select</b>
+            </button>
 
-    <section class="about-section" id="builder-contact">
-      <div class="container">
-        <div class="about-box">
-          <h2>Need help choosing?</h2>
-          <p>
-            No problem. Send an email with what you’re trying to support,
-            such as routines, emotions, toilet training, food choices, school, days out or communication needs.
-          </p>
-          <br />
-          <a href="mailto:shinewithoutlimits@hotmail.com?subject=Custom%20PECS%20Help%20Choosing" class="main-btn">Ask for Help Choosing</a>
+            <button class="pec-choice" data-name="Sad" type="button">
+              <img src="images/pec/sad.png" alt="Sad PECS card" />
+              <span>Sad</span>
+              <small>Emotions</small>
+              <b>Select</b>
+            </button>
+
+            <button class="pec-choice" data-name="Angry" type="button">
+              <img src="images/pec/angry.png" alt="Angry PECS card" />
+              <span>Angry</span>
+              <small>Emotions</small>
+              <b>Select</b>
+            </button>
+
+            <button class="pec-choice" data-name="Toilet" type="button">
+              <img src="images/pec/toilet.png" alt="Toilet PECS card" />
+              <span>Toilet</span>
+              <small>Needs</small>
+              <b>Select</b>
+            </button>
+
+            <button class="pec-choice" data-name="Drink" type="button">
+              <img src="images/pec/drink.png" alt="Drink PECS card" />
+              <span>Drink</span>
+              <small>Needs</small>
+              <b>Select</b>
+            </button>
+
+            <button class="pec-choice" data-name="Food" type="button">
+              <img src="images/pec/food.png" alt="Food PECS card" />
+              <span>Food</span>
+              <small>Needs</small>
+              <b>Select</b>
+            </button>
+
+            <button class="pec-choice" data-name="Park" type="button">
+              <img src="images/pec/park.png" alt="Park PECS card" />
+              <span>Park</span>
+              <small>Places</small>
+              <b>Select</b>
+            </button>
+
+            <button class="pec-choice" data-name="Farm" type="button">
+              <img src="images/pec/farm.png" alt="Farm PECS card" />
+              <span>Farm</span>
+              <small>Places</small>
+              <b>Select</b>
+            </button>
+
+            <button class="pec-choice" data-name="Walk" type="button">
+              <img src="images/pec/walk.png" alt="Walk PECS card" />
+              <span>Walk</span>
+              <small>Activities</small>
+              <b>Select</b>
+            </button>
+
+            <button class="pec-choice" data-name="More" type="button">
+              <img src="images/pec/more.png" alt="More PECS card" />
+              <span>More</span>
+              <small>Communication</small>
+              <b>Select</b>
+            </button>
+
+            <button class="pec-choice" data-name="Finished" type="button">
+              <img src="images/pec/finished.png" alt="Finished PECS card" />
+              <span>Finished</span>
+              <small>Communication</small>
+              <b>Select</b>
+            </button>
+
+            <button class="pec-choice" data-name="Help" type="button">
+              <img src="images/pec/help.png" alt="Help PECS card" />
+              <span>Help</span>
+              <small>Communication</small>
+              <b>Select</b>
+            </button>
+          </div>
         </div>
+
+        <aside class="order-summary">
+          <h3>Your bundle</h3>
+
+          <div class="summary-box">
+            <strong id="summary-bundle-name">Starter Bundle</strong>
+            <span id="summary-bundle-limit">Up to 10 cards</span>
+            <b id="summary-bundle-price">£8</b>
+          </div>
+
+          <div class="selected-list">
+            <h4>Selected cards</h4>
+            <p id="empty-message">No cards selected yet.</p>
+            <ul id="selected-card-list"></ul>
+          </div>
+
+          <a class="order-button disabled" id="order-button" href="#custom-pecs">
+            Send order request
+          </a>
+
+          <p class="summary-note">
+            Opens your email with the chosen cards already written out.
+          </p>
+        </aside>
       </div>
     </section>
 
+    <section class="info-strip">
+      <article class="info-card">
+        <h3>Clear choices</h3>
+        <p>Customers can see exactly what they have selected before ordering.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>Easy custom orders</h3>
+        <p>The order button creates a ready-to-send email with the full card list.</p>
+      </article>
+
+      <article class="info-card">
+        <h3>Safe test page</h3>
+        <p>This page is separate from the homepage, so your main site stays protected.</p>
+      </article>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <img src="images/header-logo.png" alt="Shine Without Limits logo" class="footer-logo" />
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <img src="images/header-logo.png" alt="Shine Without Limits logo" />
       <p>© 2026 Shine Without Limits. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    const checkboxes = document.querySelectorAll('.builder-card input[type="checkbox"]');
-    const selectedCount = document.getElementById('selectedCount');
-    const selectedList = document.getElementById('selectedList');
-    const bundleSize = document.getElementById('bundleSize');
-    const customCards = document.getElementById('customCards');
-    const extraNotes = document.getElementById('extraNotes');
-    const sendCardList = document.getElementById('sendCardList');
-    const clearSelections = document.getElementById('clearSelections');
+    const ORDER_EMAIL = "shinewithoutlimits@hotmail.com";
 
-    function getSelectedCards() {
-      return Array.from(checkboxes)
-        .filter((checkbox) => checkbox.checked)
-        .map((checkbox) => checkbox.value);
-    }
+    const bundleButtons = document.querySelectorAll(".bundle-option");
+    const pecChoices = document.querySelectorAll(".pec-choice");
+
+    const selectedCount = document.getElementById("selected-count");
+    const bundleLimitText = document.getElementById("bundle-limit");
+    const summaryBundleName = document.getElementById("summary-bundle-name");
+    const summaryBundleLimit = document.getElementById("summary-bundle-limit");
+    const summaryBundlePrice = document.getElementById("summary-bundle-price");
+    const selectedCardList = document.getElementById("selected-card-list");
+    const emptyMessage = document.getElementById("empty-message");
+    const orderButton = document.getElementById("order-button");
+
+    let currentBundle = {
+      name: "Starter Bundle",
+      limit: 10,
+      price: 8
+    };
+
+    let selectedCards = [];
 
     function updateSummary() {
-      const cards = getSelectedCards();
-      selectedCount.textContent = cards.length;
-      selectedList.innerHTML = "";
+      selectedCount.textContent = selectedCards.length;
+      bundleLimitText.textContent = currentBundle.limit;
 
-      if (cards.length === 0) {
-        const emptyItem = document.createElement("li");
-        emptyItem.textContent = "No cards selected yet.";
-        selectedList.appendChild(emptyItem);
-      } else {
-        cards.forEach((card) => {
-          const item = document.createElement("li");
-          item.textContent = card;
-          selectedList.appendChild(item);
-        });
+      summaryBundleName.textContent = currentBundle.name;
+      summaryBundleLimit.textContent = `Up to ${currentBundle.limit} cards`;
+      summaryBundlePrice.textContent = `£${currentBundle.price}`;
+
+      selectedCardList.innerHTML = "";
+
+      if (selectedCards.length === 0) {
+        emptyMessage.style.display = "block";
+        orderButton.classList.add("disabled");
+        orderButton.href = "#";
+        return;
       }
+
+      emptyMessage.style.display = "none";
+      orderButton.classList.remove("disabled");
+
+      selectedCards.forEach((cardName) => {
+        const listItem = document.createElement("li");
+
+        listItem.innerHTML = `
+          <span>${cardName}</span>
+          <button type="button" data-remove="${cardName}">Remove</button>
+        `;
+
+        selectedCardList.appendChild(listItem);
+      });
+
+      const emailBody = encodeURIComponent(
+        `Hi Shine Without Limits,\n\n` +
+        `I would like to order the ${currentBundle.name}.\n\n` +
+        `Cards selected:\n${selectedCards.map((card) => `- ${card}`).join("\n")}\n\n` +
+        `Total: £${currentBundle.price}\n\n` +
+        `Name:\n` +
+        `Delivery address:\n` +
+        `Any notes:`
+      );
+
+      orderButton.href = `mailto:${ORDER_EMAIL}?subject=Custom PECS Card Order&body=${emailBody}`;
     }
 
-    function buildEmailLink() {
-      const cards = getSelectedCards();
-      const selectedCardsText = cards.length
-        ? cards.map((card) => "- " + card).join("%0D%0A")
-        : "- No standard cards selected";
+    bundleButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        bundleButtons.forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
 
-      const customText = customCards.value.trim()
-        ? encodeURIComponent(customCards.value.trim()).replace(/%0A/g, "%0D%0A")
-        : "None added";
+        currentBundle = {
+          name: button.dataset.bundleName,
+          limit: Number(button.dataset.limit),
+          price: Number(button.dataset.price)
+        };
 
-      const notesText = extraNotes.value.trim()
-        ? encodeURIComponent(extraNotes.value.trim()).replace(/%0A/g, "%0D%0A")
-        : "None added";
+        if (selectedCards.length > currentBundle.limit) {
+          selectedCards = selectedCards.slice(0, currentBundle.limit);
 
-      const subject = "Custom PECS Card Set Enquiry";
+          pecChoices.forEach((choice) => {
+            const cardName = choice.dataset.name;
 
-      const body =
-        "Hello Shine Without Limits,%0D%0A%0D%0A" +
-        "I would like to enquire about a custom PECS card set.%0D%0A%0D%0A" +
-        "Bundle size: " + encodeURIComponent(bundleSize.value) + "%0D%0A%0D%0A" +
-        "Selected cards:%0D%0A" +
-        selectedCardsText + "%0D%0A%0D%0A" +
-        "Custom card requests:%0D%0A" +
-        customText + "%0D%0A%0D%0A" +
-        "Extra notes:%0D%0A" +
-        notesText + "%0D%0A%0D%0A" +
-        "Thank you.";
+            if (!selectedCards.includes(cardName)) {
+              choice.classList.remove("selected");
+              choice.querySelector("b").textContent = "Select";
+            }
+          });
+        }
 
-      sendCardList.href =
-        "mailto:shinewithoutlimits@hotmail.com?subject=" +
-        encodeURIComponent(subject) +
-        "&body=" +
-        body;
-    }
-
-    checkboxes.forEach((checkbox) => {
-      checkbox.addEventListener("change", () => {
         updateSummary();
-        buildEmailLink();
       });
     });
 
-    bundleSize.addEventListener("change", buildEmailLink);
-    customCards.addEventListener("input", buildEmailLink);
-    extraNotes.addEventListener("input", buildEmailLink);
+    pecChoices.forEach((choice) => {
+      choice.addEventListener("click", () => {
+        const cardName = choice.dataset.name;
 
-    clearSelections.addEventListener("click", () => {
-      checkboxes.forEach((checkbox) => {
-        checkbox.checked = false;
+        if (selectedCards.includes(cardName)) {
+          selectedCards = selectedCards.filter((card) => card !== cardName);
+          choice.classList.remove("selected");
+          choice.querySelector("b").textContent = "Select";
+          updateSummary();
+          return;
+        }
+
+        if (selectedCards.length >= currentBundle.limit) {
+          alert(`You can choose up to ${currentBundle.limit} cards in this bundle.`);
+          return;
+        }
+
+        selectedCards.push(cardName);
+        choice.classList.add("selected");
+        choice.querySelector("b").textContent = "✓ Selected";
+
+        updateSummary();
       });
-      customCards.value = "";
-      extraNotes.value = "";
-      bundleSize.value = "12 cards";
+    });
+
+    selectedCardList.addEventListener("click", (event) => {
+      const removeButton = event.target.closest("[data-remove]");
+
+      if (!removeButton) return;
+
+      const cardName = removeButton.dataset.remove;
+
+      selectedCards = selectedCards.filter((card) => card !== cardName);
+
+      pecChoices.forEach((choice) => {
+        if (choice.dataset.name === cardName) {
+          choice.classList.remove("selected");
+          choice.querySelector("b").textContent = "Select";
+        }
+      });
+
       updateSummary();
-      buildEmailLink();
     });
 
     updateSummary();
-    buildEmailLink();
   </script>
-
 </body>
 </html>
