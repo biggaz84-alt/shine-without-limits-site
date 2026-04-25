@@ -9,15 +9,13 @@
   <style>
     :root {
       --blue: #0b58ae;
-      --sky: #7fd4ff;
       --orange: #ff970f;
       --yellow: #ffe88a;
       --dark: #12386f;
       --text: #416894;
       --white: #ffffff;
-      --soft: rgba(255, 255, 255, 0.82);
-      --border: rgba(255, 255, 255, 0.92);
       --shadow: 0 20px 55px rgba(10, 82, 160, 0.18);
+      --border: rgba(255, 255, 255, 0.92);
     }
 
     * {
@@ -84,24 +82,24 @@
     }
 
     .logo-link {
-  width: 455px;
-  height: 112px;
-  max-width: 44vw;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  overflow: visible;
-  text-decoration: none;
-  border-radius: 0;
-  background: transparent;
-}
+      width: 455px;
+      height: 112px;
+      max-width: 44vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+      text-decoration: none;
+      border-radius: 26px;
+      background: transparent;
+    }
 
-.logo-link img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: left center;
-}
+    .logo-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
 
     .nav {
       display: flex;
@@ -513,13 +511,6 @@
     }
 
     @media (max-width: 950px) {
-      .header-inner,
-      .builder-layout,
-      .bundle-options,
-      .info-strip {
-        grid-template-columns: 1fr;
-      }
-
       .header-inner {
         flex-direction: column;
       }
@@ -528,17 +519,14 @@
         max-width: 90vw;
       }
 
-      .builder-layout {
-        display: grid;
+      .builder-layout,
+      .bundle-options,
+      .info-strip {
+        grid-template-columns: 1fr;
       }
 
       .order-summary {
         position: static;
-      }
-
-      .bundle-options,
-      .info-strip {
-        display: grid;
       }
     }
 
@@ -585,26 +573,6 @@
         width: 150px;
       }
     }
-    /* LOGO FIX */
-.logo-link {
-  width: 455px !important;
-  height: 112px !important;
-  max-width: 44vw !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  overflow: visible !important;
-  text-decoration: none !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-}
-
-.logo-link img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  object-position: left center !important;
-}
   </style>
 </head>
 
@@ -612,7 +580,7 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo-link">
-       <img src="images/header-logo.png" alt="Shine Without Limits logo" class="site-logo" />
+        <img src="images/header-logo.png" alt="Shine Without Limits logo" />
       </a>
 
       <nav class="nav">
@@ -778,7 +746,7 @@
             <ul id="selected-card-list"></ul>
           </div>
 
-          <a class="order-button disabled" id="order-button" href="#custom-pecs">
+          <a class="order-button disabled" id="order-button" href="#">
             Send order request
           </a>
 
