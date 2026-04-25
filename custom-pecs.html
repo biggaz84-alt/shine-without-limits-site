@@ -84,23 +84,24 @@
     }
 
     .logo-link {
-      width: 455px;
-      height: 112px;
-      max-width: 44vw;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      text-decoration: none;
-      border-radius: 26px;
-      background: rgba(255, 255, 255, 0.38);
-    }
+  width: 455px;
+  height: 112px;
+  max-width: 44vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;
+  text-decoration: none;
+  border-radius: 0;
+  background: transparent;
+}
 
-    .logo-link img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+.logo-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
 
     .nav {
       display: flex;
@@ -584,6 +585,26 @@
         width: 150px;
       }
     }
+    /* LOGO FIX */
+.logo-link {
+  width: 455px !important;
+  height: 112px !important;
+  max-width: 44vw !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  overflow: visible !important;
+  text-decoration: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.logo-link img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+}
   </style>
 </head>
 
@@ -591,7 +612,7 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo-link">
-        <img src="images/header-logo.png" alt="Shine Without Limits logo" />
+        <img src="images/header-logo1.png" alt="Shine Without Limits logo" />
       </a>
 
       <nav class="nav">
