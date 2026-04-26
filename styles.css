@@ -1340,3 +1340,95 @@ button:hover {
     transition-duration: 0.01ms !important;
   }
 }
+/* ================================
+   QUICK ANIMATION TEST
+   Paste at very bottom of styles.css
+   ================================ */
+
+body {
+  animation: pageFadeIn 1s ease both;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0.2;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animate almost every visible section/card/button */
+section,
+.hero,
+.hero-overlay,
+.product-card,
+.product-grid > *,
+.products-grid > *,
+.card,
+.info-card,
+.trust-card,
+.pec-card,
+.pec-option,
+.builder-card,
+.custom-card,
+.feature-card {
+  animation: bigGazzaPop 0.8s ease both;
+}
+
+@keyframes bigGazzaPop {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Very obvious button movement */
+a,
+button,
+.btn,
+.cta,
+.cta-button,
+.shop-btn,
+.email-btn {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+a:hover,
+button:hover,
+.btn:hover,
+.cta:hover,
+.cta-button:hover,
+.shop-btn:hover,
+.email-btn:hover {
+  transform: translateY(-6px) scale(1.06);
+  box-shadow: 0 14px 25px rgba(92, 70, 180, 0.25);
+}
+
+/* Very obvious logo/header image test */
+.site-logo,
+.header-logo,
+.logo,
+.logo img,
+.site-header img {
+  animation: logoWiggle 2s ease-in-out infinite;
+}
+
+@keyframes logoWiggle {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(2deg) scale(1.04);
+  }
+}
