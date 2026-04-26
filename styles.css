@@ -1493,7 +1493,7 @@ body {
   z-index: 1;
   pointer-events: none;
 
-  background-image: url("images/clouds-section.jpg");
+  background-image: url("images/clouds-bg.png");
   background-size: cover;
   background-position: center;
   opacity: 0.35;
