@@ -1456,3 +1456,61 @@ body {
     background-position: center 18px;
   }
 }
+/* ================================
+   GUARANTEED MOVING CLOUD LAYER
+   ================================ */
+
+/* Turn off fixed background because it can stop visible movement */
+.info-page,
+.hero,
+.hero-overlay,
+.products-hero,
+.custom-hero {
+  background-attachment: scroll !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Make sure real content stays above the moving clouds */
+.info-page > *,
+.hero > *,
+.hero-overlay > *,
+.products-hero > *,
+.custom-hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Moving cloud layer */
+.info-page::before,
+.hero::before,
+.hero-overlay::before,
+.products-hero::before,
+.custom-hero::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  z-index: 1;
+  pointer-events: none;
+
+  background-image: url("images/clouds-section.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+
+  animation: cloudsActuallyMove 14s ease-in-out infinite;
+}
+
+@keyframes cloudsActuallyMove {
+  0% {
+    transform: translate3d(-20px, 0, 0) scale(1.06);
+  }
+
+  50% {
+    transform: translate3d(20px, -18px, 0) scale(1.08);
+  }
+
+  100% {
+    transform: translate3d(-20px, 0, 0) scale(1.06);
+  }
+}
