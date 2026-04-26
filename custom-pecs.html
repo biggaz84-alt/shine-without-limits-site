@@ -5,1017 +5,377 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Build Your PECS Set | Shine Without Limits</title>
-
-  <style>
-    :root {
-      --blue: #0b58ae;
-      --orange: #ff970f;
-      --yellow: #ffe88a;
-      --dark: #12386f;
-      --text: #416894;
-      --white: #ffffff;
-      --shadow: 0 20px 55px rgba(10, 82, 160, 0.18);
-      --border: rgba(255, 255, 255, 0.92);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--dark);
-      background:
-        linear-gradient(rgba(255,255,255,0.08), rgba(255,255,255,0.08)),
-        url("images/clouds-section.jpg");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      min-height: 100vh;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 14% 38%, rgba(255, 183, 27, 0.32) 0 7%, transparent 21%),
-        radial-gradient(circle at 4% 6%, rgba(255, 255, 255, 0.94) 0 14%, transparent 32%),
-        linear-gradient(90deg, rgba(220, 244, 255, 0.72), rgba(220, 244, 255, 0.72)),
-        url("images/clouds-header.jpg");
-      background-size: auto, auto, auto, cover;
-      background-position: center;
-      border-bottom: 1px solid rgba(16, 76, 158, 0.13);
-      box-shadow:
-        0 10px 26px rgba(14, 80, 150, 0.12),
-        inset 0 -1px 0 rgba(255, 255, 255, 0.78);
-    }
-
-    .header-inner {
-      width: min(1180px, calc(100% - 36px));
-      margin: 0 auto;
-      min-height: 128px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-      padding: 16px 0;
-    }
-
-    .logo-link {
-      width: 455px;
-      height: 112px;
-      max-width: 44vw;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      text-decoration: none;
-      border-radius: 26px;
-      background: transparent;
-    }
-
-    .logo-link img,
-    .logo-link .site-logo {
-      width: 455px;
-      height: 112px;
-      object-fit: contain;
-      object-position: center;
-      transform: scale(2.7);
-      transform-origin: center;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      padding: 14px 18px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.72);
-      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.75);
-    }
-
-    .nav a {
-      text-decoration: none;
-      font-weight: 900;
-      color: var(--blue);
-      padding: 12px 16px;
-      border-radius: 999px;
-    }
-
-    .nav a:hover,
-    .nav a.active {
-      background: #ffffff;
-      color: var(--orange);
-    }
-
-    .page-hero {
-      width: min(1180px, calc(100% - 36px));
-      margin: 40px auto 26px;
-      padding: 46px;
-      border-radius: 36px;
-      background: rgba(255, 255, 255, 0.74);
-      border: 3px solid rgba(255, 255, 255, 0.88);
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: #fff2b8;
-      color: #835000;
-      font-weight: 1000;
-      margin-bottom: 16px;
-    }
-
-    .page-hero h1 {
-      margin: 0;
-      font-size: clamp(2.4rem, 6vw, 5.4rem);
-      line-height: 0.95;
-      letter-spacing: -2px;
-      color: var(--blue);
-    }
-
-    .page-hero p {
-      width: min(780px, 100%);
-      margin: 22px auto 0;
-      color: var(--text);
-      font-size: 1.12rem;
-      line-height: 1.7;
-      font-weight: 700;
-    }
-
-    .price-strip {
-      width: min(1180px, calc(100% - 36px));
-      margin: 0 auto 32px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .price-card {
-      padding: 22px;
-      border-radius: 26px;
-      background: rgba(255, 255, 255, 0.82);
-      border: 3px solid rgba(255, 255, 255, 0.9);
-      box-shadow: 0 12px 30px rgba(10, 82, 160, 0.12);
-      text-align: center;
-    }
-
-    .price-card h3 {
-      margin: 0 0 8px;
-      color: var(--blue);
-      font-size: 1.35rem;
-    }
-
-    .price-card p {
-      margin: 0;
-      color: var(--text);
-      line-height: 1.55;
-      font-weight: 700;
-    }
-
-    .price-card strong {
-      color: var(--orange);
-      font-size: 1.6rem;
-    }
-
-    .builder-section {
-      width: min(1180px, calc(100% - 36px));
-      margin: 32px auto 80px;
-      padding: 28px;
-      border-radius: 34px;
-      background: rgba(255, 255, 255, 0.78);
-      border: 3px solid rgba(255, 255, 255, 0.9);
-      box-shadow: var(--shadow);
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .section-title h2 {
-      margin: 0;
-      font-size: clamp(2rem, 5vw, 4rem);
-      color: var(--blue);
-      letter-spacing: -1px;
-    }
-
-    .section-title p {
-      color: var(--text);
-      font-weight: 700;
-      line-height: 1.6;
-    }
-
-    .builder-layout {
-      display: grid;
-      grid-template-columns: 1fr 350px;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .card-picker,
-    .order-summary {
-      background: rgba(255,255,255,0.84);
-      border: 3px solid rgba(255,255,255,0.9);
-      border-radius: 30px;
-      padding: 24px;
-      box-shadow: 0 16px 42px rgba(10, 82, 160, 0.14);
-    }
-
-    .picker-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-
-    .picker-top h3,
-    .order-summary h3 {
-      margin: 0;
-      color: var(--blue);
-      font-size: 1.55rem;
-    }
-
-    .counter {
-      margin: 0;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #eef8ff;
-      color: var(--blue);
-      font-weight: 1000;
-    }
-
-    .pec-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
-      gap: 16px;
-    }
-
-    .pec-choice {
-      border: 0;
-      cursor: pointer;
-      background: #ffffff;
-      border-radius: 24px;
-      padding: 12px;
-      box-shadow: 0 10px 26px rgba(10, 82, 160, 0.11);
-      display: grid;
-      gap: 8px;
-      text-align: center;
-      transition: transform 0.18s ease, outline 0.18s ease;
-    }
-
-    .pec-choice:hover {
-      transform: translateY(-3px);
-    }
-
-    .pec-choice.selected {
-      outline: 4px solid #79d96d;
-    }
-
-    .pec-choice img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: contain;
-      background: #f7fbff;
-      padding: 8px;
-      border-radius: 18px;
-    }
-
-    .pec-choice span {
-      font-weight: 1000;
-      color: var(--blue);
-    }
-
-    .pec-choice small {
-      font-weight: 800;
-      color: var(--text);
-    }
-
-    .pec-choice b {
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: #edf6ff;
-      color: var(--blue);
-      font-size: 0.86rem;
-    }
-
-    .pec-choice.selected b {
-      background: #e8ffe5;
-      color: #247b1d;
-    }
-
-    .order-summary {
-      position: sticky;
-      top: 154px;
-    }
-
-    .summary-box {
-      display: grid;
-      gap: 7px;
-      padding: 18px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, #fff2b8, #ffffff);
-      margin: 18px 0;
-    }
-
-    .summary-box strong {
-      color: var(--blue);
-      font-size: 1.18rem;
-    }
-
-    .summary-box span {
-      color: var(--text);
-      font-weight: 800;
-    }
-
-    .summary-box b {
-      color: var(--orange);
-      font-size: 2rem;
-    }
-
-    .pricing-message {
-      margin-top: 12px;
-      padding: 12px 14px;
-      border-radius: 18px;
-      background: #f2f9ff;
-      color: var(--blue);
-      font-weight: 900;
-      line-height: 1.45;
-    }
-
-    .next-saving {
-      margin-top: 10px;
-      padding: 10px 12px;
-      border-radius: 16px;
-      background: #fff8dc;
-      color: #835000;
-      font-weight: 900;
-      line-height: 1.45;
-    }
-
-    .selected-list h4 {
-      margin: 0 0 10px;
-      color: var(--blue);
-    }
-
-    .selected-list p {
-      color: var(--text);
-      font-weight: 700;
-    }
-
-    .selected-list ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 8px;
-      max-height: 260px;
-      overflow: auto;
-    }
-
-    .selected-list li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      background: #f2f9ff;
-      color: var(--blue);
-      font-weight: 900;
-    }
-
-    .selected-list li button {
-      border: 0;
-      background: #ffe4e4;
-      color: #b32121;
-      border-radius: 999px;
-      padding: 6px 10px;
-      cursor: pointer;
-      font-weight: 900;
-    }
-
-    .order-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 22px;
-      min-height: 56px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--orange), #ffb300);
-      color: white;
-      text-decoration: none;
-      font-weight: 1000;
-      box-shadow: 0 16px 34px rgba(255, 151, 15, 0.32);
-    }
-
-    .order-button.disabled {
-      opacity: 0.45;
-      pointer-events: none;
-    }
-
-    .summary-note {
-      font-size: 0.9rem;
-      color: var(--text);
-      line-height: 1.5;
-      font-weight: 700;
-    }
-
-    .info-strip {
-      width: min(1180px, calc(100% - 36px));
-      margin: 0 auto 70px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .info-card {
-      padding: 22px;
-      border-radius: 26px;
-      background: rgba(255,255,255,0.78);
-      border: 3px solid rgba(255,255,255,0.9);
-      box-shadow: 0 12px 30px rgba(10, 82, 160, 0.12);
-      text-align: center;
-    }
-
-    .info-card h3 {
-      margin: 0 0 8px;
-      color: var(--blue);
-    }
-
-    .info-card p {
-      margin: 0;
-      color: var(--text);
-      line-height: 1.55;
-      font-weight: 700;
-    }
-
-    .site-footer {
-      width: 100%;
-      min-height: 230px;
-      padding: 70px 20px;
-      background:
-        linear-gradient(rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)),
-        url("images/clouds-section.jpg");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .footer-inner {
-      width: min(900px, 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 50px;
-      text-align: center;
-    }
-
-    .footer-inner img {
-      width: 170px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .footer-inner p {
-      margin: 0;
-      color: #22549a;
-      font-weight: 900;
-      font-size: 1.05rem;
-    }
-
-    @media (max-width: 950px) {
-      .header-inner {
-        flex-direction: column;
-      }
-
-      .logo-link {
-        max-width: 90vw;
-      }
-
-      .builder-layout,
-      .price-strip,
-      .info-strip {
-        grid-template-columns: 1fr;
-      }
-
-      .order-summary {
-        position: static;
-      }
-    }
-
-    @media (max-width: 650px) {
-      .header-inner,
-      .page-hero,
-      .builder-section,
-      .price-strip,
-      .info-strip {
-        width: min(100% - 20px, 1180px);
-      }
-
-      .page-hero,
-      .builder-section {
-        padding: 22px;
-        border-radius: 26px;
-      }
-
-      .nav {
-        border-radius: 24px;
-      }
-
-      .nav a {
-        flex: 1;
-        text-align: center;
-        font-size: 0.9rem;
-        padding: 10px;
-      }
-
-      .picker-top {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .pec-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        gap: 18px;
-      }
-
-      .footer-inner img {
-        width: 150px;
-      }
-
-      .logo-link {
-        width: 300px;
-        height: 82px;
-        max-width: 90vw;
-      }
-
-      .logo-link img,
-      .logo-link .site-logo {
-        width: 300px;
-        height: 82px;
-        transform: scale(2.4);
-      }
-    }
-  </style>
+  <meta
+    name="description"
+    content="Build your own PECS card set from Shine Without Limits. Choose the cards you need and send your selection by email."
+  />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="logo-link">
+      <a href="index.html" class="logo-link" aria-label="Shine Without Limits home">
         <img src="images/header-logo.png" alt="Shine Without Limits logo" class="site-logo" />
       </a>
 
-      <nav class="nav">
+      <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="products.html">Products</a>
-        <a href="custom-pecs.html" class="active">PECS Cards</a>
-        <a href="custom-orders.html">Custom Orders</a>
+        <a href="custom-pecs.html" class="active">Build PECS Set</a>
         <a href="customer-info.html">Info</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="products.html#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <span class="pill">Build your own set</span>
-      <h1>Build Your PECS Set</h1>
-      <p>
-        Choose the PECS cards you want and the basket will automatically apply the best available price.
-        Bundle discounts are applied when they work out cheaper.
-      </p>
+  <main class="pec-builder-page">
+    <section class="pec-builder-hero">
+      <div class="pec-builder-hero-inner">
+        <p class="eyebrow">Build your own set</p>
+        <h1>Choose Your PECS Cards</h1>
+        <p>
+          Pick the cards you would like, then send your selection by email.
+          I’ll confirm the final price, postage and timescale before anything is made.
+        </p>
+
+        <div class="builder-hero-buttons">
+          <a href="#pec-builder" class="btn primary-btn">Start Choosing</a>
+          <a href="products.html" class="btn secondary-btn">Back to Products</a>
+        </div>
+      </div>
     </section>
 
-    <section class="price-strip">
-      <article class="price-card">
-        <h3>Single cards</h3>
-        <p><strong>£1.50</strong><br />each for 1 to 5 cards</p>
-      </article>
-
-      <article class="price-card">
-        <h3>Small set discount</h3>
-        <p><strong>£1.25</strong><br />each for 6 to 9 cards</p>
-      </article>
-
-      <article class="price-card">
-        <h3>Bundle discounts</h3>
-        <p>10 cards £8 · 20 cards £14 · 40 cards £24</p>
-      </article>
-    </section>
-
-    <section class="builder-section">
-      <div class="section-title">
-        <span class="pill">Step 1</span>
-        <h2>Choose your cards</h2>
-        <p>Tick the cards you want. The basket will calculate the best price automatically.</p>
+    <section class="pec-builder-section" id="pec-builder">
+      <div class="section-heading">
+        <p class="eyebrow">Your card choices</p>
+        <h2>Tap or click the cards you want</h2>
+        <p>
+          Your selected cards will appear in the box below, ready to send over by email.
+        </p>
       </div>
 
-      <div class="builder-layout">
-        <div class="card-picker">
-          <div class="picker-top">
-            <h3>Available cards</h3>
-            <p class="counter">
-              <span id="selected-count">0</span> selected
-            </p>
-          </div>
-
-          <div class="pec-grid">
-            <button class="pec-choice" data-name="Happy" type="button">
-              <img src="images/pec/happy.png" alt="Happy PECS card" />
-              <span>Happy</span>
-              <small>Emotions</small>
-              <b>Select</b>
-            </button>
-
-            <button class="pec-choice" data-name="Sad" type="button">
-              <img src="images/pec/sad.png" alt="Sad PECS card" />
-              <span>Sad</span>
-              <small>Emotions</small>
-              <b>Select</b>
-            </button>
-
-            <button class="pec-choice" data-name="Angry" type="button">
-              <img src="images/pec/angry.png" alt="Angry PECS card" />
-              <span>Angry</span>
-              <small>Emotions</small>
-              <b>Select</b>
-            </button>
-
-            <button class="pec-choice" data-name="Toilet" type="button">
-              <img src="images/pec/toilet.png" alt="Toilet PECS card" />
-              <span>Toilet</span>
-              <small>Needs</small>
-              <b>Select</b>
-            </button>
-
-            <button class="pec-choice" data-name="Drink" type="button">
-              <img src="images/pec/drink.png" alt="Drink PECS card" />
-              <span>Drink</span>
-              <small>Needs</small>
-              <b>Select</b>
-            </button>
-
-            <button class="pec-choice" data-name="Food" type="button">
-              <img src="images/pec/food.png" alt="Food PECS card" />
-              <span>Food</span>
-              <small>Needs</small>
-              <b>Select</b>
-            </button>
-
-            <button class="pec-choice" data-name="Park" type="button">
-              <img src="images/pec/park.png" alt="Park PECS card" />
-              <span>Park</span>
-              <small>Places</small>
-              <b>Select</b>
-            </button>
-
-            <button class="pec-choice" data-name="Farm" type="button">
-              <img src="images/pec/farm.png" alt="Farm PECS card" />
-              <span>Farm</span>
-              <small>Places</small>
-              <b>Select</b>
-            </button>
-
-            <button class="pec-choice" data-name="Walk" type="button">
-              <img src="images/pec/walk.png" alt="Walk PECS card" />
-              <span>Walk</span>
-              <small>Activities</small>
-              <b>Select</b>
-            </button>
-
-            <button class="pec-choice" data-name="More" type="button">
-              <img src="images/pec/more.png" alt="More PECS card" />
-              <span>More</span>
-              <small>Communication</small>
-              <b>Select</b>
-            </button>
-
-            <button class="pec-choice" data-name="Finished" type="button">
-              <img src="images/pec/finished.png" alt="Finished PECS card" />
-              <span>Finished</span>
-              <small>Communication</small>
-              <b>Select</b>
-            </button>
-
-            <button class="pec-choice" data-name="Help" type="button">
-              <img src="images/pec/help.png" alt="Help PECS card" />
-              <span>Help</span>
-              <small>Communication</small>
-              <b>Select</b>
-            </button>
-          </div>
+      <div class="builder-summary">
+        <div>
+          <strong>Selected cards:</strong>
+          <span id="selectedCount">0</span>
         </div>
 
-        <aside class="order-summary">
-          <h3>Your basket</h3>
+        <div class="selected-list" id="selectedList">
+          No cards selected yet.
+        </div>
 
-          <div class="summary-box">
-            <strong>Ready-made PECS cards</strong>
-            <span id="summary-count">0 cards selected</span>
-            <b id="summary-total">£0.00</b>
-          </div>
+        <a
+          id="emailOrderBtn"
+          class="btn primary-btn disabled"
+          href="mailto:shinewithoutlimits@hotmail.com"
+          aria-disabled="true"
+        >
+          Email My Selection
+        </a>
+      </div>
 
-          <div class="pricing-message" id="pricing-message">
-            Select cards to see your total.
-          </div>
+      <div class="pec-card-grid">
 
-          <div class="next-saving" id="next-saving">
-            Bundle discounts will appear automatically.
-          </div>
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Angry" />
+          <img src="images/pec/angry.png" alt="Angry PECS card" />
+          <span>Angry</span>
+        </label>
 
-          <div class="selected-list">
-            <h4>Selected cards</h4>
-            <p id="empty-message">No cards selected yet.</p>
-            <ul id="selected-card-list"></ul>
-          </div>
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Bath" />
+          <img src="images/pec/Bath.png" alt="Bath PECS card" />
+          <span>Bath</span>
+        </label>
 
-          <a class="order-button disabled" id="order-button" href="#">
-            Send order request
-          </a>
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Bedtime" />
+          <img src="images/pec/bedtime.png" alt="Bedtime PECS card" />
+          <span>Bedtime</span>
+        </label>
 
-          <p class="summary-note">
-            This opens your email with the selected cards and total already written out.
-            Postage and any custom requests are confirmed before payment.
-          </p>
-        </aside>
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Book" />
+          <img src="images/pec/book.png" alt="Book PECS card" />
+          <span>Book</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Book 1" />
+          <img src="images/pec/book1.png" alt="Book PECS card" />
+          <span>Book</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Bouncy Castle" />
+          <img src="images/pec/bouncy-castle.png" alt="Bouncy Castle PECS card" />
+          <span>Bouncy Castle</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Brother" />
+          <img src="images/pec/brother.png" alt="Brother PECS card" />
+          <span>Brother</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Brush Teeth" />
+          <img src="images/pec/brush-teeth.png" alt="Brush Teeth PECS card" />
+          <span>Brush Teeth</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Classwork" />
+          <img src="images/pec/classwork.png" alt="Classwork PECS card" />
+          <span>Classwork</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Clothes" />
+          <img src="images/pec/clothes.png" alt="Clothes PECS card" />
+          <span>Clothes</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Cookie" />
+          <img src="images/pec/cookie.png" alt="Cookie PECS card" />
+          <span>Cookie</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Dad" />
+          <img src="images/pec/dad.png" alt="Dad PECS card" />
+          <span>Dad</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Eat" />
+          <img src="images/pec/eat.png" alt="Eat PECS card" />
+          <span>Eat</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Family" />
+          <img src="images/pec/family.png" alt="Family PECS card" />
+          <span>Family</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Friends" />
+          <img src="images/pec/friends.png" alt="Friends PECS card" />
+          <span>Friends</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Good Job" />
+          <img src="images/pec/good-job.png" alt="Good Job PECS card" />
+          <span>Good Job</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Happy" />
+          <img src="images/pec/happy.png" alt="Happy PECS card" />
+          <span>Happy</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Hold Hands" />
+          <img src="images/pec/hold-hands.png" alt="Hold Hands PECS card" />
+          <span>Hold Hands</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Litter" />
+          <img src="images/pec/litter.png" alt="Litter PECS card" />
+          <span>Litter</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Milkshake" />
+          <img src="images/pec/milkshake.png" alt="Milkshake PECS card" />
+          <span>Milkshake</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Parents" />
+          <img src="images/pec/parents.png" alt="Parents PECS card" />
+          <span>Parents</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Phone" />
+          <img src="images/pec/phone.png" alt="Phone PECS card" />
+          <span>Phone</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Play-Doh" />
+          <img src="images/pec/playdoh.png" alt="Play-Doh PECS card" />
+          <span>Play-Doh</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Playground" />
+          <img src="images/pec/playground.png" alt="Playground PECS card" />
+          <span>Playground</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Sad" />
+          <img src="images/pec/sad.png" alt="Sad PECS card" />
+          <span>Sad</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="School" />
+          <img src="images/pec/school.png" alt="School PECS card" />
+          <span>School</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Shopping" />
+          <img src="images/pec/shopping.png" alt="Shopping PECS card" />
+          <span>Shopping</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Sister" />
+          <img src="images/pec/sister.png" alt="Sister PECS card" />
+          <span>Sister</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Snack Banana" />
+          <img src="images/pec/snack-banana.png" alt="Snack Banana PECS card" />
+          <span>Snack Banana</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Snack" />
+          <img src="images/pec/snack.png" alt="Snack PECS card" />
+          <span>Snack</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Swimming" />
+          <img src="images/pec/swimming.png" alt="Swimming PECS card" />
+          <span>Swimming</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Toilet" />
+          <img src="images/pec/toilet.png" alt="Toilet PECS card" />
+          <span>Toilet</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Trampoline" />
+          <img src="images/pec/trampoline.png" alt="Trampoline PECS card" />
+          <span>Trampoline</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="TV" />
+          <img src="images/pec/tv.png" alt="TV PECS card" />
+          <span>TV</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Walk" />
+          <img src="images/pec/walk.png" alt="Walk PECS card" />
+          <span>Walk</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Wash Hands" />
+          <img src="images/pec/wash-hands.png" alt="Wash Hands PECS card" />
+          <span>Wash Hands</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Washing" />
+          <img src="images/pec/washing.png" alt="Washing PECS card" />
+          <span>Washing</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Water" />
+          <img src="images/pec/Water.png" alt="Water PECS card" />
+          <span>Water</span>
+        </label>
+
+        <label class="pec-choice-card">
+          <input type="checkbox" value="Wellies" />
+          <img src="images/pec/wellies.png" alt="Wellies PECS card" />
+          <span>Wellies</span>
+        </label>
+
       </div>
     </section>
 
-    <section class="info-strip">
-      <article class="info-card">
-        <h3>Best price applied</h3>
-        <p>The basket automatically applies bundle discounts when they work out cheaper.</p>
-      </article>
-
-      <article class="info-card">
-        <h3>Pick any amount</h3>
-        <p>Choose one card or build a bigger set. The total updates as you go.</p>
-      </article>
-
-      <article class="info-card">
-        <h3>Confirm before payment</h3>
-        <p>Postage, custom wording and final total are confirmed by email before payment.</p>
-      </article>
+    <section class="pec-info-strip">
+      <div class="pec-info-card">
+        <h2>Need a custom card?</h2>
+        <p>
+          Can’t see the word or symbol you need? Send me the wording and I can create a custom PECS card for you.
+        </p>
+        <a href="mailto:shinewithoutlimits@hotmail.com?subject=Custom%20PECS%20Card%20Request" class="btn secondary-btn">
+          Ask About Custom Cards
+        </a>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <img src="images/header-logo.png" alt="Shine Without Limits logo" />
-      <p>© 2026 Shine Without Limits. All rights reserved.</p>
+      <img src="images/header-logo.png" alt="Shine Without Limits logo" class="footer-logo" />
+      <p>Helping every child shine without limits.</p>
+      <p>
+        <a href="mailto:shinewithoutlimits@hotmail.com">shinewithoutlimits@hotmail.com</a>
+      </p>
     </div>
   </footer>
 
   <script>
-    const ORDER_EMAIL = "shinewithoutlimits@hotmail.com";
+    const checkboxes = document.querySelectorAll('.pec-choice-card input');
+    const selectedCount = document.getElementById('selectedCount');
+    const selectedList = document.getElementById('selectedList');
+    const emailOrderBtn = document.getElementById('emailOrderBtn');
 
-    const pecChoices = document.querySelectorAll(".pec-choice");
-    const selectedCount = document.getElementById("selected-count");
-    const summaryCount = document.getElementById("summary-count");
-    const summaryTotal = document.getElementById("summary-total");
-    const pricingMessage = document.getElementById("pricing-message");
-    const nextSaving = document.getElementById("next-saving");
-    const selectedCardList = document.getElementById("selected-card-list");
-    const emptyMessage = document.getElementById("empty-message");
-    const orderButton = document.getElementById("order-button");
+    function updateSelection() {
+      const selected = Array.from(checkboxes)
+        .filter((checkbox) => checkbox.checked)
+        .map((checkbox) => checkbox.value);
 
-    let selectedCards = [];
+      selectedCount.textContent = selected.length;
 
-    function formatMoney(amount) {
-      return `£${amount.toFixed(2)}`;
-    }
-
-    function calculateBestPrice(cardCount) {
-      if (cardCount === 0) {
-        return {
-          total: 0,
-          label: "No cards selected",
-          savingMessage: "Select cards to see your total.",
-          nextMessage: "Bundle discounts will appear automatically."
-        };
-      }
-
-      let normalPrice;
-
-      if (cardCount <= 5) {
-        normalPrice = cardCount * 1.50;
-      } else {
-        normalPrice = cardCount * 1.25;
-      }
-
-      const options = [
-        {
-          total: normalPrice,
-          label: cardCount <= 5 ? "Single-card pricing applied" : "Small set discount applied",
-          savingMessage: cardCount <= 5
-            ? "Single cards are priced at £1.50 each."
-            : "Small set discount applied: £1.25 per card."
-        }
-      ];
-
-      if (cardCount >= 10) {
-        options.push({
-          total: 8 + Math.max(0, cardCount - 10) * 1.50,
-          label: "Starter Bundle pricing applied",
-          savingMessage: "Starter Bundle discount applied: 10 cards for £8."
-        });
-      }
-
-      if (cardCount >= 10) {
-        options.push({
-          total: 14,
-          label: "Everyday Bundle pricing applied",
-          savingMessage: "Everyday Bundle discount applied: best price up to 20 cards."
-        });
-      }
-
-      if (cardCount >= 20) {
-        options.push({
-          total: 14 + Math.max(0, cardCount - 20) * 1.25,
-          label: "Everyday Bundle plus extra cards applied",
-          savingMessage: "Everyday Bundle applied: 20 cards for £14, then £1.25 per extra card."
-        });
-      }
-
-      if (cardCount >= 20) {
-        options.push({
-          total: 24,
-          label: "Mega Bundle pricing applied",
-          savingMessage: "Mega Bundle discount applied: best price up to 40 cards."
-        });
-      }
-
-      if (cardCount > 40) {
-        options.push({
-          total: 24 + (cardCount - 40) * 1.25,
-          label: "Mega Bundle plus extra cards applied",
-          savingMessage: "Mega Bundle applied: 40 cards for £24, then £1.25 per extra card."
-        });
-      }
-
-      const bestOption = options.reduce((best, option) => {
-        return option.total < best.total ? option : best;
-      });
-
-      let nextMessage = "";
-
-      if (cardCount < 6) {
-        const cardsNeeded = 6 - cardCount;
-        nextMessage = `Add ${cardsNeeded} more card${cardsNeeded === 1 ? "" : "s"} to unlock the small set discount.`;
-      } else if (cardCount < 10) {
-        const cardsNeeded = 10 - cardCount;
-        nextMessage = `Add ${cardsNeeded} more card${cardsNeeded === 1 ? "" : "s"} to unlock the Starter Bundle price.`;
-      } else if (cardCount < 14) {
-        const cardsNeeded = 14 - cardCount;
-        nextMessage = `Add ${cardsNeeded} more card${cardsNeeded === 1 ? "" : "s"} to reach the Everyday Bundle best-price zone.`;
-      } else if (cardCount < 20) {
-        nextMessage = "Everyday Bundle discount is already giving you the best price.";
-      } else if (cardCount < 29) {
-        const cardsNeeded = 29 - cardCount;
-        nextMessage = `Add ${cardsNeeded} more card${cardsNeeded === 1 ? "" : "s"} to reach the Mega Bundle best-price zone.`;
-      } else if (cardCount <= 40) {
-        nextMessage = "Mega Bundle discount is already giving you the best price.";
-      } else {
-        nextMessage = "Mega Bundle plus extra-card pricing applied.";
-      }
-
-      return {
-        total: bestOption.total,
-        label: bestOption.label,
-        savingMessage: bestOption.savingMessage,
-        nextMessage
-      };
-    }
-
-    function updateSummary() {
-      const cardCount = selectedCards.length;
-      const pricing = calculateBestPrice(cardCount);
-
-      selectedCount.textContent = cardCount;
-
-      summaryCount.textContent = cardCount === 1
-        ? "1 card selected"
-        : `${cardCount} cards selected`;
-
-      summaryTotal.textContent = formatMoney(pricing.total);
-      pricingMessage.textContent = pricing.savingMessage;
-      nextSaving.textContent = pricing.nextMessage;
-
-      selectedCardList.innerHTML = "";
-
-      if (cardCount === 0) {
-        emptyMessage.style.display = "block";
-        orderButton.classList.add("disabled");
-        orderButton.href = "#";
+      if (selected.length === 0) {
+        selectedList.textContent = 'No cards selected yet.';
+        emailOrderBtn.classList.add('disabled');
+        emailOrderBtn.setAttribute('aria-disabled', 'true');
+        emailOrderBtn.href = 'mailto:shinewithoutlimits@hotmail.com';
         return;
       }
 
-      emptyMessage.style.display = "none";
-      orderButton.classList.remove("disabled");
+      selectedList.innerHTML = selected
+        .map((card) => `<span>${card}</span>`)
+        .join('');
 
-      selectedCards.forEach((cardName) => {
-        const listItem = document.createElement("li");
-
-        listItem.innerHTML = `
-          <span>${cardName}</span>
-          <button type="button" data-remove="${cardName}">Remove</button>
-        `;
-
-        selectedCardList.appendChild(listItem);
-      });
-
-      const emailBody = encodeURIComponent(
-        `Hi Shine Without Limits,\n\n` +
-        `I would like to order the following ready-made PECS cards:\n\n` +
-        `${selectedCards.map((card) => `- ${card}`).join("\n")}\n\n` +
-        `Cards selected: ${cardCount}\n` +
-        `Pricing applied: ${pricing.label}\n` +
-        `Card total: ${formatMoney(pricing.total)}\n\n` +
-        `Name:\n` +
-        `Delivery address:\n` +
-        `Any notes or custom wording requests:\n\n` +
-        `I understand postage and final total will be confirmed by email before payment.`
+      const subject = encodeURIComponent('PECS Card Selection');
+      const body = encodeURIComponent(
+        `Hi Shine Without Limits,\n\nI would like to enquire about these PECS cards:\n\n- ${selected.join('\n- ')}\n\nPlease can you confirm the price, postage and timescale?\n\nThank you.`
       );
 
-      orderButton.href = `mailto:${ORDER_EMAIL}?subject=PECS Card Order Request&body=${emailBody}`;
+      emailOrderBtn.href = `mailto:shinewithoutlimits@hotmail.com?subject=${subject}&body=${body}`;
+      emailOrderBtn.classList.remove('disabled');
+      emailOrderBtn.setAttribute('aria-disabled', 'false');
     }
 
-    pecChoices.forEach((choice) => {
-      choice.addEventListener("click", () => {
-        const cardName = choice.dataset.name;
-
-        if (selectedCards.includes(cardName)) {
-          selectedCards = selectedCards.filter((card) => card !== cardName);
-          choice.classList.remove("selected");
-          choice.querySelector("b").textContent = "Select";
-          updateSummary();
-          return;
-        }
-
-        selectedCards.push(cardName);
-        choice.classList.add("selected");
-        choice.querySelector("b").textContent = "✓ Selected";
-
-        updateSummary();
-      });
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener('change', updateSelection);
     });
-
-    selectedCardList.addEventListener("click", (event) => {
-      const removeButton = event.target.closest("[data-remove]");
-
-      if (!removeButton) return;
-
-      const cardName = removeButton.dataset.remove;
-
-      selectedCards = selectedCards.filter((card) => card !== cardName);
-
-      pecChoices.forEach((choice) => {
-        if (choice.dataset.name === cardName) {
-          choice.classList.remove("selected");
-          choice.querySelector("b").textContent = "Select";
-        }
-      });
-
-      updateSummary();
-    });
-
-    updateSummary();
   </script>
 </body>
 </html>
