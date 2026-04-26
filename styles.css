@@ -1148,3 +1148,195 @@ footer p,
     transform: scale(3.2) !important;
   }
 }
+/* ================================
+   Shine Without Limits animations
+   ================================ */
+
+/* Smooth hover lift for buttons */
+.btn,
+.cta-button,
+.shop-btn,
+.email-btn,
+button {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.btn:hover,
+.cta-button:hover,
+.shop-btn:hover,
+.email-btn:hover,
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(75, 53, 160, 0.18);
+  filter: brightness(1.04);
+}
+
+/* Gentle logo glow */
+.site-logo,
+.header-logo,
+.logo img,
+.site-header img {
+  animation: softLogoGlow 3.5s ease-in-out infinite;
+}
+
+@keyframes softLogoGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(255, 221, 92, 0));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 14px rgba(255, 221, 92, 0.7));
+  }
+}
+
+/* Product and info cards pop in softly */
+.product-card,
+.card,
+.info-card,
+.trust-card,
+.pec-card,
+.category-card {
+  animation: softCardPop 0.65s ease both;
+}
+
+@keyframes softCardPop {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Slight stagger so cards don't all appear like a stampede */
+.product-card:nth-child(1),
+.card:nth-child(1),
+.info-card:nth-child(1),
+.trust-card:nth-child(1),
+.pec-card:nth-child(1),
+.category-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.product-card:nth-child(2),
+.card:nth-child(2),
+.info-card:nth-child(2),
+.trust-card:nth-child(2),
+.pec-card:nth-child(2),
+.category-card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.product-card:nth-child(3),
+.card:nth-child(3),
+.info-card:nth-child(3),
+.trust-card:nth-child(3),
+.pec-card:nth-child(3),
+.category-card:nth-child(3) {
+  animation-delay: 0.19s;
+}
+
+.product-card:nth-child(4),
+.card:nth-child(4),
+.info-card:nth-child(4),
+.trust-card:nth-child(4),
+.pec-card:nth-child(4),
+.category-card:nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+.product-card:nth-child(5),
+.card:nth-child(5),
+.info-card:nth-child(5),
+.trust-card:nth-child(5),
+.pec-card:nth-child(5),
+.category-card:nth-child(5) {
+  animation-delay: 0.33s;
+}
+
+.product-card:nth-child(6),
+.card:nth-child(6),
+.info-card:nth-child(6),
+.trust-card:nth-child(6),
+.pec-card:nth-child(6),
+.category-card:nth-child(6) {
+  animation-delay: 0.4s;
+}
+
+/* Hero section floats in */
+.hero,
+.info-hero,
+.products-hero,
+.custom-hero {
+  animation: heroFloatIn 0.75s ease both;
+}
+
+@keyframes heroFloatIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Small floating effect for decorative cloud/sun/banner images */
+.cloud,
+.cloud-img,
+.sun-icon,
+.hero-cloud,
+.banner-cloud,
+.topbar img,
+.hero-banner-wrap img {
+  animation: gentleFloat 5.5s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Nice little hover on PECS selectable cards */
+.pec-option,
+.pec-select-card,
+.builder-card {
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.pec-option:hover,
+.pec-select-card:hover,
+.builder-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(78, 63, 160, 0.16);
+}
+
+/* Accessibility: turns animations down for people who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
