@@ -1432,3 +1432,27 @@ button:hover,
     transform: rotate(2deg) scale(1.04);
   }
 }
+/* ================================
+   MOVING CLOUD BACKGROUND TEST
+   ================================ */
+
+.hero,
+.hero-overlay,
+.info-page,
+.products-page,
+.custom-page,
+body {
+  background-size: cover;
+  animation: cloudDrift 18s ease-in-out infinite;
+}
+
+@keyframes cloudDrift {
+  0%,
+  100% {
+    background-position: center center;
+  }
+
+  50% {
+    background-position: center 18px;
+  }
+}
