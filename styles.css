@@ -1148,3 +1148,35 @@ footer p,
     transform: scale(3.2) !important;
   }
 }
+/* ================================
+   SAFE SHINE ANIMATIONS
+   This will NOT change layout
+   ================================ */
+
+a,
+button,
+.shop-btn,
+.email-btn,
+.cta-button,
+.category-card,
+.product-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+a:hover,
+button:hover,
+.shop-btn:hover,
+.email-btn:hover,
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.03);
+  filter: brightness(1.05);
+}
+
+.category-card:hover,
+.product-card:hover {
+  transform: translateY(-5px) scale(1.015);
+  box-shadow: 0 16px 32px rgba(0, 72, 160, 0.16);
+}
