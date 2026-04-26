@@ -1454,6 +1454,76 @@ footer,
   gap: 14px;
 }
 
+/* Pricing */
+
+.pec-pricing-section {
+  padding: 25px 20px 45px;
+}
+
+.pec-pricing-grid {
+  width: min(1050px, 100%);
+  margin: 28px auto 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.pec-price-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 3px solid #dff4ff;
+  border-radius: 30px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 14px 30px rgba(18, 57, 111, 0.13);
+}
+
+.pec-price-card.featured {
+  border-color: #ffbf3f;
+  background: #fff8d8;
+  transform: translateY(-6px);
+}
+
+.pec-price-card h3 {
+  color: #12396f;
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+}
+
+.pec-price-card .price {
+  color: #ff6f9f;
+  font-size: 1.65rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.pec-price-card p {
+  color: #24517f;
+  line-height: 1.6;
+}
+
+.bundle-price-strip {
+  width: min(1050px, 100%);
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bundle-price-strip span {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  color: #12396f;
+  border: 2px solid #ffbf3f;
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(18, 57, 111, 0.1);
+}
+
+/* Builder */
+
 .pec-builder-section {
   padding: 35px 20px 70px;
 }
@@ -1470,6 +1540,33 @@ footer,
   gap: 14px;
   text-align: center;
   color: #12396f;
+}
+
+.basket-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.basket-estimate {
+  background: #fff5c7;
+  border: 2px solid #ffbf3f;
+  color: #12396f;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 900;
+}
+
+.bundle-helper {
+  background: linear-gradient(135deg, #e9f8ff, #fff5fb);
+  border: 2px dashed #ff8fb3;
+  color: #12396f;
+  border-radius: 22px;
+  padding: 14px 16px;
+  font-weight: 900;
+  line-height: 1.45;
 }
 
 .selected-list {
@@ -1491,6 +1588,12 @@ footer,
   padding: 7px 12px;
   font-weight: 800;
   font-size: 0.9rem;
+}
+
+.basket-note {
+  color: #24517f;
+  font-size: 0.92rem;
+  margin: 0;
 }
 
 .pec-card-grid {
@@ -1608,6 +1711,16 @@ footer,
   color: #ff8fb3;
 }
 
+@media (max-width: 850px) {
+  .pec-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pec-price-card.featured {
+    transform: none;
+  }
+}
+
 @media (max-width: 750px) {
   .pec-builder-hero {
     padding-top: 55px;
@@ -1616,6 +1729,10 @@ footer,
   .pec-builder-hero-inner {
     padding: 34px 18px;
     border-radius: 28px;
+  }
+
+  .basket-topline {
+    justify-content: center;
   }
 
   .pec-card-grid {

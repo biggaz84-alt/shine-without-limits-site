@@ -90,14 +90,25 @@
         <p class="eyebrow">Your card choices</p>
         <h2>Tap or click the cards you want</h2>
         <p>
-          Your selected cards will appear in the box below, ready to send over by email.
+          Your PECS basket will count your cards and show which bundle option you are closest to.
         </p>
       </div>
 
       <div class="builder-summary">
-        <div>
-          <strong>Selected cards:</strong>
-          <span id="selectedCount">0</span>
+        <div class="basket-topline">
+          <div>
+            <strong>Your PECS basket:</strong>
+            <span id="selectedCount">0</span>
+            <span>cards selected</span>
+          </div>
+
+          <div class="basket-estimate" id="basketEstimate">
+            Estimated from £0.00
+          </div>
+        </div>
+
+        <div class="bundle-helper" id="bundleHelper">
+          Choose your cards and I’ll help you spot the best bundle option.
         </div>
 
         <div class="selected-list" id="selectedList">
@@ -112,6 +123,10 @@
         >
           Email My Selection
         </a>
+
+        <p class="basket-note">
+          Final price, postage and timescale will be confirmed by email before making.
+        </p>
       </div>
 
       <div class="pec-card-grid">
@@ -382,15 +397,60 @@
     const selectedCount = document.getElementById('selectedCount');
     const selectedList = document.getElementById('selectedList');
     const emailOrderBtn = document.getElementById('emailOrderBtn');
+    const bundleHelper = document.getElementById('bundleHelper');
+    const basketEstimate = document.getElementById('basketEstimate');
+
+    function getBundlePrice(count) {
+      if (count >= 40) return 24;
+      if (count >= 20) return 14;
+      if (count >= 10) return 8;
+      return count * 1.5;
+    }
+
+    function getBundleMessage(count) {
+      if (count === 0) {
+        return 'Choose your cards and I’ll help you spot the best bundle option.';
+      }
+
+      if (count < 10) {
+        const remaining = 10 - count;
+        return `Add ${remaining} more card${remaining === 1 ? '' : 's'} to unlock the 10 cards from £8 bundle.`;
+      }
+
+      if (count === 10) {
+        return 'Nice, you’ve unlocked the 10 cards from £8 bundle.';
+      }
+
+      if (count > 10 && count < 20) {
+        const remaining = 20 - count;
+        return `You’re on the 10+ bundle. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 20 cards from £14.`;
+      }
+
+      if (count === 20) {
+        return 'Lovely, you’ve unlocked the 20 cards from £14 bundle.';
+      }
+
+      if (count > 20 && count < 40) {
+        const remaining = 40 - count;
+        return `You’re on the 20+ bundle. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 40 cards from £24.`;
+      }
+
+      return 'Brilliant, you’ve unlocked the 40 cards from £24 bundle.';
+    }
 
     function updateSelection() {
       const selected = Array.from(checkboxes)
         .filter((checkbox) => checkbox.checked)
         .map((checkbox) => checkbox.value);
 
-      selectedCount.textContent = selected.length;
+      const count = selected.length;
+      const estimate = getBundlePrice(count);
 
-      if (selected.length === 0) {
+      selectedCount.textContent = count;
+      basketEstimate.textContent = `Estimated from £${estimate.toFixed(2)}`;
+      bundleHelper.textContent = getBundleMessage(count);
+
+      if (count === 0) {
         selectedList.textContent = 'No cards selected yet.';
         emailOrderBtn.classList.add('disabled');
         emailOrderBtn.setAttribute('aria-disabled', 'true');
@@ -404,7 +464,7 @@
 
       const subject = encodeURIComponent('PECS Card Selection');
       const body = encodeURIComponent(
-        `Hi Shine Without Limits,\n\nI would like to enquire about these PECS cards:\n\n- ${selected.join('\n- ')}\n\nPlease can you confirm the price, postage and timescale?\n\nThank you.`
+        `Hi Shine Without Limits,\n\nI would like to enquire about these PECS cards:\n\n- ${selected.join('\n- ')}\n\nSelected card count: ${count}\nEstimated bundle price: from £${estimate.toFixed(2)}\n\nPlease can you confirm the final price, postage and timescale?\n\nThank you.`
       );
 
       emailOrderBtn.href = `mailto:shinewithoutlimits@hotmail.com?subject=${subject}&body=${body}`;
@@ -415,6 +475,8 @@
     checkboxes.forEach((checkbox) => {
       checkbox.addEventListener('change', updateSelection);
     });
+
+    updateSelection();
   </script>
 </body>
 </html>
