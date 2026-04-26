@@ -1646,3 +1646,82 @@ footer,
     font-size: 0.86rem;
   }
 }
+/* =========================================================
+   PECS PRICING BLOCK
+   ========================================================= */
+
+.pec-pricing-section {
+  padding: 25px 20px 45px;
+}
+
+.pec-pricing-grid {
+  width: min(1050px, 100%);
+  margin: 28px auto 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.pec-price-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 3px solid #dff4ff;
+  border-radius: 30px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 14px 30px rgba(18, 57, 111, 0.13);
+}
+
+.pec-price-card.featured {
+  border-color: #ffbf3f;
+  background: #fff8d8;
+  transform: translateY(-6px);
+}
+
+.pec-price-card h3 {
+  color: #12396f;
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+}
+
+.pec-price-card .price {
+  color: #ff6f9f;
+  font-size: 1.65rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.pec-price-card p {
+  color: #24517f;
+  line-height: 1.6;
+}
+
+.bundle-price-strip {
+  width: min(1050px, 100%);
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bundle-price-strip span {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  color: #12396f;
+  border: 2px solid #ffbf3f;
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(18, 57, 111, 0.1);
+}
+
+@media (max-width: 850px) {
+  .pec-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pec-price-card.featured {
+    transform: none;
+  }
+}
