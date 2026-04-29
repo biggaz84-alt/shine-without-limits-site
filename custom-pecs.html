@@ -11,6 +11,173 @@
   />
 
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* =========================================================
+       PECS BUILDER PAGE EXTRA POLISH
+       Kept inside this page so you only replace custom-pecs.html
+       ========================================================= */
+
+    .pec-builder-section .builder-summary {
+      position: static !important;
+      top: auto !important;
+      z-index: auto !important;
+      margin-bottom: 48px;
+    }
+
+    .pec-builder-section .selected-list {
+      max-height: none;
+      overflow: visible;
+    }
+
+    .pec-jump-box {
+      width: min(1050px, 100%);
+      margin: 0 auto 38px;
+      padding: 22px 18px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.88);
+      border: 3px solid rgba(255, 255, 255, 0.95);
+      border-radius: 28px;
+      box-shadow: 0 14px 30px rgba(18, 57, 111, 0.12);
+    }
+
+    .pec-jump-box p {
+      margin-bottom: 14px;
+      color: #12396f;
+      font-weight: 900;
+    }
+
+    .pec-jump-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pec-jump-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #12396f;
+      border: 2px solid #ffbf3f;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(18, 57, 111, 0.1);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .pec-jump-links a:hover {
+      transform: translateY(-3px);
+      background: #fff8d8;
+      box-shadow: 0 12px 24px rgba(18, 57, 111, 0.16);
+    }
+
+    #cardSections {
+      display: grid;
+      gap: 46px;
+    }
+
+    .pec-generated-section {
+      scroll-margin-top: 165px;
+    }
+
+    #cardSections .section-heading {
+      margin-top: 18px;
+      margin-bottom: 22px;
+      padding: 26px 18px;
+      width: min(1050px, 100%);
+      background: rgba(255, 255, 255, 0.78);
+      border: 3px solid rgba(255, 255, 255, 0.92);
+      border-radius: 30px;
+      box-shadow: 0 14px 30px rgba(18, 57, 111, 0.11);
+    }
+
+    #cardSections .section-heading h2 {
+      color: #12396f;
+    }
+
+    #cardSections .section-heading p:last-child {
+      max-width: 760px;
+      margin: 8px auto 0;
+      color: #24517f;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    #cardSections .pec-card-grid {
+      margin-bottom: 18px;
+    }
+
+    .pec-choice-card {
+      overflow: hidden;
+    }
+
+    .pec-choice-card img {
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 6px;
+    }
+
+    .pec-choice-card span {
+      min-height: 42px;
+      display: grid;
+      place-items: center;
+      line-height: 1.15;
+    }
+
+    @media (max-width: 850px) {
+      #cardSections {
+        gap: 34px;
+      }
+
+      #cardSections .section-heading {
+        border-radius: 24px;
+        padding: 22px 14px;
+      }
+
+      .pec-generated-section {
+        scroll-margin-top: 24px;
+      }
+    }
+
+    @media (max-width: 750px) {
+      .pec-jump-box {
+        border-radius: 22px;
+        padding: 18px 12px;
+      }
+
+      .pec-jump-links {
+        gap: 8px;
+      }
+
+      .pec-jump-links a {
+        font-size: 0.82rem;
+        padding: 8px 10px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      #cardSections .section-heading h2 {
+        font-size: 1.65rem;
+      }
+
+      #cardSections .section-heading p:last-child {
+        font-size: 0.92rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -127,6 +294,11 @@
         <p class="basket-note">
           Final price, postage and timescale will be confirmed by email before making.
         </p>
+      </div>
+
+      <div class="pec-jump-box">
+        <p>Jump to a card section:</p>
+        <div class="pec-jump-links" id="pecJumpLinks"></div>
       </div>
 
       <div id="cardSections"></div>
@@ -352,9 +524,25 @@
     ];
 
     const cardSectionsContainer = document.getElementById('cardSections');
+    const pecJumpLinks = document.getElementById('pecJumpLinks');
+
+    function createSectionId(title) {
+      return title
+        .toLowerCase()
+        .replace(/&/g, 'and')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+    }
 
     function renderCardSections() {
+      pecJumpLinks.innerHTML = cardSections.map((section) => {
+        const sectionId = createSectionId(section.title);
+        return `<a href="#${sectionId}">${section.title}</a>`;
+      }).join('');
+
       cardSectionsContainer.innerHTML = cardSections.map((section) => {
+        const sectionId = createSectionId(section.title);
+
         const cardsHtml = section.cards.map(([name, image]) => `
           <label class="pec-choice-card">
             <input type="checkbox" value="${name}" data-category="${section.title}" />
@@ -364,15 +552,17 @@
         `).join('');
 
         return `
-          <div class="section-heading">
-            <p class="eyebrow">${section.eyebrow}</p>
-            <h2>${section.title}</h2>
-            <p>${section.description}</p>
-          </div>
+          <section class="pec-generated-section" id="${sectionId}">
+            <div class="section-heading">
+              <p class="eyebrow">${section.eyebrow}</p>
+              <h2>${section.title}</h2>
+              <p>${section.description}</p>
+            </div>
 
-          <div class="pec-card-grid">
-            ${cardsHtml}
-          </div>
+            <div class="pec-card-grid">
+              ${cardsHtml}
+            </div>
+          </section>
         `;
       }).join('');
     }
