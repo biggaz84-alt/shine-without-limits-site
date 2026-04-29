@@ -2064,3 +2064,122 @@ footer,
     border-radius: 18px;
   }
 }
+
+/* =========================================================
+   PECS BUILDER EXTRA CATEGORY POLISH
+   Add this at the very bottom of styles.css
+   ========================================================= */
+
+#cardSections {
+  display: grid;
+  gap: 46px;
+}
+
+#cardSections .section-heading {
+  margin-top: 18px;
+  margin-bottom: 22px;
+  padding: 26px 18px;
+  width: min(1050px, 100%);
+  background: rgba(255, 255, 255, 0.78);
+  border: 3px solid rgba(255, 255, 255, 0.92);
+  border-radius: 30px;
+  box-shadow: 0 14px 30px rgba(18, 57, 111, 0.11);
+}
+
+#cardSections .section-heading h2 {
+  color: #12396f;
+}
+
+#cardSections .section-heading p:last-child {
+  max-width: 760px;
+  margin: 8px auto 0;
+  color: #24517f;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#cardSections .pec-card-grid {
+  margin-bottom: 18px;
+}
+
+.pec-choice-card {
+  overflow: hidden;
+}
+
+.pec-choice-card img {
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 6px;
+}
+
+.pec-choice-card span {
+  min-height: 42px;
+  display: grid;
+  place-items: center;
+  line-height: 1.15;
+}
+
+.builder-summary {
+  position: sticky;
+  top: 155px;
+  z-index: 5;
+}
+
+.selected-list {
+  max-height: 160px;
+  overflow: auto;
+  padding: 4px;
+}
+
+.selected-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.selected-list::-webkit-scrollbar-thumb {
+  background: #ffbf3f;
+  border-radius: 999px;
+}
+
+.selected-list::-webkit-scrollbar-track {
+  background: #e9f8ff;
+  border-radius: 999px;
+}
+
+/* Make the PECS page easier on smaller screens */
+
+@media (max-width: 850px) {
+  #cardSections {
+    gap: 34px;
+  }
+
+  #cardSections .section-heading {
+    border-radius: 24px;
+    padding: 22px 14px;
+  }
+
+  .builder-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 520px) {
+  .pec-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pec-choice-card img {
+    max-width: 135px;
+  }
+
+  #cardSections .section-heading h2 {
+    font-size: 1.65rem;
+  }
+
+  #cardSections .section-heading p:last-child {
+    font-size: 0.92rem;
+  }
+}
