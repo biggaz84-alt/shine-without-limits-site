@@ -2183,3 +2183,23 @@ footer,
     font-size: 0.92rem;
   }
 }
+/* =========================================================
+   PECS BASKET FIX
+   Stops basket covering the card picker
+   ========================================================= */
+
+.pec-builder-section .builder-summary {
+  position: static !important;
+  top: auto !important;
+  z-index: auto !important;
+  margin-bottom: 48px;
+}
+
+.pec-builder-section .selected-list {
+  max-height: none;
+  overflow: visible;
+}
+
+.pec-builder-section .section-heading {
+  scroll-margin-top: 30px;
+}
