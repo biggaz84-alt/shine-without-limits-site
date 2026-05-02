@@ -1990,3 +1990,164 @@ footer p,
     max-height: 86px !important;
   }
 }
+/* =========================================================
+   PRODUCTS PAGE SAFETY RESET
+   Keeps the catalogue stable after product preview experiments
+   ========================================================= */
+
+#all-products .container {
+  width: min(1280px, calc(100% - 40px)) !important;
+}
+
+#all-products .catalogue-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+  align-items: stretch !important;
+}
+
+#all-products .catalogue-card {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100% !important;
+  overflow: hidden !important;
+  border-radius: 24px !important;
+  background: rgba(255, 255, 255, 0.84) !important;
+  border: 4px solid rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 14px 30px rgba(18, 57, 111, 0.12) !important;
+}
+
+#all-products .catalogue-card:hover {
+  transform: translateY(-5px) scale(1.012) !important;
+  box-shadow: 0 18px 36px rgba(18, 57, 111, 0.17) !important;
+}
+
+#all-products .catalogue-card > img {
+  width: 100% !important;
+  height: 205px !important;
+  max-height: 205px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  background: #ffffff !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+#all-products .catalogue-content {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 16px !important;
+  background: transparent !important;
+}
+
+#all-products .catalogue-content h3 {
+  color: #0b469c !important;
+  font-size: 1.16rem !important;
+  line-height: 1.15 !important;
+  font-weight: 900 !important;
+  margin-bottom: 8px !important;
+}
+
+#all-products .catalogue-content p {
+  color: #3c5f8e !important;
+  font-size: 0.96rem !important;
+  margin-bottom: 14px !important;
+  line-height: 1.5 !important;
+}
+
+#all-products .catalogue-content ul {
+  margin: 0 0 16px 18px !important;
+  color: #375d8d !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+}
+
+#all-products .catalogue-content li {
+  margin-bottom: 4px !important;
+}
+
+#all-products .product-bottom {
+  margin-top: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+}
+
+#all-products .product-bottom span {
+  color: #ff8a00 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.1 !important;
+  font-weight: 900 !important;
+  white-space: normal !important;
+}
+
+#all-products .small-btn {
+  width: auto !important;
+  min-width: auto !important;
+  min-height: auto !important;
+  padding: 8px 12px !important;
+  font-size: 0.82rem !important;
+  white-space: nowrap !important;
+}
+
+#all-products .small-btn::before {
+  content: none !important;
+}
+
+#all-products .catalogue-badge {
+  position: absolute !important;
+  top: 12px !important;
+  left: 12px !important;
+  z-index: 4 !important;
+  color: #ffffff !important;
+  background: #0b469c !important;
+  border-radius: 999px !important;
+  padding: 6px 10px !important;
+  font-size: 0.72rem !important;
+  font-weight: 900 !important;
+  box-shadow: 0 8px 18px rgba(15, 75, 166, 0.16) !important;
+}
+
+/* Kill off the experimental individual-card preview if any old CSS remains */
+#all-products .pecs-product-preview {
+  display: none !important;
+}
+
+/* Responsive reset */
+@media (max-width: 1180px) {
+  #all-products .catalogue-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  #all-products .container {
+    width: min(100%, calc(100% - 24px)) !important;
+  }
+
+  #all-products .catalogue-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #all-products .catalogue-card > img {
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+  }
+
+  #all-products .product-bottom {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+
+  #all-products .small-btn {
+    width: 100% !important;
+  }
+}
