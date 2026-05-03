@@ -7,7 +7,7 @@
   <title>Shine Without Limits</title>
   <meta
     name="description"
-    content="Shine Without Limits creates PECS cards, sensory toys, custom communication supports and inclusive clothing for children and families."
+    content="Shine Without Limits creates PECS card bundles, custom communication supports, sensory items and inclusive products for children and families."
   />
 
   <link rel="stylesheet" href="styles.css" />
@@ -17,18 +17,18 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo-link">
+      <a href="index.html" class="logo-link" aria-label="Shine Without Limits home">
         <img src="images/header-logo.png" alt="Shine Without Limits logo" class="site-logo" />
       </a>
 
       <nav class="main-nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="products.html">Products</a>
         <a href="custom-pecs.html">PECS Cards</a>
         <a href="custom-orders.html">Custom Orders</a>
         <a href="customer-info.html">Info</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -37,7 +37,7 @@
 
     <section class="hero-banner">
       <div class="container">
-        <a href="products.html" aria-label="View Shine Without Limits products">
+        <a href="products.html" aria-label="View Shine Without Limits products" class="hero-banner-card">
           <img
             src="images/header-version.png"
             alt="Shine Without Limits helping little voices shine"
@@ -47,84 +47,187 @@
       </div>
     </section>
 
-    <section class="category-section" id="shop">
+    <section class="intro-section">
       <div class="container">
-        <div class="section-heading">
-          <p>Shop by category</p>
-          <h1>Bright, practical support for children, families and everyday communication</h1>
-        </div>
+        <div class="intro-card">
+          <p class="eyebrow">Helping little voices shine</p>
+          <h1>Simple PECS card bundles, custom visuals and everyday communication support</h1>
+          <p>
+            Choose from ready-made PECS packs or request custom cards made around your child’s
+            routine, favourite places, needs, interests and daily life.
+          </p>
 
-        <div class="category-grid">
-          <a href="custom-pecs.html" class="category-card" aria-label="Build custom PECS cards">
-            <img src="images/pecs-category.jpg" alt="PECS Cards" />
-          </a>
-
-          <a href="products.html#clothing-products" class="category-card" aria-label="View inclusive clothing">
-            <img src="images/clothing-category.jpg" alt="Inclusive clothing" />
-          </a>
-
-          <a href="custom-orders.html" class="category-card" aria-label="Request a custom order">
-            <img src="images/custom-category.jpg" alt="Custom orders" />
-          </a>
+          <div class="intro-actions">
+            <a href="#pecs-bundles" class="main-btn">View PECS Bundles</a>
+            <a href="custom-orders.html" class="secondary-btn">Request Custom Cards</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="best-sellers" id="pecs">
+    <section class="bundle-section" id="pecs-bundles">
       <div class="container">
         <div class="section-heading">
-          <p>Popular choices</p>
-          <h2>Best Sellers</h2>
+          <p>Ready-made support</p>
+          <h2>PECS Card Bundles</h2>
+          <span>
+            We’re keeping things simple. Start with a clear ready-made pack, then ask for any extra
+            custom cards you need.
+          </span>
         </div>
 
-        <div class="product-grid">
-          <article class="product-card">
-            <img src="images/emotions.jpg" alt="Emotions PECS Set" />
-            <div class="product-content">
-              <h3>Emotions PECS Set</h3>
-              <p>Clear, colourful emotion cards to help children show how they feel when words are hard to find.</p>
+        <div class="bundle-grid">
+
+          <article class="bundle-card featured">
+            <div class="bundle-badge">Great first pack</div>
+            <img src="images/pecs-category.jpg" alt="Starter Communication PECS Pack" />
+            <div class="bundle-content">
+              <h3>Starter Communication Pack</h3>
+              <p>
+                A simple first set for everyday communication, choices and basic needs.
+              </p>
+              <ul>
+                <li>Yes, No, More, Finished</li>
+                <li>Help, Stop, Wait</li>
+                <li>Drink, Food, Toilet, Play</li>
+                <li>Happy, Sad, Tired</li>
+              </ul>
               <div class="product-bottom">
-                <span>From £9.99</span>
-                <a href="mailto:shinewithoutlimits@hotmail.com?subject=Emotions%20PECS%20Set%20Enquiry" class="small-btn">Email to Order</a>
+                <span>From £8</span>
+                <a href="mailto:shinewithoutlimits@hotmail.com?subject=Starter%20Communication%20Pack%20Enquiry" class="small-btn">Email to Order</a>
               </div>
             </div>
           </article>
 
-          <article class="product-card">
-            <img src="images/routine.jpg" alt="Daily Routine PECS Set" />
-            <div class="product-content">
-              <h3>Daily Routine PECS Set</h3>
-              <p>Helpful everyday visuals for routines, choices, transitions, home support and daily structure.</p>
+          <article class="bundle-card">
+            <img src="images/routine.jpg" alt="Daily Routine PECS Pack" />
+            <div class="bundle-content">
+              <h3>Daily Routine Pack</h3>
+              <p>
+                Visual cards for home routines, transitions and daily structure.
+              </p>
+              <ul>
+                <li>Wake up, Breakfast, Lunch</li>
+                <li>Brush teeth, Get dressed</li>
+                <li>School, Home, Bath, Bed</li>
+                <li>Wash hands, Shoes, Coat</li>
+              </ul>
               <div class="product-bottom">
-                <span>From £12.99</span>
-                <a href="mailto:shinewithoutlimits@hotmail.com?subject=Daily%20Routine%20PECS%20Set%20Enquiry" class="small-btn">Email to Order</a>
+                <span>From £12</span>
+                <a href="mailto:shinewithoutlimits@hotmail.com?subject=Daily%20Routine%20Pack%20Enquiry" class="small-btn">Email to Order</a>
               </div>
             </div>
           </article>
 
-          <article class="product-card">
-            <img src="images/fidget.jpg" alt="Fidget sensory toys" />
-            <div class="product-content">
-              <h3>Fidget Sensory Toys</h3>
-              <p>Fun 3D printed sensory supports for busy hands, calm moments, focus time and play.</p>
+          <article class="bundle-card">
+            <img src="images/emotions.jpg" alt="Emotions PECS Pack" />
+            <div class="bundle-content">
+              <h3>Emotions Pack</h3>
+              <p>
+                Helpful feeling cards for children who find it hard to explain emotions.
+              </p>
+              <ul>
+                <li>Happy, Sad, Angry</li>
+                <li>Scared, Worried, Excited</li>
+                <li>Tired, Calm, Poorly</li>
+                <li>Confused, Overwhelmed</li>
+              </ul>
               <div class="product-bottom">
-                <span>From £4.99</span>
-                <a href="mailto:shinewithoutlimits@hotmail.com?subject=Fidget%20Sensory%20Toys%20Enquiry" class="small-btn">Email to Order</a>
+                <span>From £9</span>
+                <a href="mailto:shinewithoutlimits@hotmail.com?subject=Emotions%20Pack%20Enquiry" class="small-btn">Email to Order</a>
               </div>
             </div>
           </article>
 
-          <article class="product-card" id="clothing">
-            <img src="images/shirt.jpg" alt="Kids autism friendly t-shirt" />
-            <div class="product-content">
-              <h3>Shine Bright Kids T-Shirt</h3>
-              <p>Positive, colourful clothing designs made to celebrate individuality, confidence and kindness.</p>
+          <article class="bundle-card">
+            <img src="images/food-drink.jpg" alt="Food and Drink PECS Pack" />
+            <div class="bundle-content">
+              <h3>Food & Drink Pack</h3>
+              <p>
+                Everyday food and drink visuals for snacks, meals and choices.
+              </p>
+              <ul>
+                <li>Drink, Water, Milk, Juice</li>
+                <li>Food, Breakfast, Lunch</li>
+                <li>Dinner, Snack</li>
+                <li>Fruit, Sandwich, Yoghurt</li>
+              </ul>
               <div class="product-bottom">
-                <span>From £12.99</span>
-                <a href="mailto:shinewithoutlimits@hotmail.com?subject=Shine%20Bright%20Kids%20T-Shirt%20Enquiry" class="small-btn">Email to Order</a>
+                <span>From £12</span>
+                <a href="mailto:shinewithoutlimits@hotmail.com?subject=Food%20and%20Drink%20Pack%20Enquiry" class="small-btn">Email to Order</a>
               </div>
             </div>
           </article>
+
+          <article class="bundle-card">
+            <img src="images/toilet-routine.jpg" alt="Toilet Routine PECS Pack" />
+            <div class="bundle-content">
+              <h3>Toilet Routine Pack</h3>
+              <p>
+                Step-by-step visual support for toilet training and bathroom routines.
+              </p>
+              <ul>
+                <li>Toilet, Wipe, Flush</li>
+                <li>Wash hands, Dry hands</li>
+                <li>Pants, Trousers, Finished</li>
+                <li>Reward and routine cards</li>
+              </ul>
+              <div class="product-bottom">
+                <span>From £10</span>
+                <a href="mailto:shinewithoutlimits@hotmail.com?subject=Toilet%20Routine%20Pack%20Enquiry" class="small-btn">Email to Order</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="bundle-card">
+            <img src="images/sensory.jpg" alt="Sensory and Calm PECS Pack" />
+            <div class="bundle-content">
+              <h3>Sensory & Calm Pack</h3>
+              <p>
+                Cards for sensory needs, calm moments, breaks and self-regulation.
+              </p>
+              <ul>
+                <li>I need a break</li>
+                <li>Quiet space, Headphones</li>
+                <li>Too loud, Too bright</li>
+                <li>No touch, Deep breath</li>
+              </ul>
+              <div class="product-bottom">
+                <span>From £12</span>
+                <a href="mailto:shinewithoutlimits@hotmail.com?subject=Sensory%20and%20Calm%20Pack%20Enquiry" class="small-btn">Email to Order</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="custom-section">
+      <div class="container">
+        <div class="custom-panel">
+          <div class="custom-copy">
+            <p class="eyebrow">Custom cards available</p>
+            <h2>Can’t see the card you need?</h2>
+            <p>
+              Custom PECS cards can be made for names, routines, favourite toys, places,
+              school, family, food, feelings, days out and personalised photo cards.
+            </p>
+
+            <div class="mini-list">
+              <span>Child’s name</span>
+              <span>Favourite place</span>
+              <span>School routine</span>
+              <span>Photo cards</span>
+              <span>Custom wording</span>
+            </div>
+
+            <a href="custom-orders.html" class="main-btn">Request Custom Cards</a>
+          </div>
+
+          <div class="custom-image-wrap">
+            <img src="images/custom-category.jpg" alt="Custom PECS cards and personalised communication support" />
+          </div>
         </div>
       </div>
     </section>
@@ -139,48 +242,60 @@
         <div class="trust-grid">
           <div class="trust-card">
             <div class="trust-icon">🛍️</div>
-            <h3>1. Choose your product</h3>
-            <p>Browse PECS cards, sensory toys, clothing or custom order options.</p>
+            <h3>1. Choose a pack</h3>
+            <p>Pick a ready-made PECS bundle or request something custom.</p>
           </div>
 
           <div class="trust-card">
             <div class="trust-icon">📩</div>
             <h3>2. Send an enquiry</h3>
-            <p>Use the email button or build a PECS bundle and send your selected cards.</p>
+            <p>Use the email button and tell us what you need.</p>
           </div>
 
           <div class="trust-card">
             <div class="trust-icon">✏️</div>
-            <h3>3. Add your details</h3>
-            <p>Include quantity, names, colours, wording, symbols or any custom ideas.</p>
+            <h3>3. Add details</h3>
+            <p>Include names, wording, symbols, routines or personalised ideas.</p>
           </div>
 
           <div class="trust-card">
             <div class="trust-icon">✅</div>
             <h3>4. Confirm before making</h3>
-            <p>We’ll reply with details, price confirmation, postage and next steps.</p>
+            <p>We’ll reply with price, postage, timescale and next steps.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="custom-section" id="custom">
+    <section class="coming-section">
       <div class="container">
-        <div class="custom-panel">
-          <div class="custom-copy">
-            <p class="eyebrow">Made for real life</p>
-            <h2>Build your own PECS card bundle</h2>
-            <p>
-              Choose from emotions, needs, places, activities and communication cards.
-              Pick a bundle size, tick the cards you want, and send your order request in a few clicks.
-            </p>
+        <div class="section-heading">
+          <p>Coming soon</p>
+          <h2>More Shine Without Limits products</h2>
+          <span>
+            Sensory items and clothing are being built slowly so the PECS card range stays clear,
+            useful and easy to order first.
+          </span>
+        </div>
 
-            <a href="custom-pecs.html" class="main-btn">Build a PECS Bundle</a>
-          </div>
+        <div class="coming-grid">
+          <article class="coming-card">
+            <img src="images/fidget.jpg" alt="Fidget sensory toys coming soon" />
+            <div>
+              <h3>Sensory & Fidget Items</h3>
+              <p>Fun sensory supports for busy hands, calm moments and focus time.</p>
+              <a href="mailto:shinewithoutlimits@hotmail.com?subject=Register%20Interest%20Sensory%20Items" class="small-btn">Register Interest</a>
+            </div>
+          </article>
 
-          <div class="custom-image-wrap">
-            <img src="images/about.jpg" alt="Custom PECS cards and inclusive support" />
-          </div>
+          <article class="coming-card">
+            <img src="images/shirt.jpg" alt="Inclusive clothing coming soon" />
+            <div>
+              <h3>Positive Clothing</h3>
+              <p>Bright t-shirts and hoodies with inclusive, uplifting designs.</p>
+              <a href="mailto:shinewithoutlimits@hotmail.com?subject=Register%20Interest%20Clothing" class="small-btn">Register Interest</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -207,8 +322,8 @@
 
           <div class="trust-card">
             <div class="trust-icon">🎨</div>
-            <h3>Bright designs</h3>
-            <p>Friendly, colourful products that feel positive, clear and approachable.</p>
+            <h3>Clear designs</h3>
+            <p>Simple visuals designed to feel friendly, practical and easy to understand.</p>
           </div>
 
           <div class="trust-card">
@@ -220,27 +335,46 @@
       </div>
     </section>
 
-    <section class="custom-section">
+    <section class="about-section" id="about">
       <div class="container">
-        <div class="custom-panel">
-          <div class="custom-copy">
-            <p class="eyebrow">Personalised support</p>
-            <h2>Need something custom?</h2>
-            <p>
-              Custom cards and products can be made for routines, emotions, places, food,
-              toilet training, school, days out, family needs and anything else that helps communication feel easier.
-            </p>
-
-            <a href="custom-orders.html" class="main-btn">View Custom Orders</a>
-          </div>
-
-          <div class="custom-image-wrap">
-            <img src="images/custom-category.jpg" alt="Custom Shine Without Limits order options" />
-          </div>
+        <div class="about-box">
+          <p class="eyebrow">About Shine Without Limits</p>
+          <h2>Created to make everyday communication feel a little easier</h2>
+          <p>
+            Shine Without Limits creates visual communication supports for children and families.
+            The aim is simple: clear, practical cards and products that help with routines, choices,
+            emotions, needs and confidence in everyday life.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="about-section" id="about">
+    <section class="contact-section" id="contact">
       <div class="container">
-       
+        <div class="contact-box">
+          <p class="eyebrow">Contact</p>
+          <h2>Ready to order or ask a question?</h2>
+          <p>
+            Email us with the pack you’re interested in, any custom card ideas, and how many cards you need.
+          </p>
+
+          <a href="mailto:shinewithoutlimits@hotmail.com?subject=Shine%20Without%20Limits%20Enquiry" class="main-btn">
+            Email Shine Without Limits
+          </a>
+
+          <p class="contact-email">shinewithoutlimits@hotmail.com</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <img src="images/header-logo.png" alt="Shine Without Limits logo" />
+      <p>Helping little voices shine.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
