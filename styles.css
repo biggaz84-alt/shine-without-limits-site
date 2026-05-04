@@ -1246,4 +1246,23 @@ footer p,
     width: 52px;
     height: 68px;
   }
+}/* =========================================================
+   TEMP FIX: HIDE FADED PECS PREVIEW STRIPS
+   The individual PNG cards are too pale compared to the main bundle images.
+   ========================================================= */
+
+.preview-strip {
+  display: none !important;
+}
+
+.pretty-bundle-card .bundle-content {
+  padding-top: 24px;
+}
+
+.pretty-bundle-card p {
+  margin-bottom: 16px;
+}
+
+.pretty-bundle-card ul {
+  margin-top: 10px;
 }
