@@ -1136,4 +1136,114 @@ footer p,
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}/* =========================================================
+   PRODUCTS PAGE RESCUE PASS
+   Adds warmer bundle cards with real PECS card previews
+   ========================================================= */
+
+.products-hero .intro-card,
+.products-hero-card {
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.refreshed-bundles {
+  position: relative;
+}
+
+.pretty-bundle-grid {
+  align-items: stretch;
+}
+
+.pretty-bundle-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.bundle-main-image {
+  width: 100%;
+  height: 245px;
+  padding: 16px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 211, 84, 0.22), transparent 35%),
+    radial-gradient(circle at 85% 10%, rgba(88, 181, 255, 0.16), transparent 34%),
+    rgba(255, 255, 255, 0.68);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bundle-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  display: block;
+}
+
+.soft-preview-main img {
+  width: auto;
+  max-width: 78%;
+  height: 100%;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 12px;
+  border-radius: 24px;
+  box-shadow: 0 12px 28px rgba(18, 57, 111, 0.12);
+}
+
+.preview-strip {
+  margin: 16px 0 14px;
+  padding: 10px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  box-shadow: inset 0 0 0 1px rgba(15, 76, 155, 0.05);
+}
+
+.preview-strip img {
+  flex: 0 0 auto;
+  width: 58px;
+  height: 74px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 5px 14px rgba(18, 57, 111, 0.14);
+}
+
+.pretty-bundle-card .bundle-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pretty-bundle-card ul {
+  margin-top: 4px;
+  margin-bottom: 18px;
+}
+
+.pretty-bundle-card .product-bottom {
+  margin-top: auto;
+}
+
+.pretty-bundle-card.featured {
+  border: 3px solid rgba(255, 177, 20, 0.75);
+  box-shadow: 0 18px 42px rgba(255, 150, 0, 0.18);
+}
+
+@media (max-width: 760px) {
+  .bundle-main-image {
+    height: 220px;
+    padding: 12px;
+  }
+
+  .preview-strip img {
+    width: 52px;
+    height: 68px;
+  }
 }
