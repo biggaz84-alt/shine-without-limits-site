@@ -334,7 +334,7 @@
 
         <article class="pec-price-card featured">
           <h3>Bundles</h3>
-          <p class="price">From 10 for £8</p>
+          <p class="price">From 10 for £10</p>
           <p>Great for routines, places, toilet support, drinks, activities and everyday choices.</p>
         </article>
 
@@ -346,9 +346,9 @@
       </div>
 
       <div class="bundle-price-strip">
-        <span>10 cards from £8</span>
-        <span>20 cards from £14</span>
-        <span>40 cards from £24</span>
+        <span>10 cards from £10</span>
+        <span>20 cards from £19</span>
+        <span>40 cards from £35</span>
         <span>Personalised cards from £3 each</span>
       </div>
     </section>
@@ -1333,7 +1333,7 @@
             "description": "Cards for play, games, hobbies, movement and favourite activities.",
             "cards": [
                   [
-                        "sand",
+                        "Sand",
                         "images/pecs/all-cards/sand-card.png"
                   ],
                   [
@@ -1931,9 +1931,9 @@
     const basketEstimate = document.getElementById('basketEstimate');
 
     function getBundlePrice(count) {
-      if (count >= 40) return 24;
-      if (count >= 20) return 14;
-      if (count >= 10) return 8;
+      if (count >= 40) return 35;
+      if (count >= 20) return 19;
+      if (count >= 10) return 10;
       return count * 1.5;
     }
 
@@ -1944,28 +1944,28 @@
 
       if (count < 10) {
         const remaining = 10 - count;
-        return `Add ${remaining} more card${remaining === 1 ? '' : 's'} to unlock the 10 cards from £8 bundle.`;
+        return `Add ${remaining} more card${remaining === 1 ? '' : 's'} to unlock the 10 cards from £10 bundle.`;
       }
 
       if (count === 10) {
-        return 'Nice, you’ve unlocked the 10 cards from £8 bundle.';
+        return 'Nice, you’ve unlocked the 10 cards from £10 bundle.';
       }
 
       if (count > 10 && count < 20) {
         const remaining = 20 - count;
-        return `You’re on the 10+ bundle. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 20 cards from £14.`;
+        return `You’re on the 10+ bundle. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 20 cards from £19.`;
       }
 
       if (count === 20) {
-        return 'Lovely, you’ve unlocked the 20 cards from £14 bundle.';
+        return 'Lovely, you’ve unlocked the 20 cards from £19 bundle.';
       }
 
       if (count > 20 && count < 40) {
         const remaining = 40 - count;
-        return `You’re on the 20+ bundle. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 40 cards from £24.`;
+        return `You’re on the 20+ bundle. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 40 cards from £35.`;
       }
 
-      return 'Brilliant, you’ve unlocked the 40 cards from £24 bundle.';
+      return 'Brilliant, you’ve unlocked the 40 cards from £35 bundle.';
     }
 
     function updateSelection() {
