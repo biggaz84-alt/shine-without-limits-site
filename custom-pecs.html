@@ -11,362 +11,6 @@
   />
 
   <link rel="stylesheet" href="styles.css" />
-
-  <style>
-    .pec-builder-section .builder-summary {
-      position: static !important;
-      top: auto !important;
-      z-index: auto !important;
-      margin-bottom: 34px;
-    }
-
-    .pec-builder-section .selected-list {
-      max-height: none;
-      overflow: visible;
-    }
-
-    .builder-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .clear-selection-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 12px 22px;
-      border-radius: 999px;
-      font-size: 0.95rem;
-      font-weight: 900;
-      text-decoration: none;
-      border: 3px solid #ffbf3f;
-      cursor: pointer;
-      background: #ffffff;
-      color: #12396f;
-      box-shadow: 0 10px 20px rgba(18, 57, 111, 0.12);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-
-    .clear-selection-btn:hover {
-      transform: translateY(-3px);
-      background: #fff8d8;
-      box-shadow: 0 14px 26px rgba(18, 57, 111, 0.18);
-    }
-
-    .pec-search-box {
-      width: min(1050px, 100%);
-      margin: 0 auto 24px;
-      padding: 22px 18px;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.9);
-      border: 3px solid rgba(255, 255, 255, 0.95);
-      border-radius: 28px;
-      box-shadow: 0 14px 30px rgba(18, 57, 111, 0.12);
-    }
-
-    .pec-search-box label {
-      display: block;
-      margin-bottom: 10px;
-      color: #12396f;
-      font-weight: 900;
-      font-size: 1.05rem;
-    }
-
-    .pec-search-box input {
-      width: min(620px, 100%);
-      border: 3px solid #dff4ff;
-      border-radius: 999px;
-      padding: 14px 18px;
-      font: inherit;
-      font-weight: 800;
-      color: #12396f;
-      background: #ffffff;
-      outline: none;
-      box-shadow: inset 0 2px 6px rgba(18, 57, 111, 0.05);
-    }
-
-    .pec-search-box input:focus {
-      border-color: #ffbf3f;
-      box-shadow: 0 0 0 5px rgba(255, 191, 63, 0.18);
-    }
-
-    .search-helper {
-      margin-top: 10px;
-      color: #24517f;
-      font-weight: 800;
-      font-size: 0.92rem;
-    }
-
-    .pec-jump-box {
-      width: min(1050px, 100%);
-      margin: 0 auto 38px;
-      padding: 22px 18px;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.88);
-      border: 3px solid rgba(255, 255, 255, 0.95);
-      border-radius: 28px;
-      box-shadow: 0 14px 30px rgba(18, 57, 111, 0.12);
-    }
-
-    .pec-jump-box p {
-      margin-bottom: 14px;
-      color: #12396f;
-      font-weight: 900;
-    }
-
-    .pec-jump-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .pec-jump-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      padding: 9px 14px;
-      border-radius: 999px;
-      background: #ffffff;
-      color: #12396f;
-      border: 2px solid #ffbf3f;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 900;
-      box-shadow: 0 8px 18px rgba(18, 57, 111, 0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-
-    .pec-jump-links a:hover {
-      transform: translateY(-3px);
-      background: #fff8d8;
-      box-shadow: 0 12px 24px rgba(18, 57, 111, 0.16);
-    }
-
-    #cardSections {
-      display: grid;
-      gap: 46px;
-    }
-
-    .pec-generated-section {
-      scroll-margin-top: 165px;
-    }
-
-    #cardSections .section-heading {
-      margin-top: 18px;
-      margin-bottom: 22px;
-      padding: 26px 18px;
-      width: min(1050px, 100%);
-      background: rgba(255, 255, 255, 0.78);
-      border: 3px solid rgba(255, 255, 255, 0.92);
-      border-radius: 30px;
-      box-shadow: 0 14px 30px rgba(18, 57, 111, 0.11);
-    }
-
-    #cardSections .section-heading h2 {
-      color: #12396f;
-    }
-
-    #cardSections .section-heading p:last-child {
-      max-width: 760px;
-      margin: 8px auto 0;
-      color: #24517f;
-      text-transform: none;
-      letter-spacing: 0;
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    #cardSections .pec-card-grid {
-      margin-bottom: 18px;
-    }
-
-    .pec-choice-card {
-      overflow: hidden;
-    }
-
-    .pec-choice-card img {
-      aspect-ratio: 1 / 1;
-      object-fit: contain;
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 6px;
-    }
-
-    .pec-choice-card span {
-      min-height: 42px;
-      display: grid;
-      place-items: center;
-      line-height: 1.15;
-    }
-
-    .pec-choice-card.hidden-by-search {
-      display: none;
-    }
-
-    .pec-generated-section.hidden-by-search {
-      display: none;
-    }
-
-    .no-search-results {
-      width: min(900px, 100%);
-      margin: 0 auto;
-      padding: 24px 18px;
-      text-align: center;
-      background: #fff8d8;
-      border: 3px solid #ffbf3f;
-      border-radius: 26px;
-      color: #12396f;
-      font-weight: 900;
-      box-shadow: 0 14px 30px rgba(18, 57, 111, 0.12);
-      display: none;
-    }
-
-    .no-search-results.show {
-      display: block;
-    }
-
-    .floating-pec-basket {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 100;
-      width: min(330px, calc(100% - 36px));
-      background: rgba(255, 255, 255, 0.96);
-      border: 3px solid #ffbf3f;
-      border-radius: 24px;
-      padding: 14px;
-      color: #12396f;
-      box-shadow: 0 18px 38px rgba(18, 57, 111, 0.24);
-      display: none;
-      backdrop-filter: blur(8px);
-    }
-
-    .floating-pec-basket.show {
-      display: block;
-    }
-
-    .floating-basket-top,
-    .floating-basket-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .floating-basket-top strong {
-      font-size: 1rem;
-      font-weight: 900;
-    }
-
-    #floatingSelectedCount {
-      background: #fff5c7;
-      border: 2px solid #ffbf3f;
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-weight: 900;
-      font-size: 0.86rem;
-      white-space: nowrap;
-    }
-
-    #floatingBundleHelper {
-      margin: 10px 0;
-      color: #24517f;
-      font-size: 0.88rem;
-      font-weight: 800;
-      line-height: 1.35;
-    }
-
-    #floatingBasketEstimate {
-      color: #ff6f9f;
-      font-weight: 900;
-      font-size: 0.95rem;
-    }
-
-    .floating-email-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 36px;
-      padding: 8px 13px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #ffbf3f, #ff8fb3);
-      color: #12396f;
-      border: 2px solid #ffffff;
-      text-decoration: none;
-      font-weight: 900;
-      font-size: 0.86rem;
-      box-shadow: 0 8px 16px rgba(18, 57, 111, 0.14);
-      white-space: nowrap;
-    }
-
-    .floating-email-btn.disabled {
-      opacity: 0.45;
-      pointer-events: none;
-    }
-
-    @media (max-width: 850px) {
-      #cardSections {
-        gap: 34px;
-      }
-
-      #cardSections .section-heading {
-        border-radius: 24px;
-        padding: 22px 14px;
-      }
-
-      .pec-generated-section {
-        scroll-margin-top: 24px;
-      }
-    }
-
-    @media (max-width: 750px) {
-      .pec-jump-box,
-      .pec-search-box {
-        border-radius: 22px;
-        padding: 18px 12px;
-      }
-
-      .pec-jump-links {
-        gap: 8px;
-      }
-
-      .pec-jump-links a {
-        font-size: 0.82rem;
-        padding: 8px 10px;
-      }
-
-      .builder-actions {
-        display: grid;
-      }
-
-      .clear-selection-btn {
-        width: 100%;
-      }
-
-      .floating-pec-basket {
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-        width: auto;
-        border-radius: 20px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      #cardSections .section-heading h2 {
-        font-size: 1.65rem;
-      }
-
-      #cardSections .section-heading p:last-child {
-        font-size: 0.92rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -379,9 +23,11 @@
       <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="products.html">Products</a>
-        <a href="custom-pecs.html" class="active">Build PECS Set</a>
+        <a href="custom-pecs.html" class="active">PECS Cards</a>
+        <a href="custom-orders.html">Custom Orders</a>
         <a href="customer-info.html">Info</a>
-        <a href="products.html#contact-products">Contact</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -393,7 +39,7 @@
         <h1>Choose Your PECS Cards</h1>
         <p>
           Pick the cards you would like, then send your selection by email.
-          I’ll confirm the final price, postage and timescale before anything is made.
+          I'll confirm the final price, postage and timescale before anything is made.
         </p>
 
         <div class="builder-hero-buttons">
@@ -463,7 +109,7 @@
         </div>
 
         <div class="bundle-helper" id="bundleHelper">
-          Choose your cards and I’ll help you spot the best bundle option.
+          Choose your cards and I'll help you spot the best bundle option.
         </div>
 
         <div class="selected-list" id="selectedList">
@@ -487,6 +133,7 @@
 
         <p class="basket-note">
           Final price, postage and timescale will be confirmed by email before making.
+          If your email client doesn't open automatically, please email shinewithoutlimits@hotmail.com with your chosen cards.
         </p>
       </div>
 
@@ -533,7 +180,7 @@
       <div class="pec-info-card">
         <h2>Need a custom card?</h2>
         <p>
-          Can’t see the word or symbol you need? Send me the wording and I can create a custom PECS card for you.
+          Can't see the word or symbol you need? Send me the wording and I can create a custom PECS card for you.
         </p>
         <a href="mailto:shinewithoutlimits@hotmail.com?subject=Custom%20PECS%20Card%20Request" class="btn secondary-btn">
           Ask About Custom Cards
@@ -553,1431 +200,484 @@
   </footer>
 
   <script>
-    const cardSections = [
+    /* ----------------------------------------------------------------
+       Card data — renamed from cardSections to pecCardData to avoid
+       clashing with the #cardSections DOM element below
+    ---------------------------------------------------------------- */
+    const pecCardData = [
       {
-            "eyebrow": "Core communication",
-            "title": "Communication Cards",
-            "description": "Everyday choice, request and response cards for simple communication support.",
-            "cards": [
-                  [
-                        "Breath",
-                        "images/pecs/all-cards/breath-card.png"
-                  ],
-                  [
-                        "Calm",
-                        "images/pecs/all-cards/calm-card.png"
-                  ],
-                  [
-                        "Good Choice",
-                        "images/pecs/all-cards/good-choice-card.png"
-                  ],
-                  [
-                        "Kind Hands",
-                        "images/pecs/all-cards/kind-hands-card.png"
-                  ],
-                  [
-                        "Later",
-                        "images/pecs/all-cards/later-card.png"
-                  ],
-                  [
-                        "Need Space",
-                        "images/pecs/all-cards/need-space-card.png"
-                  ],
-                  [
-                        "Next",
-                        "images/pecs/all-cards/next-card.png"
-                  ],
-                  [
-                        "No Biting",
-                        "images/pecs/all-cards/no-biting-card.png"
-                  ],
-                  [
-                        "No Hitting",
-                        "images/pecs/all-cards/no-hitting-card.png"
-                  ],
-                  [
-                        "No Throwing",
-                        "images/pecs/all-cards/no-throwing-card.png"
-                  ],
-                  [
-                        "Now",
-                        "images/pecs/all-cards/now-card.png"
-                  ],
-                  [
-                        "Quiet Voice",
-                        "images/pecs/all-cards/quiet-voice-card.png"
-                  ],
-                  [
-                        "Safe Hands",
-                        "images/pecs/all-cards/safe-hands-card.png"
-                  ],
-                  [
-                        "Share",
-                        "images/pecs/all-cards/share-card.png"
-                  ],
-                  [
-                        "Take Turns",
-                        "images/pecs/all-cards/take-turns-card.png"
-                  ],
-                  [
-                        "Too Busy",
-                        "images/pecs/all-cards/too-busy-card.png"
-                  ],
-                  [
-                        "Too Loud",
-                        "images/pecs/all-cards/too-loud-card.png"
-                  ]
-            ]
+        "eyebrow": "Core communication",
+        "title": "Communication Cards",
+        "description": "Everyday choice, request and response cards for simple communication support.",
+        "cards": [
+          ["Breath","images/pecs/all-cards/breath-card.png"],
+          ["Calm","images/pecs/all-cards/calm-card.png"],
+          ["Good Choice","images/pecs/all-cards/good-choice-card.png"],
+          ["Kind Hands","images/pecs/all-cards/kind-hands-card.png"],
+          ["Later","images/pecs/all-cards/later-card.png"],
+          ["Need Space","images/pecs/all-cards/need-space-card.png"],
+          ["Next","images/pecs/all-cards/next-card.png"],
+          ["No Biting","images/pecs/all-cards/no-biting-card.png"],
+          ["No Hitting","images/pecs/all-cards/no-hitting-card.png"],
+          ["No Throwing","images/pecs/all-cards/no-throwing-card.png"],
+          ["Now","images/pecs/all-cards/now-card.png"],
+          ["Quiet Voice","images/pecs/all-cards/quiet-voice-card.png"],
+          ["Safe Hands","images/pecs/all-cards/safe-hands-card.png"],
+          ["Share","images/pecs/all-cards/share-card.png"],
+          ["Take Turns","images/pecs/all-cards/take-turns-card.png"],
+          ["Too Busy","images/pecs/all-cards/too-busy-card.png"],
+          ["Too Loud","images/pecs/all-cards/too-loud-card.png"]
+        ]
       },
       {
-            "eyebrow": "Needs and requests",
-            "title": "Needs Cards",
-            "description": "Helpful cards for showing what someone needs, wants or is asking for.",
-            "cards": [
-                  [
-                        "Hungry",
-                        "images/pecs/all-cards/hungry-card.png"
-                  ],
-                  [
-                        "Need Drink",
-                        "images/pecs/all-cards/need-drink-card.png"
-                  ],
-                  [
-                        "Pain",
-                        "images/pecs/all-cards/pain-card.png"
-                  ],
-                  [
-                        "Thirsty",
-                        "images/pecs/all-cards/thirsty-card.png"
-                  ],
-                  [
-                        "Wet",
-                        "images/pecs/all-cards/wet-card.png"
-                  ]
-            ]
+        "eyebrow": "Needs and requests",
+        "title": "Needs Cards",
+        "description": "Helpful cards for showing what someone needs, wants or is asking for.",
+        "cards": [
+          ["Hungry","images/pecs/all-cards/hungry-card.png"],
+          ["Need Drink","images/pecs/all-cards/need-drink-card.png"],
+          ["Pain","images/pecs/all-cards/pain-card.png"],
+          ["Thirsty","images/pecs/all-cards/thirsty-card.png"],
+          ["Wet","images/pecs/all-cards/wet-card.png"]
+        ]
       },
       {
-            "eyebrow": "Attention and instructions",
-            "title": "Look and Listen Cards",
-            "description": "Simple support cards for attention, listening, waiting and following instructions.",
-            "cards": [
-                  [
-                        "Finished",
-                        "images/pecs/all-cards/finished.png"
-                  ],
-                  [
-                        "Help",
-                        "images/pecs/all-cards/help.png"
-                  ],
-                  [
-                        "I Don't Like",
-                        "images/pecs/all-cards/i-dont-like.png"
-                  ],
-                  [
-                        "I Like",
-                        "images/pecs/all-cards/i-like.png"
-                  ],
-                  [
-                        "I Need",
-                        "images/pecs/all-cards/i-need.png"
-                  ],
-                  [
-                        "I Want",
-                        "images/pecs/all-cards/i-want.png"
-                  ],
-                  [
-                        "Later",
-                        "images/pecs/all-cards/later.png"
-                  ],
-                  [
-                        "Listen",
-                        "images/pecs/all-cards/listen.png"
-                  ],
-                  [
-                        "Look",
-                        "images/pecs/all-cards/look.png"
-                  ],
-                  [
-                        "My Turn",
-                        "images/pecs/all-cards/my-turn.png"
-                  ],
-                  [
-                        "No",
-                        "images/pecs/all-cards/no.png"
-                  ],
-                  [
-                        "Please",
-                        "images/pecs/all-cards/please.png"
-                  ],
-                  [
-                        "Stop",
-                        "images/pecs/all-cards/stop.png"
-                  ],
-                  [
-                        "Visit Friends",
-                        "images/pecs/all-cards/visit-friends-card.png"
-                  ],
-                  [
-                        "Wait",
-                        "images/pecs/all-cards/wait.png"
-                  ],
-                  [
-                        "Yes",
-                        "images/pecs/all-cards/yes.png"
-                  ],
-                  [
-                        "Your Turn",
-                        "images/pecs/all-cards/your-turn.png"
-                  ]
-            ]
+        "eyebrow": "Attention and instructions",
+        "title": "Look and Listen Cards",
+        "description": "Simple support cards for attention, listening, waiting and following instructions.",
+        "cards": [
+          ["Finished","images/pecs/all-cards/finished.png"],
+          ["Help","images/pecs/all-cards/help.png"],
+          ["I Don't Like","images/pecs/all-cards/i-dont-like.png"],
+          ["I Like","images/pecs/all-cards/i-like.png"],
+          ["I Need","images/pecs/all-cards/i-need.png"],
+          ["I Want","images/pecs/all-cards/i-want.png"],
+          ["Later","images/pecs/all-cards/later.png"],
+          ["Listen","images/pecs/all-cards/listen.png"],
+          ["Look","images/pecs/all-cards/look.png"],
+          ["My Turn","images/pecs/all-cards/my-turn.png"],
+          ["No","images/pecs/all-cards/no.png"],
+          ["Please","images/pecs/all-cards/please.png"],
+          ["Stop","images/pecs/all-cards/stop.png"],
+          ["Visit Friends","images/pecs/all-cards/visit-friends-card.png"],
+          ["Wait","images/pecs/all-cards/wait.png"],
+          ["Yes","images/pecs/all-cards/yes.png"],
+          ["Your Turn","images/pecs/all-cards/your-turn.png"]
+        ]
       },
       {
-            "eyebrow": "Feelings",
-            "title": "Emotions Cards",
-            "description": "Emotion and feeling cards to help communicate how someone feels.",
-            "cards": [
-                  [
-                        "Angry",
-                        "images/pecs/all-cards/angry-card.png"
-                  ],
-                  [
-                        "Bored",
-                        "images/pecs/all-cards/bored-card.png"
-                  ],
-                  [
-                        "Calm",
-                        "images/pecs/all-cards/calm-card.png"
-                  ],
-                  [
-                        "Confused",
-                        "images/pecs/all-cards/confused-card.png"
-                  ],
-                  [
-                        "Cross",
-                        "images/pecs/all-cards/cross-card.png"
-                  ],
-                  [
-                        "Crying",
-                        "images/pecs/all-cards/crying-card.png"
-                  ],
-                  [
-                        "Embarrassed",
-                        "images/pecs/all-cards/embarrassed-card.png"
-                  ],
-                  [
-                        "Excited",
-                        "images/pecs/all-cards/excited-card.png"
-                  ],
-                  [
-                        "Frustrated",
-                        "images/pecs/all-cards/frustrated-card.png"
-                  ],
-                  [
-                        "Happy",
-                        "images/pecs/all-cards/happy-card.png"
-                  ],
-                  [
-                        "Hurt",
-                        "images/pecs/all-cards/hurt-card.png"
-                  ],
-                  [
-                        "Lonely",
-                        "images/pecs/all-cards/lonely-card.png"
-                  ],
-                  [
-                        "Loved",
-                        "images/pecs/all-cards/loved-card.png"
-                  ],
-                  [
-                        "Nervous",
-                        "images/pecs/all-cards/nervous-card.png"
-                  ],
-                  [
-                        "Poorly",
-                        "images/pecs/all-cards/poorly-card.png"
-                  ],
-                  [
-                        "Proud",
-                        "images/pecs/all-cards/proud-card.png"
-                  ],
-                  [
-                        "Sad",
-                        "images/pecs/all-cards/sad-card.png"
-                  ],
-                  [
-                        "Safe",
-                        "images/pecs/all-cards/safe-card.png"
-                  ],
-                  [
-                        "Scared",
-                        "images/pecs/all-cards/scared-card.png"
-                  ],
-                  [
-                        "Silly",
-                        "images/pecs/all-cards/silly-card.png"
-                  ],
-                  [
-                        "Surprised",
-                        "images/pecs/all-cards/surprised-card.png"
-                  ],
-                  [
-                        "Tired",
-                        "images/pecs/all-cards/tired-card.png"
-                  ],
-                  [
-                        "Upset",
-                        "images/pecs/all-cards/upset-card.png"
-                  ],
-                  [
-                        "Worried",
-                        "images/pecs/all-cards/worried-card.png"
-                  ]
-            ]
+        "eyebrow": "Feelings",
+        "title": "Emotions Cards",
+        "description": "Emotion and feeling cards to help communicate how someone feels.",
+        "cards": [
+          ["Angry","images/pecs/all-cards/angry-card.png"],
+          ["Bored","images/pecs/all-cards/bored-card.png"],
+          ["Calm","images/pecs/all-cards/calm-card.png"],
+          ["Confused","images/pecs/all-cards/confused-card.png"],
+          ["Cross","images/pecs/all-cards/cross-card.png"],
+          ["Crying","images/pecs/all-cards/crying-card.png"],
+          ["Embarrassed","images/pecs/all-cards/embarrassed-card.png"],
+          ["Excited","images/pecs/all-cards/excited-card.png"],
+          ["Frustrated","images/pecs/all-cards/frustrated-card.png"],
+          ["Happy","images/pecs/all-cards/happy-card.png"],
+          ["Hurt","images/pecs/all-cards/hurt-card.png"],
+          ["Lonely","images/pecs/all-cards/lonely-card.png"],
+          ["Loved","images/pecs/all-cards/loved-card.png"],
+          ["Nervous","images/pecs/all-cards/nervous-card.png"],
+          ["Poorly","images/pecs/all-cards/poorly-card.png"],
+          ["Proud","images/pecs/all-cards/proud-card.png"],
+          ["Sad","images/pecs/all-cards/sad-card.png"],
+          ["Safe","images/pecs/all-cards/safe-card.png"],
+          ["Scared","images/pecs/all-cards/scared-card.png"],
+          ["Silly","images/pecs/all-cards/silly-card.png"],
+          ["Surprised","images/pecs/all-cards/surprised-card.png"],
+          ["Tired","images/pecs/all-cards/tired-card.png"],
+          ["Upset","images/pecs/all-cards/upset-card.png"],
+          ["Worried","images/pecs/all-cards/worried-card.png"]
+        ]
       },
       {
-            "eyebrow": "Morning support",
-            "title": "Morning Routine Cards",
-            "description": "Cards for getting ready, washing, dressing and starting the day.",
-            "cards": [
-                  [
-                        "Brush Hair",
-                        "images/pecs/all-cards/brush-hair-card.png"
-                  ],
-                  [
-                        "Coat On",
-                        "images/pecs/all-cards/coat-on-card.png"
-                  ],
-                  [
-                        "Dry Hands",
-                        "images/pecs/all-cards/dry-hands-card.png"
-                  ],
-                  [
-                        "Flush",
-                        "images/pecs/all-cards/flush-card.png"
-                  ],
-                  [
-                        "Get Dressed",
-                        "images/pecs/all-cards/get-dressed-card.png"
-                  ],
-                  [
-                        "Go to Toilet",
-                        "images/pecs/all-cards/go-to-toilet-card.png"
-                  ],
-                  [
-                        "Leave House",
-                        "images/pecs/all-cards/leave-house-card.png"
-                  ],
-                  [
-                        "Need Changing",
-                        "images/pecs/all-cards/need-changing-card.png"
-                  ],
-                  [
-                        "Need Toilet",
-                        "images/pecs/all-cards/need-toilet-card.png"
-                  ],
-                  [
-                        "Poo",
-                        "images/pecs/all-cards/poo-card.png"
-                  ],
-                  [
-                        "Pull Clothes down",
-                        "images/pecs/all-cards/pull-clothes-down-card.png"
-                  ],
-                  [
-                        "Pull up Clothes",
-                        "images/pecs/all-cards/pull-up-clothes-card.png"
-                  ],
-                  [
-                        "Shoes On",
-                        "images/pecs/all-cards/shoes-on-card.png"
-                  ],
-                  [
-                        "Sit on Toilet",
-                        "images/pecs/all-cards/sit-on-toilet-card.png"
-                  ],
-                  [
-                        "Toilet",
-                        "images/pecs/all-cards/toilet-card.png"
-                  ],
-                  [
-                        "Wake Up",
-                        "images/pecs/all-cards/wake-up-card.png"
-                  ],
-                  [
-                        "Wash Face",
-                        "images/pecs/all-cards/wash-face-card.png"
-                  ],
-                  [
-                        "Wash Hands",
-                        "images/pecs/all-cards/wash-hands-card.png"
-                  ],
-                  [
-                        "Wee",
-                        "images/pecs/all-cards/wee-card.png"
-                  ],
-                  [
-                        "Wipe",
-                        "images/pecs/all-cards/wipe-card.png"
-                  ]
-            ]
+        "eyebrow": "Morning support",
+        "title": "Morning Routine Cards",
+        "description": "Cards for getting ready, washing, dressing and starting the day.",
+        "cards": [
+          ["Brush Hair","images/pecs/all-cards/brush-hair-card.png"],
+          ["Coat On","images/pecs/all-cards/coat-on-card.png"],
+          ["Dry Hands","images/pecs/all-cards/dry-hands-card.png"],
+          ["Flush","images/pecs/all-cards/flush-card.png"],
+          ["Get Dressed","images/pecs/all-cards/get-dressed-card.png"],
+          ["Go to Toilet","images/pecs/all-cards/go-to-toilet-card.png"],
+          ["Leave House","images/pecs/all-cards/leave-house-card.png"],
+          ["Need Changing","images/pecs/all-cards/need-changing-card.png"],
+          ["Need Toilet","images/pecs/all-cards/need-toilet-card.png"],
+          ["Poo","images/pecs/all-cards/poo-card.png"],
+          ["Pull Clothes down","images/pecs/all-cards/pull-clothes-down-card.png"],
+          ["Pull up Clothes","images/pecs/all-cards/pull-up-clothes-card.png"],
+          ["Shoes On","images/pecs/all-cards/shoes-on-card.png"],
+          ["Sit on Toilet","images/pecs/all-cards/sit-on-toilet-card.png"],
+          ["Toilet","images/pecs/all-cards/toilet-card.png"],
+          ["Wake Up","images/pecs/all-cards/wake-up-card.png"],
+          ["Wash Face","images/pecs/all-cards/wash-face-card.png"],
+          ["Wash Hands","images/pecs/all-cards/wash-hands-card.png"],
+          ["Wee","images/pecs/all-cards/wee-card.png"],
+          ["Wipe","images/pecs/all-cards/wipe-card.png"]
+        ]
       },
       {
-            "eyebrow": "Night-time support",
-            "title": "Bedtime Routine Cards",
-            "description": "Cards for bath time, pyjamas, stories, sleep and calmer bedtime routines.",
-            "cards": [
-                  [
-                        "Bath Time",
-                        "images/pecs/all-cards/bath-time-card.png"
-                  ],
-                  [
-                        "Blanket",
-                        "images/pecs/all-cards/blanket-card.png"
-                  ],
-                  [
-                        "Brush Teeth",
-                        "images/pecs/all-cards/brush-teeth-card.png"
-                  ],
-                  [
-                        "Cuddle",
-                        "images/pecs/all-cards/cuddle-card.png"
-                  ],
-                  [
-                        "Goodnight",
-                        "images/pecs/all-cards/goodnight-card.png"
-                  ],
-                  [
-                        "Lights Off",
-                        "images/pecs/all-cards/lights-off-card.png"
-                  ],
-                  [
-                        "Pyjamas",
-                        "images/pecs/all-cards/pyjamas-card.png"
-                  ],
-                  [
-                        "Shower",
-                        "images/pecs/all-cards/shower-card.png"
-                  ],
-                  [
-                        "Sleep",
-                        "images/pecs/all-cards/sleep-card.png"
-                  ],
-                  [
-                        "Story",
-                        "images/pecs/all-cards/story-card.png"
-                  ],
-                  [
-                        "Teddy",
-                        "images/pecs/all-cards/teddy-card.png"
-                  ],
-                  [
-                        "Toilet",
-                        "images/pecs/all-cards/toilet-card.png"
-                  ]
-            ]
+        "eyebrow": "Night-time support",
+        "title": "Bedtime Routine Cards",
+        "description": "Cards for bath time, pyjamas, stories, sleep and calmer bedtime routines.",
+        "cards": [
+          ["Bath Time","images/pecs/all-cards/bath-time-card.png"],
+          ["Blanket","images/pecs/all-cards/blanket-card.png"],
+          ["Brush Teeth","images/pecs/all-cards/brush-teeth-card.png"],
+          ["Cuddle","images/pecs/all-cards/cuddle-card.png"],
+          ["Goodnight","images/pecs/all-cards/goodnight-card.png"],
+          ["Lights Off","images/pecs/all-cards/lights-off-card.png"],
+          ["Pyjamas","images/pecs/all-cards/pyjamas-card.png"],
+          ["Shower","images/pecs/all-cards/shower-card.png"],
+          ["Sleep","images/pecs/all-cards/sleep-card.png"],
+          ["Story","images/pecs/all-cards/story-card.png"],
+          ["Teddy","images/pecs/all-cards/teddy-card.png"],
+          ["Toilet","images/pecs/all-cards/toilet-card.png"]
+        ]
       },
       {
-            "eyebrow": "Mealtime support",
-            "title": "Dinner Routine Cards",
-            "description": "Cards for sitting at the table, plates, cutlery, food and drink routines.",
-            "cards": [
-                  [
-                        "Bowl",
-                        "images/pecs/all-cards/bowl-card.png"
-                  ],
-                  [
-                        "Clean Face",
-                        "images/pecs/all-cards/clean-face-card.png"
-                  ],
-                  [
-                        "Cup",
-                        "images/pecs/all-cards/cup-card.png"
-                  ],
-                  [
-                        "Drink",
-                        "images/pecs/all-cards/drink-card.png"
-                  ],
-                  [
-                        "Finished",
-                        "images/pecs/all-cards/finished-card.png"
-                  ],
-                  [
-                        "Food",
-                        "images/pecs/all-cards/food-card.png"
-                  ],
-                  [
-                        "Fork",
-                        "images/pecs/all-cards/fork-card.png"
-                  ],
-                  [
-                        "More",
-                        "images/pecs/all-cards/more-card.png"
-                  ],
-                  [
-                        "Plate",
-                        "images/pecs/all-cards/plate-card.png"
-                  ],
-                  [
-                        "Sit at Table",
-                        "images/pecs/all-cards/sit-at-table-card.png"
-                  ],
-                  [
-                        "Spoon",
-                        "images/pecs/all-cards/spoon-card.png"
-                  ],
-                  [
-                        "Wipe Hands",
-                        "images/pecs/all-cards/wipe-hands-card.png"
-                  ]
-            ]
+        "eyebrow": "Mealtime support",
+        "title": "Dinner Routine Cards",
+        "description": "Cards for sitting at the table, plates, cutlery, food and drink routines.",
+        "cards": [
+          ["Bowl","images/pecs/all-cards/bowl-card.png"],
+          ["Clean Face","images/pecs/all-cards/clean-face-card.png"],
+          ["Cup","images/pecs/all-cards/cup-card.png"],
+          ["Drink","images/pecs/all-cards/drink-card.png"],
+          ["Finished","images/pecs/all-cards/finished-card.png"],
+          ["Food","images/pecs/all-cards/food-card.png"],
+          ["Fork","images/pecs/all-cards/fork-card.png"],
+          ["More","images/pecs/all-cards/more-card.png"],
+          ["Plate","images/pecs/all-cards/plate-card.png"],
+          ["Sit at Table","images/pecs/all-cards/sit-at-table-card.png"],
+          ["Spoon","images/pecs/all-cards/spoon-card.png"],
+          ["Wipe Hands","images/pecs/all-cards/wipe-hands-card.png"]
+        ]
       },
       {
-            "eyebrow": "Food choices",
-            "title": "Food Cards",
-            "description": "Food choice cards to support snacks, meals, preferences and requests.",
-            "cards": [
-                  [
-                        "Apple",
-                        "images/pecs/all-cards/apple-card.png"
-                  ],
-                  [
-                        "Banana",
-                        "images/pecs/all-cards/banana-card.png"
-                  ],
-                  [
-                        "Biscuit",
-                        "images/pecs/all-cards/biscuit-card.png"
-                  ],
-                  [
-                        "Breakfast",
-                        "images/pecs/all-cards/breakfast-card.png"
-                  ],
-                  [
-                        "Burger",
-                        "images/pecs/all-cards/burger-card.png"
-                  ],
-                  [
-                        "Cake",
-                        "images/pecs/all-cards/cake-card.png"
-                  ],
-                  [
-                        "Cereal",
-                        "images/pecs/all-cards/cereal-card.png"
-                  ],
-                  [
-                        "Cheese",
-                        "images/pecs/all-cards/cheese-card.png"
-                  ],
-                  [
-                        "Chicken",
-                        "images/pecs/all-cards/chicken-card.png"
-                  ],
-                  [
-                        "Chips",
-                        "images/pecs/all-cards/chips-card.png"
-                  ],
-                  [
-                        "Chocolate",
-                        "images/pecs/all-cards/chocolate-card.png"
-                  ],
-                  [
-                        "Crisps",
-                        "images/pecs/all-cards/crisps-card.png"
-                  ],
-                  [
-                        "Dinner",
-                        "images/pecs/all-cards/dinner-card.png"
-                  ],
-                  [
-                        "Egg",
-                        "images/pecs/all-cards/egg-card.png"
-                  ],
-                  [
-                        "Fruit",
-                        "images/pecs/all-cards/fruit-card.png"
-                  ],
-                  [
-                        "Grapes",
-                        "images/pecs/all-cards/grapes-card.png"
-                  ],
-                  [
-                        "Lunch",
-                        "images/pecs/all-cards/lunch-card.png"
-                  ],
-                  [
-                        "Orange",
-                        "images/pecs/all-cards/orange-card.png"
-                  ],
-                  [
-                        "Pizza",
-                        "images/pecs/all-cards/pizza-card.png"
-                  ],
-                  [
-                        "Sandwich",
-                        "images/pecs/all-cards/sandwich-card.png"
-                  ],
-                  [
-                        "Sausage",
-                        "images/pecs/all-cards/sausage-card.png"
-                  ],
-                  [
-                        "Strawberry",
-                        "images/pecs/all-cards/strawberry-card.png"
-                  ],
-                  [
-                        "Sweets",
-                        "images/pecs/all-cards/sweets-card.png"
-                  ],
-                  [
-                        "Toast",
-                        "images/pecs/all-cards/toast-card.png"
-                  ],
-                  [
-                        "Yoghurt",
-                        "images/pecs/all-cards/yoghurt-card.png"
-                  ]
-            ]
+        "eyebrow": "Food choices",
+        "title": "Food Cards",
+        "description": "Food choice cards to support snacks, meals, preferences and requests.",
+        "cards": [
+          ["Apple","images/pecs/all-cards/apple-card.png"],
+          ["Banana","images/pecs/all-cards/banana-card.png"],
+          ["Biscuit","images/pecs/all-cards/biscuit-card.png"],
+          ["Breakfast","images/pecs/all-cards/breakfast-card.png"],
+          ["Burger","images/pecs/all-cards/burger-card.png"],
+          ["Cake","images/pecs/all-cards/cake-card.png"],
+          ["Cereal","images/pecs/all-cards/cereal-card.png"],
+          ["Cheese","images/pecs/all-cards/cheese-card.png"],
+          ["Chicken","images/pecs/all-cards/chicken-card.png"],
+          ["Chips","images/pecs/all-cards/chips-card.png"],
+          ["Chocolate","images/pecs/all-cards/chocolate-card.png"],
+          ["Crisps","images/pecs/all-cards/crisps-card.png"],
+          ["Dinner","images/pecs/all-cards/dinner-card.png"],
+          ["Egg","images/pecs/all-cards/egg-card.png"],
+          ["Fruit","images/pecs/all-cards/fruit-card.png"],
+          ["Grapes","images/pecs/all-cards/grapes-card.png"],
+          ["Lunch","images/pecs/all-cards/lunch-card.png"],
+          ["Orange","images/pecs/all-cards/orange-card.png"],
+          ["Pizza","images/pecs/all-cards/pizza-card.png"],
+          ["Sandwich","images/pecs/all-cards/sandwich-card.png"],
+          ["Sausage","images/pecs/all-cards/sausage-card.png"],
+          ["Strawberry","images/pecs/all-cards/strawberry-card.png"],
+          ["Sweets","images/pecs/all-cards/sweets-card.png"],
+          ["Toast","images/pecs/all-cards/toast-card.png"],
+          ["Yoghurt","images/pecs/all-cards/yoghurt-card.png"]
+        ]
       },
       {
-            "eyebrow": "Toilet support",
-            "title": "Toilet Training Cards",
-            "description": "Support cards for toilet routines, changing, washing hands and hygiene.",
-            "cards": [
-                  [
-                        "Accident",
-                        "images/pecs/all-cards/accident-card.png"
-                  ],
-                  [
-                        "Dry Hands",
-                        "images/pecs/all-cards/dry-hands-card.png"
-                  ],
-                  [
-                        "Flush",
-                        "images/pecs/all-cards/flush-card.png"
-                  ],
-                  [
-                        "Go to Toilet",
-                        "images/pecs/all-cards/go-to-toilet-card.png"
-                  ],
-                  [
-                        "Need Changing",
-                        "images/pecs/all-cards/need-changing-card.png"
-                  ],
-                  [
-                        "Need Toilet",
-                        "images/pecs/all-cards/need-toilet-card.png"
-                  ],
-                  [
-                        "Poo",
-                        "images/pecs/all-cards/poo-card.png"
-                  ],
-                  [
-                        "Pull down Clothes",
-                        "images/pecs/all-cards/pull-down-clothes-card.png"
-                  ],
-                  [
-                        "Pull up Clothes",
-                        "images/pecs/all-cards/pull-up-clothes-card.png"
-                  ],
-                  [
-                        "Sit on Toilet",
-                        "images/pecs/all-cards/sit-on-toilet-card.png"
-                  ],
-                  [
-                        "Wash Hands",
-                        "images/pecs/all-cards/wash-hands-card.png"
-                  ],
-                  [
-                        "Wee",
-                        "images/pecs/all-cards/wee-card.png"
-                  ],
-                  [
-                        "Wipe",
-                        "images/pecs/all-cards/wipe-card.png"
-                  ]
-            ]
+        "eyebrow": "Toilet support",
+        "title": "Toilet Training Cards",
+        "description": "Support cards for toilet routines, changing, washing hands and hygiene.",
+        "cards": [
+          ["Accident","images/pecs/all-cards/accident-card.png"],
+          ["Dry Hands","images/pecs/all-cards/dry-hands-card.png"],
+          ["Flush","images/pecs/all-cards/flush-card.png"],
+          ["Go to Toilet","images/pecs/all-cards/go-to-toilet-card.png"],
+          ["Need Changing","images/pecs/all-cards/need-changing-card.png"],
+          ["Need Toilet","images/pecs/all-cards/need-toilet-card.png"],
+          ["Poo","images/pecs/all-cards/poo-card.png"],
+          ["Pull down Clothes","images/pecs/all-cards/pull-down-clothes-card.png"],
+          ["Pull up Clothes","images/pecs/all-cards/pull-up-clothes-card.png"],
+          ["Sit on Toilet","images/pecs/all-cards/sit-on-toilet-card.png"],
+          ["Wash Hands","images/pecs/all-cards/wash-hands-card.png"],
+          ["Wee","images/pecs/all-cards/wee-card.png"],
+          ["Wipe","images/pecs/all-cards/wipe-card.png"]
+        ]
       },
       {
-            "eyebrow": "Personal care",
-            "title": "Hygiene Cards",
-            "description": "Cards for washing, brushing teeth, clean-up routines and personal care.",
-            "cards": [
-                  [
-                        "Bath",
-                        "images/pecs/all-cards/bath-card.png"
-                  ],
-                  [
-                        "Blow Nose",
-                        "images/pecs/all-cards/blow-nose-card.png"
-                  ],
-                  [
-                        "Clean Clothes",
-                        "images/pecs/all-cards/clean-clothes-card.png"
-                  ],
-                  [
-                        "Cut Nails",
-                        "images/pecs/all-cards/cut-nails-card.png"
-                  ],
-                  [
-                        "Deodorant",
-                        "images/pecs/all-cards/deodorant-card.png"
-                  ],
-                  [
-                        "Dirty Clothes",
-                        "images/pecs/all-cards/dirty-clothes-card.png"
-                  ],
-                  [
-                        "Laundry",
-                        "images/pecs/all-cards/laundry-card.png"
-                  ],
-                  [
-                        "Sanitiser",
-                        "images/pecs/all-cards/sanitiser-card.png"
-                  ],
-                  [
-                        "Soap",
-                        "images/pecs/all-cards/soap-card.png"
-                  ],
-                  [
-                        "Sun Cream",
-                        "images/pecs/all-cards/sun-cream-card.png"
-                  ],
-                  [
-                        "Tissue",
-                        "images/pecs/all-cards/tissue-card.png"
-                  ],
-                  [
-                        "Towel",
-                        "images/pecs/all-cards/towel-card.png"
-                  ],
-                  [
-                        "Wash Hands",
-                        "images/pecs/all-cards/wash-hands-card.png"
-                  ]
-            ]
+        "eyebrow": "Personal care",
+        "title": "Hygiene Cards",
+        "description": "Cards for washing, brushing teeth, clean-up routines and personal care.",
+        "cards": [
+          ["Bath","images/pecs/all-cards/bath-card.png"],
+          ["Blow Nose","images/pecs/all-cards/blow-nose-card.png"],
+          ["Clean Clothes","images/pecs/all-cards/clean-clothes-card.png"],
+          ["Cut Nails","images/pecs/all-cards/cut-nails-card.png"],
+          ["Deodorant","images/pecs/all-cards/deodorant-card.png"],
+          ["Dirty Clothes","images/pecs/all-cards/dirty-clothes-card.png"],
+          ["Laundry","images/pecs/all-cards/laundry-card.png"],
+          ["Sanitiser","images/pecs/all-cards/sanitiser-card.png"],
+          ["Soap","images/pecs/all-cards/soap-card.png"],
+          ["Sun Cream","images/pecs/all-cards/sun-cream-card.png"],
+          ["Tissue","images/pecs/all-cards/tissue-card.png"],
+          ["Towel","images/pecs/all-cards/towel-card.png"],
+          ["Wash Hands","images/pecs/all-cards/wash-hands-card.png"]
+        ]
       },
       {
-            "eyebrow": "Regulation",
-            "title": "Sensory and Regulation Cards",
-            "description": "Cards for calm spaces, breaks, sensory support and regulation needs.",
-            "cards": [
-                  [
-                        "Feel Calm",
-                        "images/pecs/all-cards/feel-calm-card.png"
-                  ],
-                  [
-                        "Feel Overwhelmed",
-                        "images/pecs/all-cards/feel-overwhelmed-card.png"
-                  ],
-                  [
-                        "I Need a Break",
-                        "images/pecs/all-cards/i-need-a-break-card.png"
-                  ],
-                  [
-                        "I Need Fidget",
-                        "images/pecs/all-cards/i-need-fidget-card.png"
-                  ],
-                  [
-                        "I Need Headphones",
-                        "images/pecs/all-cards/i-need-headphones-card.png"
-                  ],
-                  [
-                        "I Need Movement",
-                        "images/pecs/all-cards/i-need-movement-card.png"
-                  ],
-                  [
-                        "I Need Pressure",
-                        "images/pecs/all-cards/i-need-pressure-card.png"
-                  ],
-                  [
-                        "I Need Quiet",
-                        "images/pecs/all-cards/i-need-quiet-card.png"
-                  ],
-                  [
-                        "I Need Space",
-                        "images/pecs/all-cards/i-need-space-card.png"
-                  ],
-                  [
-                        "I Need Sunglasses",
-                        "images/pecs/all-cards/i-need-sunglasses-card.png"
-                  ],
-                  [
-                        "Lights off",
-                        "images/pecs/all-cards/lights-off-card.png"
-                  ],
-                  [
-                        "Lights on",
-                        "images/pecs/all-cards/lights-on-card.png"
-                  ],
-                  [
-                        "Need Sensory",
-                        "images/pecs/all-cards/need-sensory-card.png"
-                  ],
-                  [
-                        "No Touch",
-                        "images/pecs/all-cards/no-touch-card.png"
-                  ],
-                  [
-                        "Soft Touch",
-                        "images/pecs/all-cards/soft-touch-card.png"
-                  ],
-                  [
-                        "Too Bright",
-                        "images/pecs/all-cards/too-bright-card.png"
-                  ],
-                  [
-                        "Too Busy",
-                        "images/pecs/all-cards/too-busy-card.png"
-                  ],
-                  [
-                        "Too Cold",
-                        "images/pecs/all-cards/too-cold-card.png"
-                  ],
-                  [
-                        "Too Hot",
-                        "images/pecs/all-cards/too-hot-card.png"
-                  ],
-                  [
-                        "Too Loud",
-                        "images/pecs/all-cards/too-loud-card.png"
-                  ],
-                  [
-                        "Too Smelly",
-                        "images/pecs/all-cards/too-smelly-card.png"
-                  ]
-            ]
+        "eyebrow": "Regulation",
+        "title": "Sensory and Regulation Cards",
+        "description": "Cards for calm spaces, breaks, sensory support and regulation needs.",
+        "cards": [
+          ["Feel Calm","images/pecs/all-cards/feel-calm-card.png"],
+          ["Feel Overwhelmed","images/pecs/all-cards/feel-overwhelmed-card.png"],
+          ["I Need a Break","images/pecs/all-cards/i-need-a-break-card.png"],
+          ["I Need Fidget","images/pecs/all-cards/i-need-fidget-card.png"],
+          ["I Need Headphones","images/pecs/all-cards/i-need-headphones-card.png"],
+          ["I Need Movement","images/pecs/all-cards/i-need-movement-card.png"],
+          ["I Need Pressure","images/pecs/all-cards/i-need-pressure-card.png"],
+          ["I Need Quiet","images/pecs/all-cards/i-need-quiet-card.png"],
+          ["I Need Space","images/pecs/all-cards/i-need-space-card.png"],
+          ["I Need Sunglasses","images/pecs/all-cards/i-need-sunglasses-card.png"],
+          ["Lights off","images/pecs/all-cards/lights-off-card.png"],
+          ["Lights on","images/pecs/all-cards/lights-on-card.png"],
+          ["Need Sensory","images/pecs/all-cards/need-sensory-card.png"],
+          ["No Touch","images/pecs/all-cards/no-touch-card.png"],
+          ["Soft Touch","images/pecs/all-cards/soft-touch-card.png"],
+          ["Too Bright","images/pecs/all-cards/too-bright-card.png"],
+          ["Too Busy","images/pecs/all-cards/too-busy-card.png"],
+          ["Too Cold","images/pecs/all-cards/too-cold-card.png"],
+          ["Too Hot","images/pecs/all-cards/too-hot-card.png"],
+          ["Too Loud","images/pecs/all-cards/too-loud-card.png"],
+          ["Too Smelly","images/pecs/all-cards/too-smelly-card.png"]
+        ]
       },
       {
-            "eyebrow": "Motivation",
-            "title": "Rewards Cards",
-            "description": "Reward, praise and favourite item cards for encouragement and motivation.",
-            "cards": [
-                  [
-                        "Book",
-                        "images/pecs/all-cards/book-card.png"
-                  ],
-                  [
-                        "Bubbles",
-                        "images/pecs/all-cards/bubbles-card.png"
-                  ],
-                  [
-                        "Choice Time",
-                        "images/pecs/all-cards/choice-time-card.png"
-                  ],
-                  [
-                        "Dancing",
-                        "images/pecs/all-cards/dancing-card.png"
-                  ],
-                  [
-                        "Game",
-                        "images/pecs/all-cards/game-card.png"
-                  ],
-                  [
-                        "Good Job",
-                        "images/pecs/all-cards/good-job-card.png"
-                  ],
-                  [
-                        "Music",
-                        "images/pecs/all-cards/music-card.png"
-                  ],
-                  [
-                        "Park",
-                        "images/pecs/all-cards/park-card.png"
-                  ],
-                  [
-                        "Reward",
-                        "images/pecs/all-cards/reward-card.png"
-                  ],
-                  [
-                        "Sensory Toy",
-                        "images/pecs/all-cards/sensory-toy-card.png"
-                  ],
-                  [
-                        "Snack",
-                        "images/pecs/all-cards/snack-card.png"
-                  ],
-                  [
-                        "Star",
-                        "images/pecs/all-cards/star-card.png"
-                  ],
-                  [
-                        "Sticker",
-                        "images/pecs/all-cards/sticker-card.png"
-                  ],
-                  [
-                        "Tablet",
-                        "images/pecs/all-cards/tablet-card.png"
-                  ],
-                  [
-                        "Toy",
-                        "images/pecs/all-cards/toy-card.png"
-                  ],
-                  [
-                        "TV",
-                        "images/pecs/all-cards/tv-card.png"
-                  ],
-                  [
-                        "Well Done",
-                        "images/pecs/all-cards/well-done-card.png"
-                  ],
-                  [
-                        "You Did It",
-                        "images/pecs/all-cards/you-did-it-card.png"
-                  ],
-                  [
-                        "YouTube",
-                        "images/pecs/all-cards/youtube-card.png"
-                  ]
-            ]
+        "eyebrow": "Motivation",
+        "title": "Rewards Cards",
+        "description": "Reward, praise and favourite item cards for encouragement and motivation.",
+        "cards": [
+          ["Book","images/pecs/all-cards/book-card.png"],
+          ["Bubbles","images/pecs/all-cards/bubbles-card.png"],
+          ["Choice Time","images/pecs/all-cards/choice-time-card.png"],
+          ["Dancing","images/pecs/all-cards/dancing-card.png"],
+          ["Game","images/pecs/all-cards/game-card.png"],
+          ["Good Job","images/pecs/all-cards/good-job-card.png"],
+          ["Music","images/pecs/all-cards/music-card.png"],
+          ["Park","images/pecs/all-cards/park-card.png"],
+          ["Reward","images/pecs/all-cards/reward-card.png"],
+          ["Sensory Toy","images/pecs/all-cards/sensory-toy-card.png"],
+          ["Snack","images/pecs/all-cards/snack-card.png"],
+          ["Star","images/pecs/all-cards/star-card.png"],
+          ["Sticker","images/pecs/all-cards/sticker-card.png"],
+          ["Tablet","images/pecs/all-cards/tablet-card.png"],
+          ["Toy","images/pecs/all-cards/toy-card.png"],
+          ["TV","images/pecs/all-cards/tv-card.png"],
+          ["Well Done","images/pecs/all-cards/well-done-card.png"],
+          ["You Did It","images/pecs/all-cards/you-did-it-card.png"],
+          ["YouTube","images/pecs/all-cards/youtube-card.png"]
+        ]
       },
       {
-            "eyebrow": "Play and hobbies",
-            "title": "Activities Cards",
-            "description": "Cards for play, games, hobbies, movement and favourite activities.",
-            "cards": [
-                  [
-                        "Sand",
-                        "images/pecs/all-cards/sand-card.png"
-                  ],
-                  [
-                        "Bike",
-                        "images/pecs/all-cards/bike-card.png"
-                  ],
-                  [
-                        "Colouring",
-                        "images/pecs/all-cards/colouring-card.png"
-                  ],
-                  [
-                        "Drawing",
-                        "images/pecs/all-cards/drawing-card.png"
-                  ],
-                  [
-                        "Library",
-                        "images/pecs/all-cards/library-card.png"
-                  ],
-                  [
-                        "Play",
-                        "images/pecs/all-cards/play-card.png"
-                  ],
-                  [
-                        "Playground",
-                        "images/pecs/all-cards/playground-card.png"
-                  ],
-                  [
-                        "Sensory Room",
-                        "images/pecs/all-cards/sensory-room-card.png"
-                  ],
-                  [
-                        "Singing",
-                        "images/pecs/all-cards/singing-card.png"
-                  ],
-                  [
-                        "Soft Play",
-                        "images/pecs/all-cards/soft-play-card.png"
-                  ],
-                  [
-                        "Supermarket",
-                        "images/pecs/all-cards/supermarket-card.png"
-                  ],
-                  [
-                        "Trampoline",
-                        "images/pecs/all-cards/trampoline-card.png"
-                  ],
-                  [
-                        "Water Play",
-                        "images/pecs/all-cards/water-play-card.png"
-                  ]
-            ]
+        "eyebrow": "Play and hobbies",
+        "title": "Activities Cards",
+        "description": "Cards for play, games, hobbies, movement and favourite activities.",
+        "cards": [
+          ["Sand","images/pecs/all-cards/sand-card.png"],
+          ["Bike","images/pecs/all-cards/bike-card.png"],
+          ["Colouring","images/pecs/all-cards/colouring-card.png"],
+          ["Drawing","images/pecs/all-cards/drawing-card.png"],
+          ["Library","images/pecs/all-cards/library-card.png"],
+          ["Play","images/pecs/all-cards/play-card.png"],
+          ["Playground","images/pecs/all-cards/playground-card.png"],
+          ["Sensory Room","images/pecs/all-cards/sensory-room-card.png"],
+          ["Singing","images/pecs/all-cards/singing-card.png"],
+          ["Soft Play","images/pecs/all-cards/soft-play-card.png"],
+          ["Supermarket","images/pecs/all-cards/supermarket-card.png"],
+          ["Trampoline","images/pecs/all-cards/trampoline-card.png"],
+          ["Water Play","images/pecs/all-cards/water-play-card.png"]
+        ]
       },
       {
-            "eyebrow": "Places and days out",
-            "title": "Outings Cards",
-            "description": "Cards for appointments, visits, shopping, days out and places to go.",
-            "cards": [
-                  [
-                        "Appointment",
-                        "images/pecs/all-cards/appointment-card.png"
-                  ],
-                  [
-                        "Birthday",
-                        "images/pecs/all-cards/birthday-card.png"
-                  ],
-                  [
-                        "Bowling",
-                        "images/pecs/all-cards/bowling-card.png"
-                  ],
-                  [
-                        "Car Trip",
-                        "images/pecs/all-cards/car-trip-card.png"
-                  ],
-                  [
-                        "Cinema",
-                        "images/pecs/all-cards/cinema-card.png"
-                  ],
-                  [
-                        "Farm",
-                        "images/pecs/all-cards/farm-card.png"
-                  ],
-                  [
-                        "Hair Cut",
-                        "images/pecs/all-cards/hair-cut-card.png"
-                  ],
-                  [
-                        "Holiday",
-                        "images/pecs/all-cards/holiday-card.png"
-                  ],
-                  [
-                        "Meal out",
-                        "images/pecs/all-cards/meal-out-card.png"
-                  ],
-                  [
-                        "Shopping",
-                        "images/pecs/all-cards/shopping-card.png"
-                  ],
-                  [
-                        "Swimming",
-                        "images/pecs/all-cards/swimming-card.png"
-                  ],
-                  [
-                        "Visit Family",
-                        "images/pecs/all-cards/visit-family-card.png"
-                  ],
-                  [
-                        "Visit Friends",
-                        "images/pecs/all-cards/visit-friends-card.png"
-                  ]
-            ]
+        "eyebrow": "Places and days out",
+        "title": "Outings Cards",
+        "description": "Cards for appointments, visits, shopping, days out and places to go.",
+        "cards": [
+          ["Appointment","images/pecs/all-cards/appointment-card.png"],
+          ["Birthday","images/pecs/all-cards/birthday-card.png"],
+          ["Bowling","images/pecs/all-cards/bowling-card.png"],
+          ["Car Trip","images/pecs/all-cards/car-trip-card.png"],
+          ["Cinema","images/pecs/all-cards/cinema-card.png"],
+          ["Farm","images/pecs/all-cards/farm-card.png"],
+          ["Hair Cut","images/pecs/all-cards/hair-cut-card.png"],
+          ["Holiday","images/pecs/all-cards/holiday-card.png"],
+          ["Meal out","images/pecs/all-cards/meal-out-card.png"],
+          ["Shopping","images/pecs/all-cards/shopping-card.png"],
+          ["Swimming","images/pecs/all-cards/swimming-card.png"],
+          ["Visit Family","images/pecs/all-cards/visit-family-card.png"],
+          ["Visit Friends","images/pecs/all-cards/visit-friends-card.png"]
+        ]
       },
       {
-            "eyebrow": "Getting around",
-            "title": "Transport Cards",
-            "description": "Cards for cars, buses, taxis, trains and travel support.",
-            "cards": [
-                  [
-                        "Boat",
-                        "images/pecs/all-cards/boat-card.png"
-                  ],
-                  [
-                        "Bus",
-                        "images/pecs/all-cards/bus-card.png"
-                  ],
-                  [
-                        "Car",
-                        "images/pecs/all-cards/car-card.png"
-                  ],
-                  [
-                        "Car Seat",
-                        "images/pecs/all-cards/car-seat-card.png"
-                  ],
-                  [
-                        "Seat Belt",
-                        "images/pecs/all-cards/seat-belt-card.png"
-                  ],
-                  [
-                        "Taxi",
-                        "images/pecs/all-cards/taxi-card.png"
-                  ],
-                  [
-                        "Train",
-                        "images/pecs/all-cards/train-card.png"
-                  ],
-                  [
-                        "Wheelchair",
-                        "images/pecs/all-cards/wheelchair-card.png"
-                  ]
-            ]
+        "eyebrow": "Getting around",
+        "title": "Transport Cards",
+        "description": "Cards for cars, buses, taxis, trains and travel support.",
+        "cards": [
+          ["Boat","images/pecs/all-cards/boat-card.png"],
+          ["Bus","images/pecs/all-cards/bus-card.png"],
+          ["Car","images/pecs/all-cards/car-card.png"],
+          ["Car Seat","images/pecs/all-cards/car-seat-card.png"],
+          ["Seat Belt","images/pecs/all-cards/seat-belt-card.png"],
+          ["Taxi","images/pecs/all-cards/taxi-card.png"],
+          ["Train","images/pecs/all-cards/train-card.png"],
+          ["Wheelchair","images/pecs/all-cards/wheelchair-card.png"]
+        ]
       },
       {
-            "eyebrow": "Family and people",
-            "title": "People Cards",
-            "description": "Cards for family members, friends, teachers and people in everyday life.",
-            "cards": [
-                  [
-                        "Baby",
-                        "images/pecs/all-cards/baby-card.png"
-                  ],
-                  [
-                        "Brother",
-                        "images/pecs/all-cards/brother-card.png"
-                  ],
-                  [
-                        "Carer",
-                        "images/pecs/all-cards/carer-card.png"
-                  ],
-                  [
-                        "Dad",
-                        "images/pecs/all-cards/dad-card.png"
-                  ],
-                  [
-                        "Dentist",
-                        "images/pecs/all-cards/dentist-card.png"
-                  ],
-                  [
-                        "Doctor",
-                        "images/pecs/all-cards/doctor-card.png"
-                  ],
-                  [
-                        "Family",
-                        "images/pecs/all-cards/family-card.png"
-                  ],
-                  [
-                        "Firefighter",
-                        "images/pecs/all-cards/firefighter-card.png"
-                  ],
-                  [
-                        "Friends",
-                        "images/pecs/all-cards/friends-card.png"
-                  ],
-                  [
-                        "Grandad",
-                        "images/pecs/all-cards/grandad-card.png"
-                  ],
-                  [
-                        "Key Worker",
-                        "images/pecs/all-cards/key-worker-card.png"
-                  ],
-                  [
-                        "Me",
-                        "images/pecs/all-cards/me-card.png"
-                  ],
-                  [
-                        "Mum",
-                        "images/pecs/all-cards/mum-card.png"
-                  ],
-                  [
-                        "Nan",
-                        "images/pecs/all-cards/nan-card.png"
-                  ],
-                  [
-                        "Police",
-                        "images/pecs/all-cards/police-card.png"
-                  ],
-                  [
-                        "Sister",
-                        "images/pecs/all-cards/sister-card.png"
-                  ],
-                  [
-                        "Teacher",
-                        "images/pecs/all-cards/teacher-card.png"
-                  ]
-            ]
+        "eyebrow": "Family and people",
+        "title": "People Cards",
+        "description": "Cards for family members, friends, teachers and people in everyday life.",
+        "cards": [
+          ["Baby","images/pecs/all-cards/baby-card.png"],
+          ["Brother","images/pecs/all-cards/brother-card.png"],
+          ["Carer","images/pecs/all-cards/carer-card.png"],
+          ["Dad","images/pecs/all-cards/dad-card.png"],
+          ["Dentist","images/pecs/all-cards/dentist-card.png"],
+          ["Doctor","images/pecs/all-cards/doctor-card.png"],
+          ["Family","images/pecs/all-cards/family-card.png"],
+          ["Firefighter","images/pecs/all-cards/firefighter-card.png"],
+          ["Friends","images/pecs/all-cards/friends-card.png"],
+          ["Grandad","images/pecs/all-cards/grandad-card.png"],
+          ["Key Worker","images/pecs/all-cards/key-worker-card.png"],
+          ["Me","images/pecs/all-cards/me-card.png"],
+          ["Mum","images/pecs/all-cards/mum-card.png"],
+          ["Nan","images/pecs/all-cards/nan-card.png"],
+          ["Police","images/pecs/all-cards/police-card.png"],
+          ["Sister","images/pecs/all-cards/sister-card.png"],
+          ["Teacher","images/pecs/all-cards/teacher-card.png"]
+        ]
       },
       {
-            "eyebrow": "School and learning",
-            "title": "Education Cards",
-            "description": "Cards for school routines, lessons, learning and classroom support.",
-            "cards": [
-                  [
-                        "Art",
-                        "images/pecs/all-cards/art-card.png"
-                  ],
-                  [
-                        "Assembly",
-                        "images/pecs/all-cards/assembly-card.png"
-                  ],
-                  [
-                        "Classroom",
-                        "images/pecs/all-cards/classroom-card.png"
-                  ],
-                  [
-                        "Computer",
-                        "images/pecs/all-cards/computer-card.png"
-                  ],
-                  [
-                        "Line up",
-                        "images/pecs/all-cards/line-up-card.png"
-                  ],
-                  [
-                        "Lunch Time",
-                        "images/pecs/all-cards/lunch-time-card.png"
-                  ],
-                  [
-                        "Maths",
-                        "images/pecs/all-cards/maths-card.png"
-                  ],
-                  [
-                        "PE",
-                        "images/pecs/all-cards/pe-card.png"
-                  ],
-                  [
-                        "Science",
-                        "images/pecs/all-cards/science-card.png"
-                  ],
-                  [
-                        "Sit down",
-                        "images/pecs/all-cards/sit-down-card.png"
-                  ],
-                  [
-                        "Snack",
-                        "images/pecs/all-cards/snack-card.png"
-                  ],
-                  [
-                        "Stand up",
-                        "images/pecs/all-cards/stand-up-card.png"
-                  ],
-                  [
-                        "Toilet",
-                        "images/pecs/all-cards/toilet-card.png"
-                  ],
-                  [
-                        "Writing",
-                        "images/pecs/all-cards/writing-card.png"
-                  ]
-            ]
+        "eyebrow": "School and learning",
+        "title": "Education Cards",
+        "description": "Cards for school routines, lessons, learning and classroom support.",
+        "cards": [
+          ["Art","images/pecs/all-cards/art-card.png"],
+          ["Assembly","images/pecs/all-cards/assembly-card.png"],
+          ["Classroom","images/pecs/all-cards/classroom-card.png"],
+          ["Computer","images/pecs/all-cards/computer-card.png"],
+          ["Line up","images/pecs/all-cards/line-up-card.png"],
+          ["Lunch Time","images/pecs/all-cards/lunch-time-card.png"],
+          ["Maths","images/pecs/all-cards/maths-card.png"],
+          ["PE","images/pecs/all-cards/pe-card.png"],
+          ["Science","images/pecs/all-cards/science-card.png"],
+          ["Sit down","images/pecs/all-cards/sit-down-card.png"],
+          ["Snack","images/pecs/all-cards/snack-card.png"],
+          ["Stand up","images/pecs/all-cards/stand-up-card.png"],
+          ["Toilet","images/pecs/all-cards/toilet-card.png"],
+          ["Writing","images/pecs/all-cards/writing-card.png"]
+        ]
       },
       {
-            "eyebrow": "Health support",
-            "title": "Medical Cards",
-            "description": "Cards for appointments, medicine, hospitals, allergies and health needs.",
-            "cards": [
-                  [
-                        "Bandage",
-                        "images/pecs/all-cards/bandage-card.png"
-                  ],
-                  [
-                        "Better",
-                        "images/pecs/all-cards/better-card.png"
-                  ],
-                  [
-                        "Cream",
-                        "images/pecs/all-cards/cream-card.png"
-                  ],
-                  [
-                        "Dentist",
-                        "images/pecs/all-cards/dentist-card.png"
-                  ],
-                  [
-                        "Ear Ache",
-                        "images/pecs/all-cards/ear-ache-card.png"
-                  ],
-                  [
-                        "Feel Dizzy",
-                        "images/pecs/all-cards/feel-dizzy-card.png"
-                  ],
-                  [
-                        "Feel Sick",
-                        "images/pecs/all-cards/feel-sick-card.png"
-                  ],
-                  [
-                        "Headache",
-                        "images/pecs/all-cards/headache-card.png"
-                  ],
-                  [
-                        "Hospital",
-                        "images/pecs/all-cards/hospital-card.png"
-                  ],
-                  [
-                        "Inhaler",
-                        "images/pecs/all-cards/inhaler-card.png"
-                  ],
-                  [
-                        "Injection",
-                        "images/pecs/all-cards/injection-card.png"
-                  ],
-                  [
-                        "Medicine",
-                        "images/pecs/all-cards/medicine-card.png"
-                  ],
-                  [
-                        "Pain",
-                        "images/pecs/all-cards/pain-card.png"
-                  ],
-                  [
-                        "Plaster",
-                        "images/pecs/all-cards/plaster-card.png"
-                  ],
-                  [
-                        "Poorly",
-                        "images/pecs/all-cards/poorly-card.png"
-                  ],
-                  [
-                        "Sore Throat",
-                        "images/pecs/all-cards/sore-throat-card.png"
-                  ],
-                  [
-                        "Thermometer",
-                        "images/pecs/all-cards/thermometer-card.png"
-                  ],
-                  [
-                        "Tired",
-                        "images/pecs/all-cards/tired-card.png"
-                  ],
-                  [
-                        "Tooth Ache",
-                        "images/pecs/all-cards/tooth-ache-card.png"
-                  ],
-                  [
-                        "Tummy Ache",
-                        "images/pecs/all-cards/tummy-ache-card.png"
-                  ],
-                  [
-                        "Worse",
-                        "images/pecs/all-cards/worse-card.png"
-                  ]
-            ]
+        "eyebrow": "Health support",
+        "title": "Medical Cards",
+        "description": "Cards for appointments, medicine, hospitals, allergies and health needs.",
+        "cards": [
+          ["Bandage","images/pecs/all-cards/bandage-card.png"],
+          ["Better","images/pecs/all-cards/better-card.png"],
+          ["Cream","images/pecs/all-cards/cream-card.png"],
+          ["Dentist","images/pecs/all-cards/dentist-card.png"],
+          ["Ear Ache","images/pecs/all-cards/ear-ache-card.png"],
+          ["Feel Dizzy","images/pecs/all-cards/feel-dizzy-card.png"],
+          ["Feel Sick","images/pecs/all-cards/feel-sick-card.png"],
+          ["Headache","images/pecs/all-cards/headache-card.png"],
+          ["Hospital","images/pecs/all-cards/hospital-card.png"],
+          ["Inhaler","images/pecs/all-cards/inhaler-card.png"],
+          ["Injection","images/pecs/all-cards/injection-card.png"],
+          ["Medicine","images/pecs/all-cards/medicine-card.png"],
+          ["Pain","images/pecs/all-cards/pain-card.png"],
+          ["Plaster","images/pecs/all-cards/plaster-card.png"],
+          ["Poorly","images/pecs/all-cards/poorly-card.png"],
+          ["Sore Throat","images/pecs/all-cards/sore-throat-card.png"],
+          ["Thermometer","images/pecs/all-cards/thermometer-card.png"],
+          ["Tired","images/pecs/all-cards/tired-card.png"],
+          ["Tooth Ache","images/pecs/all-cards/tooth-ache-card.png"],
+          ["Tummy Ache","images/pecs/all-cards/tummy-ache-card.png"],
+          ["Worse","images/pecs/all-cards/worse-card.png"]
+        ]
       },
       {
-            "eyebrow": "Safety and awareness",
-            "title": "Safety Cards",
-            "description": "Cards for danger, first aid, safety instructions and everyday awareness.",
-            "cards": [
-                  [
-                        "Allergy",
-                        "images/pecs/all-cards/allergy-card.png"
-                  ],
-                  [
-                        "Emergency",
-                        "images/pecs/all-cards/emergency-card.png"
-                  ],
-                  [
-                        "Fire",
-                        "images/pecs/all-cards/fire-card.png"
-                  ],
-                  [
-                        "Helmet",
-                        "images/pecs/all-cards/helmet-card.png"
-                  ],
-                  [
-                        "Help",
-                        "images/pecs/all-cards/help-card.png"
-                  ],
-                  [
-                        "Hold Hands",
-                        "images/pecs/all-cards/hold-hands-card.png"
-                  ],
-                  [
-                        "Hot",
-                        "images/pecs/all-cards/hot-card.png"
-                  ],
-                  [
-                        "I Need an Adult",
-                        "images/pecs/all-cards/i-need-an-adult-card.png"
-                  ],
-                  [
-                        "I'm Lost",
-                        "images/pecs/all-cards/im-lost-card.png"
-                  ],
-                  [
-                        "No Running",
-                        "images/pecs/all-cards/no-running-card.png"
-                  ],
-                  [
-                        "Road",
-                        "images/pecs/all-cards/road-card.png"
-                  ],
-                  [
-                        "Safe Place",
-                        "images/pecs/all-cards/safe-place-card.png"
-                  ],
-                  [
-                        "Seat Belt",
-                        "images/pecs/all-cards/seat-belt-card.png"
-                  ],
-                  [
-                        "Sharp",
-                        "images/pecs/all-cards/sharp-card.png"
-                  ],
-                  [
-                        "Stay Close",
-                        "images/pecs/all-cards/stay-close-card.png"
-                  ],
-                  [
-                        "Wait",
-                        "images/pecs/all-cards/wait-card.png"
-                  ]
-            ]
+        "eyebrow": "Safety and awareness",
+        "title": "Safety Cards",
+        "description": "Cards for danger, first aid, safety instructions and everyday awareness.",
+        "cards": [
+          ["Allergy","images/pecs/all-cards/allergy-card.png"],
+          ["Emergency","images/pecs/all-cards/emergency-card.png"],
+          ["Fire","images/pecs/all-cards/fire-card.png"],
+          ["Helmet","images/pecs/all-cards/helmet-card.png"],
+          ["Help","images/pecs/all-cards/help-card.png"],
+          ["Hold Hands","images/pecs/all-cards/hold-hands-card.png"],
+          ["Hot","images/pecs/all-cards/hot-card.png"],
+          ["I Need an Adult","images/pecs/all-cards/i-need-an-adult-card.png"],
+          ["I'm Lost","images/pecs/all-cards/im-lost-card.png"],
+          ["No Running","images/pecs/all-cards/no-running-card.png"],
+          ["Road","images/pecs/all-cards/road-card.png"],
+          ["Safe Place","images/pecs/all-cards/safe-place-card.png"],
+          ["Seat Belt","images/pecs/all-cards/seat-belt-card.png"],
+          ["Sharp","images/pecs/all-cards/sharp-card.png"],
+          ["Stay Close","images/pecs/all-cards/stay-close-card.png"],
+          ["Wait","images/pecs/all-cards/wait-card.png"]
+        ]
       },
       {
-            "eyebrow": "Clothes and dressing",
-            "title": "Clothing Cards",
-            "description": "Cards for clothes, dressing, shoes, coats and getting changed.",
-            "cards": [
-                  [
-                        "Bag",
-                        "images/pecs/all-cards/bag-card.png"
-                  ],
-                  [
-                        "Coat",
-                        "images/pecs/all-cards/coat-card.png"
-                  ],
-                  [
-                        "Dress",
-                        "images/pecs/all-cards/dress-card.png"
-                  ],
-                  [
-                        "Gloves",
-                        "images/pecs/all-cards/gloves-card.png"
-                  ],
-                  [
-                        "Hat",
-                        "images/pecs/all-cards/hat-card.png"
-                  ],
-                  [
-                        "Hoodie",
-                        "images/pecs/all-cards/hoodie-card.png"
-                  ],
-                  [
-                        "Jumper",
-                        "images/pecs/all-cards/jumper-card.png"
-                  ],
-                  [
-                        "Nappy",
-                        "images/pecs/all-cards/nappy-card.png"
-                  ],
-                  [
-                        "Pe Kit",
-                        "images/pecs/all-cards/pe-kit-card.png"
-                  ],
-                  [
-                        "Scarf",
-                        "images/pecs/all-cards/scarf-card.png"
-                  ],
-                  [
-                        "School Uniform",
-                        "images/pecs/all-cards/school-uniform-card.png"
-                  ],
-                  [
-                        "Shoes",
-                        "images/pecs/all-cards/shoes-card.png"
-                  ],
-                  [
-                        "Shorts",
-                        "images/pecs/all-cards/shorts-card.png"
-                  ],
-                  [
-                        "Skirt",
-                        "images/pecs/all-cards/skirt-card.png"
-                  ],
-                  [
-                        "Socks",
-                        "images/pecs/all-cards/socks-card.png"
-                  ],
-                  [
-                        "T-Shirt",
-                        "images/pecs/all-cards/t-shirt-card.png"
-                  ],
-                  [
-                        "Trousers",
-                        "images/pecs/all-cards/trousers-card.png"
-                  ],
-                  [
-                        "Underwear",
-                        "images/pecs/all-cards/underwear-card.png"
-                  ],
-                  [
-                        "Wellies",
-                        "images/pecs/all-cards/wellies-card.png"
-                  ]
-            ]
+        "eyebrow": "Clothes and dressing",
+        "title": "Clothing Cards",
+        "description": "Cards for clothes, dressing, shoes, coats and getting changed.",
+        "cards": [
+          ["Bag","images/pecs/all-cards/bag-card.png"],
+          ["Coat","images/pecs/all-cards/coat-card.png"],
+          ["Dress","images/pecs/all-cards/dress-card.png"],
+          ["Gloves","images/pecs/all-cards/gloves-card.png"],
+          ["Hat","images/pecs/all-cards/hat-card.png"],
+          ["Hoodie","images/pecs/all-cards/hoodie-card.png"],
+          ["Jumper","images/pecs/all-cards/jumper-card.png"],
+          ["Nappy","images/pecs/all-cards/nappy-card.png"],
+          ["Pe Kit","images/pecs/all-cards/pe-kit-card.png"],
+          ["Scarf","images/pecs/all-cards/scarf-card.png"],
+          ["School Uniform","images/pecs/all-cards/school-uniform-card.png"],
+          ["Shoes","images/pecs/all-cards/shoes-card.png"],
+          ["Shorts","images/pecs/all-cards/shorts-card.png"],
+          ["Skirt","images/pecs/all-cards/skirt-card.png"],
+          ["Socks","images/pecs/all-cards/socks-card.png"],
+          ["T-Shirt","images/pecs/all-cards/t-shirt-card.png"],
+          ["Trousers","images/pecs/all-cards/trousers-card.png"],
+          ["Underwear","images/pecs/all-cards/underwear-card.png"],
+          ["Wellies","images/pecs/all-cards/wellies-card.png"]
+        ]
       }
-];
+    ];
 
-    const cardSectionsContainer = document.getElementById('cardSections');
-    const pecJumpLinks = document.getElementById('pecJumpLinks');
-    const cardSearchInput = document.getElementById('cardSearchInput');
-    const searchHelper = document.getElementById('searchHelper');
-    const noSearchResults = document.getElementById('noSearchResults');
+    /* ----------------------------------------------------------------
+       DOM references
+    ---------------------------------------------------------------- */
+    const cardSectionsEl   = document.getElementById('cardSections');
+    const pecJumpLinks     = document.getElementById('pecJumpLinks');
+    const cardSearchInput  = document.getElementById('cardSearchInput');
+    const searchHelper     = document.getElementById('searchHelper');
+    const noSearchResults  = document.getElementById('noSearchResults');
 
+    /* ----------------------------------------------------------------
+       Helpers
+    ---------------------------------------------------------------- */
     function createSectionId(title) {
       return title
         .toLowerCase()
@@ -1986,14 +686,60 @@
         .replace(/(^-|-$)/g, '');
     }
 
+    /* ----------------------------------------------------------------
+       Pricing — Option B
+       1–5 cards  : £1.50 each
+       6–9 cards  : £1.25 each
+       10 cards   : £10
+       20 cards   : £19
+       40 cards   : £35
+       41+ cards  : £35 + £1.25 per extra card
+    ---------------------------------------------------------------- */
+    function getBundlePrice(count) {
+      if (count === 0)  return 0;
+      if (count >= 40)  return 35 + (count - 40) * 1.25;
+      if (count >= 20)  return 19;
+      if (count >= 10)  return 10;
+      if (count >= 6)   return count * 1.25;
+      return count * 1.5;
+    }
+
+    function getBundleMessage(count) {
+      if (count === 0) {
+        return "Choose your cards and I\u2019ll help you spot the best bundle option.";
+      }
+      if (count < 10) {
+        const remaining = 10 - count;
+        return `Add ${remaining} more card${remaining === 1 ? '' : 's'} to unlock the 10 cards from \u00a310 bundle.`;
+      }
+      if (count === 10) {
+        return "Nice, you\u2019ve unlocked the 10 cards from \u00a310 bundle.";
+      }
+      if (count > 10 && count < 20) {
+        const remaining = 20 - count;
+        return `You\u2019re on the 10+ bundle. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 20 cards from \u00a319.`;
+      }
+      if (count === 20) {
+        return "Lovely, you\u2019ve unlocked the 20 cards from \u00a319 bundle.";
+      }
+      if (count > 20 && count < 40) {
+        const remaining = 40 - count;
+        return `You\u2019re on the 20+ bundle. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 40 cards from \u00a335.`;
+      }
+      return "Brilliant, you\u2019ve unlocked the 40 cards from \u00a335 bundle.";
+    }
+
+    /* ----------------------------------------------------------------
+       Render sections and jump links
+    ---------------------------------------------------------------- */
     function renderCardSections() {
-      pecJumpLinks.innerHTML = cardSections.map((section) => {
-        const sectionId = createSectionId(section.title);
-        return `<a href="#${sectionId}">${section.title}</a>`;
+      pecJumpLinks.innerHTML = pecCardData.map((section) => {
+        const id = createSectionId(section.title);
+        return `<a href="#${id}">${section.title}</a>`;
       }).join('');
 
-      cardSectionsContainer.innerHTML = cardSections.map((section) => {
-        const sectionId = createSectionId(section.title);
+      cardSectionsEl.innerHTML = pecCardData.map((section) => {
+        const id = createSectionId(section.title);
 
         const cardsHtml = section.cards.map(([name, image]) => `
           <label
@@ -2008,16 +754,13 @@
         `).join('');
 
         return `
-          <section class="pec-generated-section" id="${sectionId}" data-section-name="${section.title.toLowerCase()}">
+          <section class="pec-generated-section" id="${id}" data-section-name="${section.title.toLowerCase()}">
             <div class="section-heading">
               <p class="eyebrow">${section.eyebrow}</p>
               <h2>${section.title}</h2>
               <p>${section.description}</p>
             </div>
-
-            <div class="pec-card-grid">
-              ${cardsHtml}
-            </div>
+            <div class="pec-card-grid">${cardsHtml}</div>
           </section>
         `;
       }).join('');
@@ -2025,69 +768,26 @@
 
     renderCardSections();
 
-    const checkboxes = document.querySelectorAll('.pec-choice-card input');
-    const selectedCount = document.getElementById('selectedCount');
-    const selectedList = document.getElementById('selectedList');
-    const emailOrderBtn = document.getElementById('emailOrderBtn');
-    const clearSelectionBtn = document.getElementById('clearSelectionBtn');
-    const bundleHelper = document.getElementById('bundleHelper');
-    const basketEstimate = document.getElementById('basketEstimate');
-    const floatingPecBasket = document.getElementById('floatingPecBasket');
+    /* ----------------------------------------------------------------
+       Basket state
+    ---------------------------------------------------------------- */
+    const checkboxes           = document.querySelectorAll('.pec-choice-card input');
+    const selectedCountEl      = document.getElementById('selectedCount');
+    const selectedListEl       = document.getElementById('selectedList');
+    const emailOrderBtn        = document.getElementById('emailOrderBtn');
+    const clearSelectionBtn    = document.getElementById('clearSelectionBtn');
+    const bundleHelperEl       = document.getElementById('bundleHelper');
+    const basketEstimateEl     = document.getElementById('basketEstimate');
+    const floatingPecBasket    = document.getElementById('floatingPecBasket');
     const floatingSelectedCount = document.getElementById('floatingSelectedCount');
     const floatingBundleHelper = document.getElementById('floatingBundleHelper');
     const floatingBasketEstimate = document.getElementById('floatingBasketEstimate');
-    const floatingEmailBtn = document.getElementById('floatingEmailBtn');
-
-    function getBundlePrice(count) {
-      if (count <= 0) return 0;
-      if (count < 10) return count * 1.5;
-      if (count === 10) return 10;
-      if (count < 20) return 10 + ((count - 10) * 1.5);
-      if (count === 20) return 19;
-      if (count < 40) return 19 + ((count - 20) * 1.5);
-      if (count === 40) return 35;
-      return 35 + ((count - 40) * 1.5);
-    }
-
-    function getBundleMessage(count) {
-      if (count === 0) {
-        return 'Choose your cards and I’ll help you spot the best bundle option.';
-      }
-
-      if (count < 10) {
-        const remaining = 10 - count;
-        return `Add ${remaining} more card${remaining === 1 ? '' : 's'} to unlock the 10 cards from £10 bundle.`;
-      }
-
-      if (count === 10) {
-        return 'Nice, you’ve unlocked the 10 cards from £10 bundle.';
-      }
-
-      if (count > 10 && count < 20) {
-        const remaining = 20 - count;
-        return `You’re on the 10 card bundle, with extra cards added at £1.50 each. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 20 cards from £19.`;
-      }
-
-      if (count === 20) {
-        return 'Lovely, you’ve unlocked the 20 cards from £19 bundle.';
-      }
-
-      if (count > 20 && count < 40) {
-        const remaining = 40 - count;
-        return `You’re on the 20 card bundle, with extra cards added at £1.50 each. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 40 cards from £35.`;
-      }
-
-      if (count === 40) {
-        return 'Brilliant, you’ve unlocked the 40 cards from £35 bundle.';
-      }
-
-      return 'You’re over the 40 card bundle, with extra cards added at £1.50 each.';
-    }
+    const floatingEmailBtn     = document.getElementById('floatingEmailBtn');
 
     function updateFloatingBasket(count, estimate) {
-      floatingSelectedCount.textContent = `${count} card${count === 1 ? '' : 's'}`;
-      floatingBasketEstimate.textContent = `From £${estimate.toFixed(2)}`;
-      floatingBundleHelper.textContent = getBundleMessage(count);
+      floatingSelectedCount.textContent  = `${count} card${count === 1 ? '' : 's'}`;
+      floatingBasketEstimate.textContent = `From \u00a3${estimate.toFixed(2)}`;
+      floatingBundleHelper.textContent   = getBundleMessage(count);
 
       if (count > 0) {
         floatingPecBasket.classList.add('show');
@@ -2100,105 +800,87 @@
 
     function updateSelection() {
       const selected = Array.from(checkboxes)
-        .filter((checkbox) => checkbox.checked)
-        .map((checkbox) => ({
-          name: checkbox.value,
-          category: checkbox.dataset.category
-        }));
+        .filter(cb => cb.checked)
+        .map(cb => ({ name: cb.value, category: cb.dataset.category }));
 
-      const count = selected.length;
+      const count    = selected.length;
       const estimate = getBundlePrice(count);
 
-      selectedCount.textContent = count;
-      basketEstimate.textContent = `Estimated from £${estimate.toFixed(2)}`;
-      bundleHelper.textContent = getBundleMessage(count);
+      selectedCountEl.textContent    = count;
+      basketEstimateEl.textContent   = `Estimated from \u00a3${estimate.toFixed(2)}`;
+      bundleHelperEl.textContent     = getBundleMessage(count);
       updateFloatingBasket(count, estimate);
 
       if (count === 0) {
-        selectedList.textContent = 'No cards selected yet.';
+        selectedListEl.textContent = 'No cards selected yet.';
         emailOrderBtn.classList.add('disabled');
         emailOrderBtn.setAttribute('aria-disabled', 'true');
         emailOrderBtn.href = 'mailto:shinewithoutlimits@hotmail.com';
         return;
       }
 
-      selectedList.innerHTML = selected
-        .map((card) => `<span>${card.name}</span>`)
+      selectedListEl.innerHTML = selected
+        .map(card => `<span>${card.name}</span>`)
         .join('');
 
       const emailCardList = selected
-        .map((card) => `- ${card.name} (${card.category})`)
+        .map(card => `- ${card.name} (${card.category})`)
         .join('\n');
 
       const subject = encodeURIComponent('PECS Card Selection');
       const body = encodeURIComponent(
-        `Hi Shine Without Limits,\n\nI would like to enquire about these PECS cards:\n\n${emailCardList}\n\nSelected card count: ${count}\nEstimated bundle price: from £${estimate.toFixed(2)}\n\nPlease can you confirm the final price, postage and timescale?\n\nThank you.`
+        `Hi Shine Without Limits,\n\nI would like to enquire about these PECS cards:\n\n${emailCardList}\n\nSelected card count: ${count}\nEstimated bundle price: from \u00a3${estimate.toFixed(2)}\n\nPlease can you confirm the final price, postage and timescale?\n\nThank you.`
       );
 
-      emailOrderBtn.href = `mailto:shinewithoutlimits@hotmail.com?subject=${subject}&body=${body}`;
+      const mailto = `mailto:shinewithoutlimits@hotmail.com?subject=${subject}&body=${body}`;
+      emailOrderBtn.href = mailto;
       emailOrderBtn.classList.remove('disabled');
       emailOrderBtn.setAttribute('aria-disabled', 'false');
-      floatingEmailBtn.href = emailOrderBtn.href;
+      floatingEmailBtn.href = mailto;
       floatingEmailBtn.classList.remove('disabled');
     }
 
     function clearSelection() {
-      checkboxes.forEach((checkbox) => {
-        checkbox.checked = false;
-      });
-
+      checkboxes.forEach(cb => { cb.checked = false; });
       updateSelection();
     }
 
+    /* ----------------------------------------------------------------
+       Search / filter
+    ---------------------------------------------------------------- */
     function filterCards() {
-      const searchTerm = cardSearchInput.value.trim().toLowerCase();
-      const allCards = document.querySelectorAll('.pec-choice-card');
+      const term = cardSearchInput.value.trim().toLowerCase();
+      const allCards    = document.querySelectorAll('.pec-choice-card');
       const allSections = document.querySelectorAll('.pec-generated-section');
-
-      let visibleCardCount = 0;
+      let visible = 0;
 
       allCards.forEach((card) => {
-        const cardName = card.dataset.cardName || '';
-        const sectionName = card.dataset.sectionName || '';
-        const matchesSearch = cardName.includes(searchTerm) || sectionName.includes(searchTerm);
-
-        if (!searchTerm || matchesSearch) {
-          card.classList.remove('hidden-by-search');
-          visibleCardCount += 1;
-        } else {
-          card.classList.add('hidden-by-search');
-        }
+        const match = !term
+          || card.dataset.cardName.includes(term)
+          || card.dataset.sectionName.includes(term);
+        card.classList.toggle('hidden-by-search', !match);
+        if (match) visible++;
       });
 
       allSections.forEach((section) => {
-        const visibleCardsInSection = section.querySelectorAll('.pec-choice-card:not(.hidden-by-search)').length;
-
-        if (visibleCardsInSection === 0 && searchTerm) {
-          section.classList.add('hidden-by-search');
-        } else {
-          section.classList.remove('hidden-by-search');
-        }
+        const hasVisible = section.querySelectorAll('.pec-choice-card:not(.hidden-by-search)').length > 0;
+        section.classList.toggle('hidden-by-search', term && !hasVisible);
       });
 
-      if (!searchTerm) {
+      if (!term) {
         searchHelper.textContent = 'Search by card name or section.';
         noSearchResults.classList.remove('show');
         return;
       }
 
-      searchHelper.textContent = `${visibleCardCount} matching card${visibleCardCount === 1 ? '' : 's'} found.`;
-
-      if (visibleCardCount === 0) {
-        noSearchResults.classList.add('show');
-      } else {
-        noSearchResults.classList.remove('show');
-      }
+      searchHelper.textContent = `${visible} matching card${visible === 1 ? '' : 's'} found.`;
+      noSearchResults.classList.toggle('show', visible === 0);
     }
 
-    checkboxes.forEach((checkbox) => {
-      checkbox.addEventListener('change', updateSelection);
-    });
-
+    /* ----------------------------------------------------------------
+       Event listeners
+    ---------------------------------------------------------------- */
+    checkboxes.forEach(cb => cb.addEventListener('change', updateSelection));
     clearSelectionBtn.addEventListener('click', clearSelection);
     cardSearchInput.addEventListener('input', filterCards);
 

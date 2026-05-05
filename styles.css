@@ -50,7 +50,9 @@ a {
   margin: 0 auto;
 }
 
-/* HEADER */
+/* ============================================================
+   HEADER
+   ============================================================ */
 
 .site-header {
   position: sticky;
@@ -165,7 +167,9 @@ a {
   box-shadow: 0 8px 18px rgba(15, 75, 166, 0.1);
 }
 
-/* HERO / HOME */
+/* ============================================================
+   HERO / HOME
+   ============================================================ */
 
 .hero,
 .home-hero,
@@ -210,7 +214,9 @@ a {
   animation: heroSoftEntrance 0.85s ease both;
 }
 
-/* COMMON SECTIONS */
+/* ============================================================
+   COMMON SECTIONS
+   ============================================================ */
 
 .section-heading {
   text-align: center;
@@ -237,7 +243,9 @@ a {
   font-weight: 900;
 }
 
-/* PRODUCTS PAGE */
+/* ============================================================
+   PRODUCTS PAGE
+   ============================================================ */
 
 .products-hero {
   padding: 28px 0 18px;
@@ -492,7 +500,9 @@ a {
   filter: brightness(1.05);
 }
 
-/* TRUST / ABOUT / CUSTOM */
+/* ============================================================
+   TRUST / ABOUT / CUSTOM
+   ============================================================ */
 
 .compact-section {
   padding: 20px 0 24px;
@@ -585,7 +595,9 @@ a {
   box-shadow: 0 12px 26px rgba(18, 57, 111, 0.12);
 }
 
-/* PECS BUILDER PAGE */
+/* ============================================================
+   PECS BUILDER PAGE
+   ============================================================ */
 
 .pec-builder-page {
   min-height: 100vh;
@@ -1102,7 +1114,92 @@ a {
   line-height: 1.7;
 }
 
-/* OLD BUILDER SUPPORT */
+/* ============================================================
+   FLOATING PECS BASKET
+   ============================================================ */
+
+.floating-pec-basket {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 100;
+  width: min(330px, calc(100% - 36px));
+  background: rgba(255, 255, 255, 0.96);
+  border: 3px solid #ffbf3f;
+  border-radius: 24px;
+  padding: 14px;
+  color: #12396f;
+  box-shadow: 0 18px 38px rgba(18, 57, 111, 0.24);
+  display: none;
+  backdrop-filter: blur(8px);
+}
+
+.floating-pec-basket.show {
+  display: block;
+}
+
+.floating-basket-top,
+.floating-basket-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.floating-basket-top strong {
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+#floatingSelectedCount {
+  background: #fff5c7;
+  border: 2px solid #ffbf3f;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-weight: 900;
+  font-size: 0.86rem;
+  white-space: nowrap;
+}
+
+#floatingBundleHelper {
+  margin: 10px 0;
+  color: #24517f;
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+#floatingBasketEstimate {
+  color: #ff6f9f;
+  font-weight: 900;
+  font-size: 0.95rem;
+}
+
+.floating-email-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffbf3f, #ff8fb3);
+  color: #12396f;
+  border: 2px solid #ffffff;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 0.86rem;
+  box-shadow: 0 8px 16px rgba(18, 57, 111, 0.14);
+  white-space: nowrap;
+}
+
+.floating-email-btn.disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* ============================================================
+   OLD BUILDER SUPPORT
+   ============================================================ */
 
 .pecs-builder-section {
   padding: 24px 0 44px;
@@ -1271,7 +1368,9 @@ a {
   font-weight: 700;
 }
 
-/* FOOTER */
+/* ============================================================
+   FOOTER
+   ============================================================ */
 
 .site-footer,
 footer,
@@ -1322,88 +1421,47 @@ footer p,
   font-size: 1.05rem;
 }
 
-/* ANIMATIONS */
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
 
 @keyframes shineCloudDrift {
-  0%,
-  100% {
-    background-position:
-      8% 12%,
-      90% 18%,
-      center,
-      center center;
+  0%, 100% {
+    background-position: 8% 12%, 90% 18%, center, center center;
   }
-
   50% {
-    background-position:
-      10% 14%,
-      88% 20%,
-      center,
-      center 42px;
+    background-position: 10% 14%, 88% 20%, center, center 42px;
   }
 }
 
 @keyframes headerCloudDrift {
-  0%,
-  100% {
-    background-position:
-      14% 38%,
-      4% 6%,
-      center,
-      center center;
+  0%, 100% {
+    background-position: 14% 38%, 4% 6%, center, center center;
   }
-
   50% {
-    background-position:
-      16% 40%,
-      6% 8%,
-      center,
-      center 28px;
+    background-position: 16% 40%, 6% 8%, center, center 28px;
   }
 }
 
 @keyframes heroSoftEntrance {
-  from {
-    opacity: 0;
-    transform: translateY(18px) scale(0.985);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  from { opacity: 0; transform: translateY(18px) scale(0.985); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes sectionSoftEntrance {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes softCardPop {
-  from {
-    opacity: 0;
-    transform: translateY(18px) scale(0.985);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  from { opacity: 0; transform: translateY(18px) scale(0.985); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes logoSoftGlow {
-  0%,
-  100% {
+  0%, 100% {
     filter: drop-shadow(0 8px 12px rgba(15, 75, 166, 0.14));
   }
-
   50% {
     filter:
       drop-shadow(0 8px 12px rgba(15, 75, 166, 0.14))
@@ -1412,21 +1470,17 @@ footer p,
 }
 
 @keyframes footerCloudDrift {
-  0%,
-  100% {
-    background-position:
-      center,
-      center center;
+  0%, 100% {
+    background-position: center, center center;
   }
-
   50% {
-    background-position:
-      center,
-      center 36px;
+    background-position: center, center 36px;
   }
 }
 
-/* RESPONSIVE */
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 
 @media (min-width: 1500px) {
   .hero-banner .container,
@@ -1521,81 +1575,7 @@ footer p,
   .hero-poster-wrap img {
     border-radius: 24px;
   }
-}    .floating-pec-basket {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 80;
-      width: min(330px, calc(100% - 36px));
-      background: rgba(255, 255, 255, 0.96);
-      border: 3px solid #ffbf3f;
-      border-radius: 24px;
-      padding: 14px;
-      box-shadow: 0 18px 38px rgba(18, 57, 111, 0.22);
-      color: #12396f;
-      display: none;
-    }
-
-    .floating-pec-basket.show {
-      display: block;
-    }
-
-    .floating-basket-top,
-    .floating-basket-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .floating-basket-top strong {
-      font-size: 1rem;
-      font-weight: 900;
-    }
-
-    #floatingSelectedCount {
-      background: #fff5c7;
-      border: 2px solid #ffbf3f;
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-weight: 900;
-      font-size: 0.86rem;
-    }
-
-    #floatingBundleHelper {
-      margin: 10px 0;
-      color: #24517f;
-      font-size: 0.88rem;
-      font-weight: 800;
-      line-height: 1.35;
-    }
-
-    #floatingBasketEstimate {
-      color: #ff6f9f;
-      font-weight: 900;
-      font-size: 0.95rem;
-    }
-
-    .floating-email-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 36px;
-      padding: 8px 13px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #ffbf3f, #ff8fb3);
-      color: #12396f;
-      border: 2px solid #ffffff;
-      text-decoration: none;
-      font-weight: 900;
-      font-size: 0.86rem;
-      box-shadow: 0 8px 16px rgba(18, 57, 111, 0.14);
-    }
-
-    .floating-email-btn.disabled {
-      opacity: 0.45;
-      pointer-events: none;
-    }
+}
 
 @media (max-width: 850px) {
   .pec-pricing-grid {
@@ -1655,13 +1635,14 @@ footer p,
   .clear-selection-btn {
     width: 100%;
   }
-        .floating-pec-basket {
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-        width: auto;
-        border-radius: 20px;
-      }
+
+  .floating-pec-basket {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+    border-radius: 20px;
+  }
 }
 
 @media (max-width: 720px) {
