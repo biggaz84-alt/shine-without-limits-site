@@ -1521,7 +1521,81 @@ footer p,
   .hero-poster-wrap img {
     border-radius: 24px;
   }
-}
+}    .floating-pec-basket {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 80;
+      width: min(330px, calc(100% - 36px));
+      background: rgba(255, 255, 255, 0.96);
+      border: 3px solid #ffbf3f;
+      border-radius: 24px;
+      padding: 14px;
+      box-shadow: 0 18px 38px rgba(18, 57, 111, 0.22);
+      color: #12396f;
+      display: none;
+    }
+
+    .floating-pec-basket.show {
+      display: block;
+    }
+
+    .floating-basket-top,
+    .floating-basket-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .floating-basket-top strong {
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    #floatingSelectedCount {
+      background: #fff5c7;
+      border: 2px solid #ffbf3f;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-weight: 900;
+      font-size: 0.86rem;
+    }
+
+    #floatingBundleHelper {
+      margin: 10px 0;
+      color: #24517f;
+      font-size: 0.88rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    #floatingBasketEstimate {
+      color: #ff6f9f;
+      font-weight: 900;
+      font-size: 0.95rem;
+    }
+
+    .floating-email-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ffbf3f, #ff8fb3);
+      color: #12396f;
+      border: 2px solid #ffffff;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 0.86rem;
+      box-shadow: 0 8px 16px rgba(18, 57, 111, 0.14);
+    }
+
+    .floating-email-btn.disabled {
+      opacity: 0.45;
+      pointer-events: none;
+    }
 
 @media (max-width: 850px) {
   .pec-pricing-grid {
@@ -1581,6 +1655,13 @@ footer p,
   .clear-selection-btn {
     width: 100%;
   }
+        .floating-pec-basket {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        width: auto;
+        border-radius: 20px;
+      }
 }
 
 @media (max-width: 720px) {
