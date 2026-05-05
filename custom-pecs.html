@@ -2039,10 +2039,14 @@
     const floatingEmailBtn = document.getElementById('floatingEmailBtn');
 
     function getBundlePrice(count) {
-      if (count >= 40) return 35;
-      if (count >= 20) return 19;
-      if (count >= 10) return 10;
-      return count * 1.5;
+      if (count <= 0) return 0;
+      if (count < 10) return count * 1.5;
+      if (count === 10) return 10;
+      if (count < 20) return 10 + ((count - 10) * 1.5);
+      if (count === 20) return 19;
+      if (count < 40) return 19 + ((count - 20) * 1.5);
+      if (count === 40) return 35;
+      return 35 + ((count - 40) * 1.5);
     }
 
     function getBundleMessage(count) {
@@ -2061,7 +2065,7 @@
 
       if (count > 10 && count < 20) {
         const remaining = 20 - count;
-        return `You’re on the 10+ bundle. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 20 cards from £19.`;
+        return `You’re on the 10 card bundle, with extra cards added at £1.50 each. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 20 cards from £19.`;
       }
 
       if (count === 20) {
@@ -2070,10 +2074,14 @@
 
       if (count > 20 && count < 40) {
         const remaining = 40 - count;
-        return `You’re on the 20+ bundle. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 40 cards from £35.`;
+        return `You’re on the 20 card bundle, with extra cards added at £1.50 each. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 40 cards from £35.`;
       }
 
-      return 'Brilliant, you’ve unlocked the 40 cards from £35 bundle.';
+      if (count === 40) {
+        return 'Brilliant, you’ve unlocked the 40 cards from £35 bundle.';
+      }
+
+      return 'You’re over the 40 card bundle, with extra cards added at £1.50 each.';
     }
 
     function updateFloatingBasket(count, estimate) {
