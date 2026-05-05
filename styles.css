@@ -1,6 +1,7 @@
 /* =====================================================
    SHINE WITHOUT LIMITS
-   Products page polished full replacement
+   Bright branded products page
+   Full replacement stylesheet
    ===================================================== */
 
 /* 1. Reset */
@@ -20,9 +21,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: #12396f;
   background:
-    radial-gradient(circle at 8% 12%, rgba(255, 203, 61, 0.22) 0 7%, transparent 18%),
-    radial-gradient(circle at 92% 18%, rgba(75, 174, 255, 0.18) 0 10%, transparent 24%),
-    linear-gradient(rgba(231, 248, 255, 0.82), rgba(231, 248, 255, 0.82)),
+    radial-gradient(circle at 7% 9%, rgba(255, 203, 61, 0.25) 0 7%, transparent 18%),
+    radial-gradient(circle at 92% 15%, rgba(75, 174, 255, 0.2) 0 10%, transparent 24%),
+    linear-gradient(rgba(231, 248, 255, 0.76), rgba(231, 248, 255, 0.76)),
     url("images/clouds-bg.png");
   background-size: auto, auto, cover, cover;
   background-attachment: fixed;
@@ -52,25 +53,25 @@ ul {
 
 .eyebrow {
   color: #ff9d2e;
-  font-weight: 900;
+  font-weight: 950;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   font-size: 0.78rem;
   margin-bottom: 10px;
 }
 
 .section-heading {
   max-width: 760px;
-  margin: 0 auto 36px;
+  margin: 0 auto 38px;
   text-align: center;
 }
 
 .section-heading h2 {
-  font-size: clamp(2rem, 4vw, 3.05rem);
-  line-height: 1.08;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.05;
   color: #12396f;
   margin-bottom: 14px;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.04em;
 }
 
 .section-heading p {
@@ -84,14 +85,32 @@ ul {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.94);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(246, 252, 255, 0.96));
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(18, 57, 111, 0.08);
-  box-shadow: 0 8px 26px rgba(18, 57, 111, 0.08);
+  box-shadow: 0 10px 28px rgba(18, 57, 111, 0.08);
+}
+
+.top-sun-strip {
+  min-height: 32px;
+  background: linear-gradient(90deg, #fff3bd, #dff4ff, #ddf8df, #ffe2d2);
+  color: #12396f;
+  font-weight: 950;
+  font-size: 0.84rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  letter-spacing: 0.02em;
+}
+
+.sun-badge {
+  filter: drop-shadow(0 4px 7px rgba(255, 157, 46, 0.25));
 }
 
 .header-inner {
-  min-height: 102px;
+  min-height: 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -105,7 +124,7 @@ ul {
 }
 
 .site-logo {
-  width: 230px;
+  width: 238px;
   height: auto;
 }
 
@@ -118,8 +137,8 @@ ul {
 }
 
 .main-nav a {
-  font-weight: 900;
-  font-size: 0.95rem;
+  font-weight: 950;
+  font-size: 0.94rem;
   color: #12396f;
   padding: 11px 16px;
   border-radius: 999px;
@@ -145,24 +164,24 @@ ul {
   border-radius: 999px;
   font-weight: 950;
   line-height: 1;
-  box-shadow: 0 12px 26px rgba(18, 57, 111, 0.12);
+  box-shadow: 0 12px 26px rgba(18, 57, 111, 0.13);
   transition: 0.2s ease;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 32px rgba(18, 57, 111, 0.16);
+  box-shadow: 0 18px 34px rgba(18, 57, 111, 0.17);
 }
 
 .btn-primary {
-  background: #ffcb3d;
+  background: linear-gradient(135deg, #ffcb3d, #ffb72e);
   color: #12396f;
 }
 
 .btn-secondary {
   background: #ffffff;
   color: #12396f;
-  border: 2px solid rgba(18, 57, 111, 0.12);
+  border: 2px solid rgba(18, 57, 111, 0.1);
 }
 
 .text-link {
@@ -176,28 +195,52 @@ ul {
   text-decoration: underline;
 }
 
-/* 5. Products hero */
+/* 5. Hero */
 
-.products-hero {
-  padding: 78px 0 44px;
+.shine-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 78px 0 52px;
+  background:
+    linear-gradient(120deg, rgba(255, 246, 193, 0.42), rgba(219, 243, 255, 0.4)),
+    radial-gradient(circle at 82% 20%, rgba(255, 203, 61, 0.26), transparent 22%);
 }
 
-.products-hero-inner {
+.shine-hero::after {
+  content: "";
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  bottom: -1px;
+  height: 72px;
+  background:
+    radial-gradient(circle at 5% 100%, rgba(255, 255, 255, 0.95) 0 46px, transparent 47px),
+    radial-gradient(circle at 20% 100%, rgba(255, 255, 255, 0.95) 0 54px, transparent 55px),
+    radial-gradient(circle at 37% 100%, rgba(255, 255, 255, 0.95) 0 42px, transparent 43px),
+    radial-gradient(circle at 55% 100%, rgba(255, 255, 255, 0.95) 0 58px, transparent 59px),
+    radial-gradient(circle at 73% 100%, rgba(255, 255, 255, 0.95) 0 48px, transparent 49px),
+    radial-gradient(circle at 91% 100%, rgba(255, 255, 255, 0.95) 0 56px, transparent 57px);
+  pointer-events: none;
+}
+
+.shine-hero-inner {
+  position: relative;
+  z-index: 2;
   display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
-  gap: 42px;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 44px;
   align-items: center;
 }
 
-.products-hero-text h1 {
-  font-size: clamp(2.55rem, 5vw, 4.9rem);
+.shine-hero-text h1 {
+  font-size: clamp(2.55rem, 5vw, 5rem);
   line-height: 0.98;
   color: #12396f;
   letter-spacing: -0.055em;
   margin-bottom: 24px;
 }
 
-.products-hero-text p {
+.shine-hero-text p {
   max-width: 650px;
   color: #315985;
   font-size: 1.13rem;
@@ -210,22 +253,119 @@ ul {
   margin-top: 30px;
 }
 
-.products-hero-card {
+.cloud-float {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  filter: blur(1px);
+  opacity: 0.85;
+}
+
+.cloud-float::before,
+.cloud-float::after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  border-radius: inherit;
+}
+
+.cloud-one {
+  width: 160px;
+  height: 48px;
+  left: 4%;
+  top: 18%;
+}
+
+.cloud-one::before {
+  width: 70px;
+  height: 70px;
+  left: 25px;
+  bottom: 14px;
+}
+
+.cloud-one::after {
+  width: 92px;
+  height: 92px;
+  left: 75px;
+  bottom: 4px;
+}
+
+.cloud-two {
+  width: 190px;
+  height: 54px;
+  right: 4%;
+  top: 18%;
+}
+
+.cloud-two::before {
+  width: 85px;
+  height: 85px;
+  left: 28px;
+  bottom: 13px;
+}
+
+.cloud-two::after {
+  width: 100px;
+  height: 100px;
+  left: 88px;
+  bottom: 1px;
+}
+
+.cloud-three {
+  width: 140px;
+  height: 42px;
+  right: 32%;
+  bottom: 18%;
+  opacity: 0.5;
+}
+
+.cloud-three::before {
+  width: 64px;
+  height: 64px;
+  left: 22px;
+  bottom: 10px;
+}
+
+.cloud-three::after {
+  width: 80px;
+  height: 80px;
+  left: 62px;
+  bottom: 0;
+}
+
+/* 6. Showcase cards */
+
+.sunny-showcase {
+  position: relative;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 251, 231, 0.94));
+    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 250, 222, 0.94));
   border: 1px solid rgba(18, 57, 111, 0.08);
-  border-radius: 36px;
-  padding: 26px;
-  box-shadow: 0 24px 60px rgba(18, 57, 111, 0.16);
+  border-radius: 38px;
+  padding: 30px;
+  box-shadow: 0 26px 64px rgba(18, 57, 111, 0.17);
+  overflow: hidden;
+}
+
+.showcase-rainbow {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -110px;
+  top: -120px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, transparent 35%, rgba(255, 203, 61, 0.35) 36% 45%, transparent 46%),
+    radial-gradient(circle, transparent 47%, rgba(102, 202, 255, 0.28) 48% 56%, transparent 57%),
+    radial-gradient(circle, transparent 58%, rgba(126, 222, 151, 0.22) 59% 66%, transparent 67%);
 }
 
 .sample-card-grid {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 18px;
 }
-
-/* 6. PECS preview cards */
 
 .pecs-preview-card {
   position: relative;
@@ -259,6 +399,8 @@ ul {
   margin-top: 12px;
   font-weight: 950;
 }
+
+/* 7. Black line icons */
 
 .line-icon {
   position: relative;
@@ -432,38 +574,81 @@ ul {
     radial-gradient(circle at right center, #111 0 7px, transparent 8px);
 }
 
-/* 7. Intro */
+/* 8. Message */
 
-.product-intro {
-  padding: 16px 0 48px;
+.shine-message {
+  padding: 46px 0 56px;
 }
 
-.intro-card {
-  background: rgba(255, 255, 255, 0.94);
+.message-card {
+  position: relative;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 246, 190, 0.82));
   border: 1px solid rgba(18, 57, 111, 0.08);
-  border-radius: 30px;
-  padding: 32px;
+  border-radius: 34px;
+  padding: 34px 38px;
   text-align: center;
-  box-shadow: 0 16px 42px rgba(18, 57, 111, 0.1);
+  box-shadow: 0 18px 48px rgba(18, 57, 111, 0.11);
+  overflow: hidden;
 }
 
-.intro-card h2 {
-  font-size: clamp(1.65rem, 3vw, 2.45rem);
+.message-card::before,
+.message-card::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(223, 244, 255, 0.8);
+}
+
+.message-card::before {
+  width: 180px;
+  height: 180px;
+  left: -70px;
+  top: -80px;
+}
+
+.message-card::after {
+  width: 220px;
+  height: 220px;
+  right: -90px;
+  bottom: -120px;
+}
+
+.message-card h2,
+.message-card p,
+.message-sun {
+  position: relative;
+  z-index: 2;
+}
+
+.message-sun {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 10px;
+  background: #fff3bd;
+  border-radius: 50%;
+  box-shadow: 0 10px 24px rgba(255, 157, 46, 0.18);
+}
+
+.message-card h2 {
+  font-size: clamp(1.7rem, 3vw, 2.45rem);
   line-height: 1.12;
   margin-bottom: 10px;
   letter-spacing: -0.035em;
 }
 
-.intro-card p {
-  max-width: 840px;
+.message-card p {
+  max-width: 850px;
   margin: 0 auto;
   color: #315985;
 }
 
-/* 8. Bundles */
+/* 9. Bundles */
 
 .products-section {
-  padding: 64px 0;
+  padding: 66px 0;
 }
 
 .bundle-grid {
@@ -474,47 +659,94 @@ ul {
 }
 
 .bundle-card {
-  background: rgba(255, 255, 255, 0.95);
+  position: relative;
+  background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(18, 57, 111, 0.08);
-  border-radius: 30px;
+  border-radius: 34px;
   overflow: hidden;
-  box-shadow: 0 18px 46px rgba(18, 57, 111, 0.1);
+  box-shadow: 0 20px 48px rgba(18, 57, 111, 0.12);
   display: flex;
   flex-direction: column;
 }
 
 .featured-bundle {
-  transform: translateY(-10px);
+  transform: translateY(-12px);
   border: 3px solid #ffcb3d;
-  box-shadow: 0 26px 60px rgba(18, 57, 111, 0.16);
+  box-shadow: 0 28px 66px rgba(18, 57, 111, 0.18);
+}
+
+.popular-ribbon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 4;
+  background: #ffcb3d;
+  color: #12396f;
+  font-weight: 950;
+  font-size: 0.8rem;
+  padding: 8px 12px;
+  border-radius: 999px;
+  box-shadow: 0 10px 22px rgba(18, 57, 111, 0.12);
 }
 
 .bundle-image {
+  position: relative;
   min-height: 230px;
-  padding: 30px 20px 24px;
+  padding: 34px 20px 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 14px;
+  overflow: hidden;
+}
+
+.bundle-image::before {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 70px;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+  filter: blur(1px);
 }
 
 .bundle-starter {
-  background: linear-gradient(135deg, #d9f1ff, #fff8cf);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.9), transparent 24%),
+    linear-gradient(135deg, #dff4ff, #fff7c9);
 }
 
 .bundle-everyday {
-  background: linear-gradient(135deg, #fff3bd, #d8f7dc);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.9), transparent 24%),
+    linear-gradient(135deg, #fff3bd, #ddf8df);
 }
 
 .bundle-mega {
-  background: linear-gradient(135deg, #ffe1d2, #dff5ff);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.9), transparent 24%),
+    linear-gradient(135deg, #ffe2d2, #dff4ff);
 }
+
+.corner-sun {
+  position: absolute;
+  top: 17px;
+  left: 18px;
+  z-index: 2;
+  font-size: 1.1rem;
+  filter: drop-shadow(0 5px 8px rgba(255, 157, 46, 0.2));
+}
+
+/* 10. Mini PECS cards */
 
 .mini-pecs-card {
   position: relative;
+  z-index: 2;
   width: 88px;
   min-height: 120px;
-  background: #ffffff;
   border: 3px solid #111;
   outline: 2px solid #111;
   outline-offset: -8px;
@@ -524,7 +756,23 @@ ul {
   place-items: center;
   padding: 20px 8px 10px;
   color: #111;
-  box-shadow: 0 10px 22px rgba(18, 57, 111, 0.13);
+  box-shadow: 0 12px 24px rgba(18, 57, 111, 0.14);
+}
+
+.mini-blue {
+  background: #dff4ff;
+}
+
+.mini-yellow {
+  background: #fff4bd;
+}
+
+.mini-green {
+  background: #ddf8df;
+}
+
+.mini-peach {
+  background: #ffe2d2;
 }
 
 .mini-dot {
@@ -695,8 +943,10 @@ ul {
   border-radius: 5px;
 }
 
+/* 11. Bundle content */
+
 .bundle-content {
-  padding: 25px;
+  padding: 26px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -741,26 +991,43 @@ ul {
   margin: auto 0 16px;
 }
 
-/* 9. Custom cards */
+/* 12. Custom cards */
 
 .custom-section {
-  padding: 66px 0;
+  padding: 72px 0;
 }
 
 .custom-grid {
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr 0.9fr;
-  gap: 30px;
+  grid-template-columns: 1fr 0.88fr;
+  gap: 32px;
   align-items: center;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 34px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(223, 244, 255, 0.78));
+  border-radius: 38px;
   border: 1px solid rgba(18, 57, 111, 0.08);
-  box-shadow: 0 18px 46px rgba(18, 57, 111, 0.11);
-  padding: 36px;
+  box-shadow: 0 20px 54px rgba(18, 57, 111, 0.13);
+  padding: 38px;
+  overflow: hidden;
+}
+
+.custom-grid::before {
+  content: "☀️";
+  position: absolute;
+  right: 32px;
+  top: 22px;
+  font-size: 2rem;
+  opacity: 0.75;
+}
+
+.custom-text {
+  position: relative;
+  z-index: 2;
 }
 
 .custom-text h2 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(2rem, 4vw, 3.25rem);
   line-height: 1.05;
   margin-bottom: 14px;
   letter-spacing: -0.045em;
@@ -778,9 +1045,9 @@ ul {
 }
 
 .custom-price-list div {
-  background: #f3fbff;
+  background: rgba(255, 255, 255, 0.86);
   border: 1px solid rgba(18, 57, 111, 0.08);
-  border-radius: 18px;
+  border-radius: 20px;
   padding: 15px 17px;
   display: flex;
   align-items: center;
@@ -798,6 +1065,8 @@ ul {
 }
 
 .custom-preview {
+  position: relative;
+  z-index: 2;
   display: grid;
   gap: 16px;
 }
@@ -806,10 +1075,10 @@ ul {
   min-height: 150px;
 }
 
-/* 10. Coming soon */
+/* 13. Coming soon */
 
 .coming-soon-section {
-  padding: 64px 0;
+  padding: 66px 0;
 }
 
 .coming-grid {
@@ -819,15 +1088,55 @@ ul {
 }
 
 .coming-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(18, 57, 111, 0.08);
-  border-radius: 28px;
-  padding: 30px;
-  box-shadow: 0 16px 42px rgba(18, 57, 111, 0.1);
+  border-radius: 30px;
+  padding: 32px;
+  box-shadow: 0 18px 44px rgba(18, 57, 111, 0.11);
+  overflow: hidden;
+  position: relative;
+}
+
+.coming-card::after {
+  content: "";
+  position: absolute;
+  right: -42px;
+  bottom: -54px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  opacity: 0.55;
+}
+
+.sensory-card::after {
+  background: #fff3bd;
+}
+
+.clothing-card::after {
+  background: #dff4ff;
+}
+
+.coming-card span {
+  position: relative;
+  z-index: 2;
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  background: #fff3bd;
+  border-radius: 50%;
+  margin-bottom: 14px;
+}
+
+.coming-card h3,
+.coming-card p,
+.coming-card a {
+  position: relative;
+  z-index: 2;
 }
 
 .coming-card h3 {
-  font-size: 1.52rem;
+  font-size: 1.55rem;
   margin-bottom: 10px;
 }
 
@@ -835,10 +1144,10 @@ ul {
   color: #315985;
 }
 
-/* 11. How to order */
+/* 14. How to order */
 
 .how-to-order {
-  padding: 64px 0 84px;
+  padding: 66px 0 88px;
 }
 
 .steps-grid {
@@ -848,27 +1157,28 @@ ul {
 }
 
 .step-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(18, 57, 111, 0.08);
-  border-radius: 24px;
-  padding: 23px;
-  box-shadow: 0 14px 34px rgba(18, 57, 111, 0.09);
+  border-radius: 26px;
+  padding: 24px;
+  box-shadow: 0 16px 38px rgba(18, 57, 111, 0.1);
 }
 
 .step-card span {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
-  background: #ffcb3d;
+  background: linear-gradient(135deg, #ffcb3d, #ffb72e);
   color: #12396f;
   font-weight: 950;
   border-radius: 50%;
   margin-bottom: 14px;
+  box-shadow: 0 10px 20px rgba(18, 57, 111, 0.1);
 }
 
 .step-card h3 {
-  font-size: 1.15rem;
+  font-size: 1.16rem;
   margin-bottom: 8px;
 }
 
@@ -877,7 +1187,7 @@ ul {
   font-size: 0.95rem;
 }
 
-/* 12. Pastel card colours */
+/* 15. Pastel card colours */
 
 .pastel-blue {
   background: #dff4ff;
@@ -895,12 +1205,13 @@ ul {
   background: #ffe2d2;
 }
 
-/* 13. Footer */
+/* 16. Footer */
 
 .site-footer {
-  background: #12396f;
+  background:
+    linear-gradient(135deg, #12396f, #0e2d57);
   color: white;
-  padding: 30px 0;
+  padding: 32px 0;
 }
 
 .footer-inner {
@@ -920,7 +1231,7 @@ ul {
   color: #ffcb3d;
 }
 
-/* 14. Tablet */
+/* 17. Tablet */
 
 @media (max-width: 980px) {
   .header-inner {
@@ -930,23 +1241,23 @@ ul {
   }
 
   .site-logo {
-    width: 210px;
+    width: 214px;
   }
 
   .main-nav {
     justify-content: center;
   }
 
-  .products-hero-inner,
+  .shine-hero-inner,
   .custom-grid {
     grid-template-columns: 1fr;
   }
 
-  .products-hero-text {
+  .shine-hero-text {
     text-align: center;
   }
 
-  .products-hero-text p {
+  .shine-hero-text p {
     margin: 0 auto;
   }
 
@@ -954,7 +1265,7 @@ ul {
     justify-content: center;
   }
 
-  .products-hero-card {
+  .sunny-showcase {
     max-width: 560px;
     margin: 0 auto;
   }
@@ -969,7 +1280,7 @@ ul {
   }
 }
 
-/* 15. Mobile */
+/* 18. Mobile */
 
 @media (max-width: 680px) {
   body {
@@ -980,12 +1291,18 @@ ul {
     width: min(100% - 26px, 1120px);
   }
 
+  .top-sun-strip {
+    font-size: 0.78rem;
+    padding: 0 12px;
+    text-align: center;
+  }
+
   .header-inner {
     min-height: auto;
   }
 
   .site-logo {
-    width: 185px;
+    width: 188px;
   }
 
   .main-nav {
@@ -993,19 +1310,19 @@ ul {
   }
 
   .main-nav a {
-    font-size: 0.86rem;
+    font-size: 0.85rem;
     padding: 9px 11px;
   }
 
-  .products-hero {
-    padding: 46px 0 34px;
+  .shine-hero {
+    padding: 46px 0 46px;
   }
 
-  .products-hero-text h1 {
+  .shine-hero-text h1 {
     font-size: 2.45rem;
   }
 
-  .products-hero-text p {
+  .shine-hero-text p {
     font-size: 1rem;
   }
 
@@ -1017,9 +1334,9 @@ ul {
     width: 100%;
   }
 
-  .products-hero-card {
+  .sunny-showcase {
     padding: 18px;
-    border-radius: 28px;
+    border-radius: 30px;
   }
 
   .sample-card-grid,
@@ -1035,7 +1352,7 @@ ul {
 
   .bundle-image {
     min-height: 220px;
-    padding: 26px 14px;
+    padding: 30px 14px;
     gap: 10px;
   }
 
@@ -1045,7 +1362,7 @@ ul {
   }
 
   .custom-grid {
-    padding: 24px;
+    padding: 26px;
   }
 
   .custom-price-list div {
@@ -1053,8 +1370,8 @@ ul {
     flex-direction: column;
   }
 
-  .intro-card {
-    padding: 24px;
+  .message-card {
+    padding: 28px 22px;
   }
 
   .footer-inner {
@@ -1063,10 +1380,10 @@ ul {
   }
 }
 
-/* 16. Tiny screens */
+/* 19. Tiny screens */
 
 @media (max-width: 420px) {
-  .products-hero-text h1 {
+  .shine-hero-text h1 {
     font-size: 2.15rem;
   }
 
