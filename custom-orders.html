@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Custom Orders | Shine Without Limits</title>
+  <meta
+    name="description"
+    content="Request custom PECS cards, personalised visual support bundles, routine boards and custom communication supports from Shine Without Limits."
+  />
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -25,20 +29,23 @@
       margin: 42px auto 34px;
       padding: 52px 34px;
       border-radius: 36px;
-      background: rgba(255, 255, 255, 0.76);
-      border: 3px solid rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.78);
+      border: 3px solid rgba(255, 255, 255, 0.92);
       box-shadow: 0 20px 55px rgba(10, 82, 160, 0.18);
       text-align: center;
     }
 
     .custom-pill {
       display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 10px 18px;
       border-radius: 999px;
       background: #fff2b8;
       color: #835000;
       font-weight: 1000;
       margin-bottom: 16px;
+      box-shadow: 0 8px 18px rgba(131, 80, 0, 0.12);
     }
 
     .custom-hero h1 {
@@ -50,12 +57,57 @@
     }
 
     .custom-hero p {
-      width: min(760px, 100%);
+      width: min(780px, 100%);
       margin: 22px auto 0;
       color: #416894;
       font-size: 1.12rem;
       line-height: 1.7;
       font-weight: 700;
+    }
+
+    .custom-hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .custom-hero-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 1000;
+      box-shadow: 0 12px 26px rgba(10, 82, 160, 0.14);
+    }
+
+    .custom-primary-link {
+      background: linear-gradient(135deg, #ff970f, #ffb300);
+      color: #ffffff;
+    }
+
+    .custom-secondary-link {
+      background: #ffffff;
+      color: #0b58ae;
+      border: 3px solid #ffcf4d;
+    }
+
+    .custom-note-strip {
+      width: min(980px, calc(100% - 36px));
+      margin: 0 auto 34px;
+      padding: 20px 24px;
+      border-radius: 26px;
+      background: rgba(255, 248, 216, 0.92);
+      border: 3px solid #ffcf4d;
+      color: #12396f;
+      text-align: center;
+      font-weight: 900;
+      line-height: 1.6;
+      box-shadow: 0 14px 34px rgba(10, 82, 160, 0.13);
     }
 
     .custom-options {
@@ -69,8 +121,8 @@
     .custom-card {
       padding: 24px;
       border-radius: 30px;
-      background: rgba(255, 255, 255, 0.82);
-      border: 3px solid rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.84);
+      border: 3px solid rgba(255, 255, 255, 0.94);
       box-shadow: 0 16px 42px rgba(10, 82, 160, 0.14);
       display: grid;
       gap: 14px;
@@ -83,12 +135,14 @@
       background: #f7fbff;
       border-radius: 24px;
       padding: 12px;
+      box-shadow: inset 0 0 0 2px rgba(11, 88, 174, 0.06);
     }
 
     .custom-card h2 {
       margin: 0;
       color: #0b58ae;
       font-size: 1.55rem;
+      line-height: 1.1;
     }
 
     .custom-card p {
@@ -98,9 +152,17 @@
       font-weight: 700;
     }
 
+    .custom-card ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #416894;
+      font-weight: 800;
+      line-height: 1.55;
+    }
+
     .custom-card strong {
       color: #ff970f;
-      font-size: 1.25rem;
+      font-size: 1.18rem;
     }
 
     .custom-button {
@@ -116,15 +178,21 @@
       font-weight: 1000;
       box-shadow: 0 14px 30px rgba(255, 151, 15, 0.3);
       margin-top: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .custom-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 36px rgba(255, 151, 15, 0.38);
     }
 
     .custom-info {
       width: min(980px, calc(100% - 36px));
-      margin: 0 auto 70px;
+      margin: 0 auto 34px;
       padding: 34px;
       border-radius: 34px;
-      background: rgba(255, 255, 255, 0.82);
-      border: 3px solid rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.84);
+      border: 3px solid rgba(255, 255, 255, 0.94);
       box-shadow: 0 16px 42px rgba(10, 82, 160, 0.14);
       text-align: center;
     }
@@ -154,8 +222,9 @@
     .custom-step {
       padding: 20px;
       border-radius: 24px;
-      background: rgba(247, 251, 255, 0.9);
-      border: 2px solid rgba(255, 255, 255, 0.9);
+      background: rgba(247, 251, 255, 0.92);
+      border: 2px solid rgba(255, 255, 255, 0.94);
+      box-shadow: 0 10px 22px rgba(10, 82, 160, 0.08);
     }
 
     .custom-step b {
@@ -168,6 +237,7 @@
       background: #fff2b8;
       color: #835000;
       margin-bottom: 10px;
+      font-weight: 1000;
     }
 
     .custom-step h3 {
@@ -180,6 +250,32 @@
       font-size: 0.98rem;
     }
 
+    .custom-contact-box {
+      width: min(980px, calc(100% - 36px));
+      margin: 0 auto 70px;
+      padding: 34px;
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 3px solid rgba(255, 255, 255, 0.94);
+      box-shadow: 0 16px 42px rgba(10, 82, 160, 0.14);
+      text-align: center;
+    }
+
+    .custom-contact-box h2 {
+      margin: 0 0 12px;
+      color: #0b58ae;
+      font-size: clamp(1.9rem, 5vw, 3.2rem);
+      line-height: 1;
+    }
+
+    .custom-contact-box p {
+      width: min(720px, 100%);
+      margin: 0 auto 20px;
+      color: #416894;
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
     @media (max-width: 900px) {
       .custom-options,
       .custom-steps {
@@ -190,14 +286,30 @@
     @media (max-width: 650px) {
       .custom-hero,
       .custom-options,
-      .custom-info {
+      .custom-info,
+      .custom-contact-box,
+      .custom-note-strip {
         width: min(100% - 20px, 1180px);
       }
 
       .custom-hero,
-      .custom-info {
+      .custom-info,
+      .custom-contact-box {
         padding: 24px;
         border-radius: 26px;
+      }
+
+      .custom-hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .custom-hero-actions {
+        display: grid;
+      }
+
+      .custom-hero-actions a,
+      .custom-button {
+        width: 100%;
       }
     }
   </style>
@@ -206,7 +318,7 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo-link">
+      <a href="index.html" class="logo-link" aria-label="Shine Without Limits home">
         <img src="images/header-logo.png" alt="Shine Without Limits logo" class="site-logo" />
       </a>
 
@@ -214,7 +326,7 @@
         <a href="index.html">Home</a>
         <a href="products.html">Products</a>
         <a href="custom-pecs.html">PECS Cards</a>
-        <a href="custom-orders.html">Custom Orders</a>
+        <a href="custom-orders.html" class="active">Custom Orders</a>
         <a href="customer-info.html">Info</a>
         <a href="index.html#about">About</a>
         <a href="index.html#contact">Contact</a>
@@ -227,57 +339,147 @@
       <span class="custom-pill">Made your way</span>
       <h1>Custom Orders</h1>
       <p>
-        Need something more personal? Order custom PECS cards, personalised bundles,
-        sensory items, labels, colour themes or gift-style sets made around your needs.
+        Need something more personal? Request custom PECS-style cards, personalised bundles,
+        routine boards, visual supports, labels or small custom items made around your child,
+        family, classroom or daily routine.
       </p>
+
+      <div class="custom-hero-actions">
+        <a href="#custom-options" class="custom-primary-link">View Custom Options</a>
+        <a href="custom-pecs.html" class="custom-secondary-link">Build PECS Set</a>
+      </div>
     </section>
 
-    <section class="custom-options">
+    <div class="custom-note-strip">
+      PECS-style cards start from £2.00 per card. Bundle prices, postage, custom details and timescales are confirmed by email before anything is made.
+    </div>
+
+    <section class="custom-options" id="custom-options">
       <article class="custom-card">
         <img src="images/custom-pecs.jpg" alt="Custom PECS cards" />
         <h2>Custom PECS Cards</h2>
         <p>
-          Choose specific words, symbols, routines, emotions, places or activities.
-          Ideal for building a set that fits daily life.
+          Choose specific words, symbols, routines, emotions, places, activities or family-specific cards.
+          Perfect when you need something that is not already in the PECS card builder.
         </p>
-        <strong>Personalised request</strong>
+        <ul>
+          <li>Custom wording available</li>
+          <li>Great for names, places and routines</li>
+          <li>Design details confirmed first</li>
+        </ul>
+        <strong>From £2.00 per card</strong>
         <a
           class="custom-button"
-          href="mailto:shinewithoutlimits@hotmail.com?subject=Custom%20PECS%20Card%20Order&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20to%20request%20custom%20PECS%20cards.%0A%0AName%3A%0AWhat%20cards%20I%20need%3A%0AColours%20or%20style%20preferred%3A%0AQuantity%3A%0ADelivery%20address%3A%0AAny%20notes%3A"
+          href="mailto:shinewithoutlimits@hotmail.com?subject=Custom%20PECS%20Card%20Request&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20to%20request%20custom%20PECS-style%20cards.%0A%0AName%3A%0AWhat%20cards%20I%20need%3A%0AQuantity%3A%0AWording%20needed%3A%0AColours%20or%20style%20preferred%3A%0AAny%20personalised%20details%3A%0ADelivery%20postcode%3A%0AAny%20notes%3A%0A%0APlease%20can%20you%20confirm%20the%20final%20price%2C%20postage%20and%20timescale%3F"
         >
-          Request PECS cards
+          Request PECS Cards
         </a>
       </article>
 
       <article class="custom-card">
-        <img src="images/personalised-bundle.jpg" alt="Personalised bundle" />
+        <img src="images/personalised-bundle.jpg" alt="Personalised PECS bundle" />
         <h2>Personalised Bundles</h2>
         <p>
           Ask for a full themed set, such as morning routine, school, bedtime,
-          emotions, food and drink, or going out.
+          emotions, food and drink, toilet routine, going out or everyday communication.
         </p>
-        <strong>Bundle request</strong>
+        <ul>
+          <li>Built around your needs</li>
+          <li>Good for home or school</li>
+          <li>Bundle price confirmed by email</li>
+        </ul>
+        <strong>Bundle quote by email</strong>
         <a
           class="custom-button"
-          href="mailto:shinewithoutlimits@hotmail.com?subject=Personalised%20Bundle%20Order&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20to%20request%20a%20personalised%20bundle.%0A%0AName%3A%0ABundle%20theme%3A%0AApprox%20number%20of%20items%3A%0AColours%20or%20style%20preferred%3A%0ADelivery%20address%3A%0AAny%20notes%3A"
+          href="mailto:shinewithoutlimits@hotmail.com?subject=Personalised%20PECS%20Bundle%20Request&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20to%20request%20a%20personalised%20PECS-style%20bundle.%0A%0AName%3A%0ABundle%20theme%3A%0AApprox%20number%20of%20cards%3A%0ACards%20or%20words%20I%20would%20like%3A%0AColours%20or%20style%20preferred%3A%0AWho%20the%20bundle%20is%20for%3A%0ADelivery%20postcode%3A%0AAny%20notes%3A%0A%0APlease%20can%20you%20confirm%20the%20final%20price%2C%20postage%20and%20timescale%3F"
         >
-          Request a bundle
+          Request A Bundle
         </a>
       </article>
 
+      <article class="custom-card">
+        <img src="images/routine-board.jpg" alt="Custom visual routine board" />
+        <h2>Routine Boards</h2>
+        <p>
+          Need a morning routine, bedtime board, toilet routine, school day schedule or visual planner?
+          A custom routine board can help make the day feel clearer.
+        </p>
+        <ul>
+          <li>Morning and bedtime routines</li>
+          <li>Toilet and hygiene support</li>
+          <li>Visual schedules and daily plans</li>
+        </ul>
+        <strong>Custom quote by email</strong>
+        <a
+          class="custom-button"
+          href="mailto:shinewithoutlimits@hotmail.com?subject=Custom%20Routine%20Board%20Request&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20to%20request%20a%20custom%20routine%20board%20or%20visual%20schedule.%0A%0AName%3A%0AType%20of%20routine%3A%0ASteps%20or%20cards%20needed%3A%0AColours%20or%20style%20preferred%3A%0ASize%20or%20layout%20idea%3A%0ADelivery%20postcode%3A%0AAny%20notes%3A%0A%0APlease%20can%20you%20confirm%20the%20final%20price%2C%20postage%20and%20timescale%3F"
+        >
+          Request Routine Board
+        </a>
+      </article>
+    </section>
+
+    <section class="custom-options">
       <article class="custom-card">
         <img src="images/custom-category.jpg" alt="Other custom orders" />
         <h2>Other Custom Items</h2>
         <p>
-          Need something different? Ask about custom sensory items, keyrings,
-          labels, small gifts, classroom sets or clothing ideas.
+          Need something different? Ask about labels, classroom sets, small gifts, bag tags,
+          keyrings, sensory-friendly ideas or custom visual support items.
         </p>
+        <ul>
+          <li>Labels and small visual supports</li>
+          <li>Classroom or home sets</li>
+          <li>Custom ideas welcome</li>
+        </ul>
         <strong>Custom quote</strong>
         <a
           class="custom-button"
-          href="mailto:shinewithoutlimits@hotmail.com?subject=Custom%20Order%20Request&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20to%20request%20a%20custom%20order.%0A%0AName%3A%0AWhat%20I%20would%20like%3A%0AColours%20or%20style%20preferred%3A%0AQuantity%3A%0ADelivery%20address%3A%0AAny%20notes%3A"
+          href="mailto:shinewithoutlimits@hotmail.com?subject=Custom%20Order%20Request&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20to%20request%20a%20custom%20order.%0A%0AName%3A%0AWhat%20I%20would%20like%3A%0AQuantity%3A%0AColours%20or%20style%20preferred%3A%0ADelivery%20postcode%3A%0AAny%20notes%3A%0A%0APlease%20can%20you%20confirm%20the%20final%20price%2C%20postage%20and%20timescale%3F"
         >
-          Ask about custom work
+          Ask About Custom Work
+        </a>
+      </article>
+
+      <article class="custom-card">
+        <img src="images/products/custom-pecs-cards.jpg" alt="Personalised visual support cards" />
+        <h2>Personalised Support Cards</h2>
+        <p>
+          Personalised cards can be requested for favourite toys, family names, places,
+          clubs, school needs, special interests or personal routines.
+        </p>
+        <ul>
+          <li>Personal wording</li>
+          <li>Useful for home life</li>
+          <li>Great for specific routines</li>
+        </ul>
+        <strong>From £2.00 per card</strong>
+        <a
+          class="custom-button"
+          href="mailto:shinewithoutlimits@hotmail.com?subject=Personalised%20Support%20Card%20Request&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20to%20request%20personalised%20support%20cards.%0A%0AName%3A%0ACard%20words%20or%20ideas%3A%0AQuantity%3A%0AColours%20or%20style%20preferred%3A%0AAny%20personal%20details%20to%20include%3A%0ADelivery%20postcode%3A%0AAny%20notes%3A%0A%0APlease%20can%20you%20confirm%20the%20final%20price%2C%20postage%20and%20timescale%3F"
+        >
+          Request Personalised Cards
+        </a>
+      </article>
+
+      <article class="custom-card">
+        <img src="images/sensory-keyrings.jpg" alt="Custom sensory keyrings and bag tags" />
+        <h2>Bag Tags & Keyrings</h2>
+        <p>
+          Ask about small custom items such as bag tags, keyrings, name labels or simple visual reminders
+          that can travel with a child through the day.
+        </p>
+        <ul>
+          <li>School bag friendly</li>
+          <li>Custom colours possible</li>
+          <li>Good for quick visual prompts</li>
+        </ul>
+        <strong>Coming soon</strong>
+        <a
+          class="custom-button"
+          href="mailto:shinewithoutlimits@hotmail.com?subject=Bag%20Tag%20or%20Keyring%20Interest&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20to%20ask%20about%20custom%20bag%20tags%20or%20keyrings.%0A%0AName%3A%0AWhat%20I%20would%20like%3A%0AColours%20or%20style%20preferred%3A%0AQuantity%3A%0ADelivery%20postcode%3A%0AAny%20notes%3A"
+        >
+          Register Interest
         </a>
       </article>
     </section>
@@ -286,28 +488,43 @@
       <h2>How custom orders work</h2>
       <p>
         Custom orders are handled by email so details can be checked before anything is made.
-        That keeps it simple, personal and clear.
+        This keeps the process simple, personal and clear.
       </p>
 
       <div class="custom-steps">
         <article class="custom-step">
           <b>1</b>
           <h3>Send your idea</h3>
-          <p>Tell us what you need, including words, symbols, colours or bundle theme.</p>
+          <p>Tell us what you need, including words, symbols, colours, quantity or bundle theme.</p>
         </article>
 
         <article class="custom-step">
           <b>2</b>
           <h3>Confirm details</h3>
-          <p>We check the order details, quantity and any personal touches before making it.</p>
+          <p>We check the design details, price, postage and timescale before your order is agreed.</p>
         </article>
 
         <article class="custom-step">
           <b>3</b>
           <h3>Made with care</h3>
-          <p>Your custom order is created, packed and prepared for delivery.</p>
+          <p>Your custom order is created, packed and prepared for delivery once everything is confirmed.</p>
         </article>
       </div>
+    </section>
+
+    <section class="custom-contact-box">
+      <h2>Not sure what to choose?</h2>
+      <p>
+        Send a quick message with what you are trying to support, such as mornings, bedtime,
+        food choices, emotions, school, toilet training or days out. We can help shape the idea into a useful set.
+      </p>
+
+      <a
+        class="custom-button"
+        href="mailto:shinewithoutlimits@hotmail.com?subject=Custom%20Order%20Advice&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20some%20help%20choosing%20a%20custom%20visual%20support%20or%20PECS-style%20set.%0A%0AWhat%20I%20need%20help%20with%3A%0AWho%20it%20is%20for%3A%0AAny%20routines%20or%20situations%20to%20support%3A%0AApprox%20number%20of%20cards%20or%20items%3A%0ADelivery%20postcode%3A%0AAny%20notes%3A"
+      >
+        Email For Help Choosing
+      </a>
     </section>
   </main>
 
