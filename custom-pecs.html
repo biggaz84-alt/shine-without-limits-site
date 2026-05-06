@@ -455,7 +455,7 @@
         <p class="eyebrow">Your card choices</p>
         <h2>Tap or click the cards you want</h2>
         <p>
-          Your PECS basket will count your cards and show which bundle option you are closest to.
+           Your PECS basket will count your cards and estimate the total at £2.00 per card.
         </p>
       </div>
 
@@ -2048,16 +2048,10 @@
     const floatingBasketEstimate = document.getElementById('floatingBasketEstimate');
     const floatingEmailBtn = document.getElementById('floatingEmailBtn');
 
+    
     function getBundlePrice(count) {
-      if (count <= 0) return 0;
-      if (count < 10) return count * 1.5;
-      if (count === 10) return 10;
-      if (count < 20) return 10 + ((count - 10) * 1.5);
-      if (count === 20) return 19;
-      if (count < 40) return 19 + ((count - 20) * 1.5);
-      if (count === 40) return 35;
-      return 35 + ((count - 40) * 1.5);
-    }
+  return count * 2;
+}
 
     function getBundleMessage(count) {
       if (count === 0) {
@@ -2142,7 +2136,7 @@
 
       const subject = encodeURIComponent('PECS Card Selection');
       const body = encodeURIComponent(
-        `Hi Shine Without Limits,\n\nI would like to enquire about these PECS cards:\n\n${emailCardList}\n\nSelected card count: ${count}\nEstimated bundle price: from £${estimate.toFixed(2)}\n\nPlease can you confirm the final price, postage and timescale?\n\nThank you.`
+        `Hi Shine Without Limits,\n\nI would like to enquire about these PECS cards:\n\n${emailCardList}\n\nSelected card count: ${count}\nEstimated card price: from £${estimate.toFixed(2)}\n\nPlease can you confirm the final price, postage and timescale?\n\nThank you.`
       );
 
       emailOrderBtn.href = `mailto:shinewithoutlimits@hotmail.com?subject=${subject}&body=${body}`;
