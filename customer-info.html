@@ -7,7 +7,7 @@
   <title>Customer Information | Shine Without Limits</title>
   <meta
     name="description"
-    content="Customer information for Shine Without Limits including ordering, PayPal payment, delivery, returns, launch pricing and product safety notes."
+    content="Customer information for Shine Without Limits including ordering, PayPal payment, delivery, returns, pricing, custom orders and product safety notes."
   />
 
   <link rel="stylesheet" href="styles.css" />
@@ -29,20 +29,23 @@
       margin: 42px auto 34px;
       padding: 52px 34px;
       border-radius: 36px;
-      background: rgba(255, 255, 255, 0.76);
-      border: 3px solid rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.78);
+      border: 3px solid rgba(255, 255, 255, 0.92);
       box-shadow: 0 20px 55px rgba(10, 82, 160, 0.18);
       text-align: center;
     }
 
     .info-pill {
       display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 10px 18px;
       border-radius: 999px;
       background: #fff2b8;
       color: #835000;
       font-weight: 1000;
       margin-bottom: 16px;
+      box-shadow: 0 8px 18px rgba(131, 80, 0, 0.12);
     }
 
     .info-hero h1 {
@@ -54,12 +57,35 @@
     }
 
     .info-hero p {
-      width: min(760px, 100%);
+      width: min(780px, 100%);
       margin: 22px auto 0;
       color: #416894;
       font-size: 1.12rem;
       line-height: 1.7;
       font-weight: 700;
+    }
+
+    .info-hero-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .info-hero-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #0b58ae;
+      border: 3px solid #ffcf4d;
+      text-decoration: none;
+      font-weight: 1000;
+      box-shadow: 0 12px 26px rgba(10, 82, 160, 0.12);
     }
 
     .info-grid {
@@ -129,7 +155,8 @@
       white-space: nowrap;
     }
 
-    .payment-highlight {
+    .payment-highlight,
+    .info-highlight {
       margin-top: 18px;
       padding: 18px;
       border-radius: 22px;
@@ -137,7 +164,8 @@
       border: 2px solid rgba(255, 255, 255, 0.9);
     }
 
-    .payment-highlight p {
+    .payment-highlight p,
+    .info-highlight p {
       margin: 0;
       color: #0b58ae;
       font-weight: 900;
@@ -163,11 +191,18 @@
       text-decoration: none;
       font-weight: 1000;
       box-shadow: 0 14px 30px rgba(255, 151, 15, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .info-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 36px rgba(255, 151, 15, 0.38);
     }
 
     .info-button.secondary {
       background: #ffffff;
       color: #0b58ae;
+      border: 3px solid #ffcf4d;
       box-shadow: 0 14px 30px rgba(10, 82, 160, 0.12);
     }
 
@@ -189,9 +224,23 @@
         border-radius: 26px;
       }
 
+      .info-hero h1 {
+        letter-spacing: -1px;
+      }
+
       .price-row {
         flex-direction: column;
         gap: 4px;
+      }
+
+      .info-buttons,
+      .info-hero-links {
+        display: grid;
+      }
+
+      .info-button,
+      .info-hero-links a {
+        width: 100%;
       }
     }
   </style>
@@ -200,7 +249,7 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo-link">
+      <a href="index.html" class="logo-link" aria-label="Shine Without Limits home">
         <img src="images/header-logo.png" alt="Shine Without Limits logo" class="site-logo" />
       </a>
 
@@ -209,7 +258,7 @@
         <a href="products.html">Products</a>
         <a href="custom-pecs.html">PECS Cards</a>
         <a href="custom-orders.html">Custom Orders</a>
-        <a href="customer-info.html">Info</a>
+        <a href="customer-info.html" class="active">Info</a>
         <a href="index.html#contact">Contact</a>
       </nav>
     </div>
@@ -220,65 +269,79 @@
       <span class="info-pill">Customer information</span>
       <h1>Ordering, Payment & Safety</h1>
       <p>
-        Helpful information about ordering from Shine Without Limits, including smart PECS pricing,
+        Helpful information about ordering from Shine Without Limits, including PECS-style card pricing,
         PayPal payment, delivery, returns, custom orders and product safety notes.
       </p>
+
+      <div class="info-hero-links">
+        <a href="#ordering-info">Ordering</a>
+        <a href="#pricing-info">Pricing</a>
+        <a href="#payment-info">Payment</a>
+        <a href="#safety-info">Safety</a>
+      </div>
     </section>
 
     <section class="info-grid">
-      <article class="info-card">
+      <article class="info-card" id="ordering-info">
         <h2>How ordering works</h2>
         <p>
           Orders are currently handled by email so every product and custom request can be checked properly before payment.
+          This is especially useful for custom PECS-style cards, routine boards and personalised bundles.
         </p>
         <ul>
-          <li>Choose a product or build a PECS card set.</li>
-          <li>Send your order request by email.</li>
-          <li>We confirm the details, price, postage and timescale.</li>
+          <li>Choose a product, build a PECS card set or send a custom request.</li>
+          <li>Email your order details or use one of the website enquiry buttons.</li>
+          <li>We confirm the details, final price, postage and timescale.</li>
           <li>Payment details are sent after everything is agreed.</li>
         </ul>
       </article>
 
-      <article class="info-card">
-        <h2>PECS card launch prices</h2>
+      <article class="info-card" id="pricing-info">
+        <h2>PECS card pricing</h2>
         <p>
-          These are introductory launch prices. Bundle discounts are applied automatically when they work out cheaper.
-          Larger bespoke sets, extra custom wording, special symbols and bigger requests may be quoted separately.
+          PECS-style cards start from £2.00 per card. Bundle pricing may be available for larger sets and will be confirmed
+          by email before anything is made.
         </p>
 
         <div class="price-list">
           <div class="price-row">
-            <span>1 to 9 ready-made cards</span>
-            <span>£2.00 each</span>
+            <span>PECS-style cards</span>
+            <span>From £2.00 each</span>
           </div>
 
           <div class="price-row">
-            <span>Starter Bundle: 10 cards</span>
-            <span>£10</span>
+            <span>Custom wording cards</span>
+            <span>From £2.00 each</span>
           </div>
 
           <div class="price-row">
-            <span>Everyday Bundle: 20 cards</span>
-            <span>£19</span>
+            <span>Personalised bundles</span>
+            <span>Quoted by email</span>
           </div>
 
           <div class="price-row">
-            <span>Mega Bundle: 40 cards</span>
-            <span>£35</span>
+            <span>Routine boards</span>
+            <span>Quoted by email</span>
           </div>
 
           <div class="price-row">
-            <span>41+ cards</span>
-            <span>£35 + £2.00 per extra card</span>
+            <span>Postage</span>
+            <span>Confirmed before payment</span>
           </div>
+        </div>
+
+        <div class="info-highlight">
+          <p>
+            Final price, postage and timescale are always confirmed by email before your order is agreed.
+          </p>
         </div>
       </article>
 
-      <article class="info-card">
+      <article class="info-card" id="payment-info">
         <h2>PayPal payment</h2>
         <p>
           Payment is taken by PayPal after your order details, postage and final total have been confirmed by email.
-          Please do not send payment until your order has been checked and confirmed.
+          Please do not send payment until your order has been checked and agreed.
         </p>
 
         <div class="payment-highlight">
@@ -303,11 +366,13 @@
         <h2>Delivery</h2>
         <p>
           Delivery times can vary depending on the product, quantity and whether the order is custom-made.
+          A timescale will be confirmed before payment.
         </p>
         <ul>
           <li>Estimated timescale confirmed by email.</li>
           <li>Postage cost confirmed before payment.</li>
           <li>Custom orders may take longer than ready-made items.</li>
+          <li>Delivery details should be checked carefully before the order is made.</li>
         </ul>
       </article>
 
@@ -315,23 +380,26 @@
         <h2>Returns & custom items</h2>
         <p>
           If there is a problem with your order, please get in touch so it can be looked into.
+          Custom-made items are created to your requested details, so returns may be limited unless there is a fault.
         </p>
         <ul>
           <li>Ready-made items may be returnable if unused and in suitable condition.</li>
-          <li>Custom-made items may not be returnable unless faulty.</li>
+          <li>Custom-made or personalised items may not be returnable unless faulty.</li>
           <li>Any issue should be reported as soon as possible after delivery.</li>
+          <li>Please keep photos of any damage or issue so it can be checked properly.</li>
         </ul>
       </article>
 
-      <article class="info-card">
+      <article class="info-card" id="safety-info">
         <h2>Product safety</h2>
         <p>
-          Some sensory items and small products may contain small parts or be unsuitable for unsupervised use.
+          Some sensory items, bag tags, keyrings and small products may contain small parts or be unsuitable for unsupervised use.
         </p>
         <ul>
           <li>Adult supervision is recommended where appropriate.</li>
           <li>Products are not intended to be chewed unless clearly stated.</li>
           <li>Check items regularly and stop use if damaged.</li>
+          <li>Small parts may not be suitable for children under 3 years old.</li>
           <li>Colours and finish may vary slightly on handmade or 3D printed items.</li>
         </ul>
       </article>
@@ -339,14 +407,14 @@
       <article class="info-card">
         <h2>Custom PECS cards</h2>
         <p>
-          Custom PECS cards can be made for routines, emotions, places, food choices, school needs, days out,
+          Custom PECS-style cards can be made for routines, emotions, places, food choices, school needs, days out,
           toilet training and family-specific communication.
         </p>
         <ul>
           <li>Choose from ready-made options.</li>
           <li>Add your own words, symbols or ideas.</li>
           <li>Build your own set using the PECS card builder.</li>
-          <li>Photo-based cards are not available at the moment.</li>
+          <li>Ask by email if you need a card that is not listed.</li>
         </ul>
       </article>
 
@@ -360,6 +428,7 @@
           <li>Order checked by email first.</li>
           <li>Final total confirmed before payment.</li>
           <li>PayPal link supplied for easy payment.</li>
+          <li>No order is started until the details are confirmed.</li>
         </ul>
       </article>
 
@@ -367,6 +436,7 @@
         <h2>Need help before ordering?</h2>
         <p>
           Send a message with what you need and we’ll help work out the best option.
+          You can ask about PECS-style cards, custom bundles, routine boards, sensory items, clothing interest or personalised support.
         </p>
 
         <div class="info-buttons">
@@ -376,6 +446,10 @@
 
           <a href="custom-pecs.html" class="info-button secondary">
             Build a PECS Set
+          </a>
+
+          <a href="custom-orders.html" class="info-button secondary">
+            Request Custom Order
           </a>
 
           <a href="products.html" class="info-button secondary">
