@@ -542,7 +542,7 @@
         <p>
           Can’t see the word or symbol you need? Send me the wording and I can create a custom PECS card for you.
         </p>
-        <a href="mailto:shinewithoutlimits@hotmail.com?subject=Custom%20PECS%20Card%20Request" class="btn secondary-btn">
+        <a href="mailto:shinewithoutlimits@hotmail.com?subject=Custom%20PECS%20Card%20Request&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20to%20ask%20about%20custom%20PECS-style%20cards.%0A%0AMy%20name%3A%0AMy%20postcode%20for%20postage%3A%0ACard%20words%20or%20ideas%20needed%3A%0AQuantity%3A%0AColours%20or%20style%20preferred%3A%0AWho%20the%20cards%20are%20for%3A%0A%0APlease%20can%20you%20confirm%20the%20options%2C%20final%20price%2C%20postage%20and%20timescale%3F%0A%0AThank%20you" class="btn secondary-btn">
           Ask About Custom Cards
         </a>
       </div>
@@ -2113,7 +2113,7 @@
       } else {
         floatingPecBasket.classList.remove('show');
         floatingEmailBtn.classList.add('disabled');
-        floatingEmailBtn.href = 'mailto:shinewithoutlimits@hotmail.com';
+        floatingEmailBtn.href = 'mailto:shinewithoutlimits@hotmail.com?subject=PECS%20Card%20Selection%20Help&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20some%20help%20choosing%20PECS%20cards.%0A%0AMy%20name%3A%0AMy%20postcode%20for%20postage%3A%0AWhat%20I%20need%20support%20with%3A%0AAny%20questions%3A%0A%0AThank%20you';
       }
     }
 
@@ -2137,7 +2137,7 @@
         selectedList.textContent = 'No cards selected yet.';
         emailOrderBtn.classList.add('disabled');
         emailOrderBtn.setAttribute('aria-disabled', 'true');
-        emailOrderBtn.href = 'mailto:shinewithoutlimits@hotmail.com';
+        emailOrderBtn.href = 'mailto:shinewithoutlimits@hotmail.com?subject=PECS%20Card%20Selection%20Help&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20some%20help%20choosing%20PECS%20cards.%0A%0AMy%20name%3A%0AMy%20postcode%20for%20postage%3A%0AWhat%20I%20need%20support%20with%3A%0AAny%20questions%3A%0A%0AThank%20you';
         return;
       }
 
@@ -2151,7 +2151,7 @@
 
       const subject = encodeURIComponent('PECS Card Selection');
       const body = encodeURIComponent(
-        `Hi Shine Without Limits,\n\nI would like to enquire about these PECS cards:\n\n${emailCardList}\n\nSelected card count: ${count}\nEstimated card price: from £${estimate.toFixed(2)}\n\nPlease can you confirm the final price, postage and timescale?\n\nThank you.`
+        `Hi Shine Without Limits,\n\nI would like to enquire about these PECS cards:\n\n${emailCardList}\n\nSelected card count: ${count}\nEstimated card price: from £${estimate.toFixed(2)}\n\nMy name:\nMy postcode for postage:\nAny custom wording, colour or symbol notes:\n\nPlease can you confirm the final price, postage and timescale?\n\nThank you.`
       );
 
       emailOrderBtn.href = `mailto:shinewithoutlimits@hotmail.com?subject=${subject}&body=${body}`;
