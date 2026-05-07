@@ -588,6 +588,24 @@ a {
   font-size: 1.05rem;
 }
 
+
+.soft-note {
+  width: min(980px, 100%);
+  margin: 18px auto 0;
+  padding: 16px 18px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 2px solid rgba(255, 191, 63, 0.36);
+  box-shadow: 0 10px 22px rgba(18, 57, 111, 0.08);
+  text-align: center;
+}
+
+.soft-note p {
+  color: #375d8d;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
 .custom-section {
   padding: 30px 0;
 }

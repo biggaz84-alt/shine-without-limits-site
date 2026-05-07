@@ -405,57 +405,54 @@
 
     <section class="pec-pricing-section">
       <div class="section-heading">
-        <p class="eyebrow">Simple launch pricing</p>
+        <p class="eyebrow">Simple pricing</p>
         <h2>PECS Card Prices</h2>
         <p>
-          Mix and match the cards you need. Final price, postage and timescale will always be confirmed by email before making.
+          Standard ready-made visual cards are £2.00 each. Personalised word or symbol cards start from £2.50 each, and fully custom visual cards start from £3.00 each.
+          Final price, postage and timescale will always be confirmed by email before making.
         </p>
       </div>
 
-      <section class="pec-pricing-section">
-  <div class="section-heading">
-    <p class="eyebrow">Simple pricing</p>
-    <h2>PECS Card Prices</h2>
-    <p>
-      Mix and match the cards you need for £2.00 per card.
-      Final price, postage and timescale will always be confirmed by email before making.
-    </p>
-  </div>
+      <div class="pec-pricing-grid">
+        <article class="pec-price-card">
+          <h3>Standard Visual Cards</h3>
+          <p class="price">£2.00 each</p>
+          <p>Pick from the existing PECS cards shown below and build a set that works for you.</p>
+        </article>
 
-  <div class="pec-pricing-grid">
-    <article class="pec-price-card">
-      <h3>Choose Any Cards</h3>
-      <p class="price">£2.00 each</p>
-      <p>Pick from the existing PECS cards shown below and build a set that works for you.</p>
-    </article>
+        <article class="pec-price-card featured">
+          <h3>Build Your Own Set</h3>
+          <p class="price">Bundles from £8.99</p>
+          <p>Choose 5, 10, 15 or 20 cards for routines, places, toilet support, drinks, activities and everyday choices.</p>
+        </article>
 
-    <article class="pec-price-card featured">
-      <h3>Build Your Own Set</h3>
-      <p class="price">£2.00 per card</p>
-      <p>Great for routines, places, toilet support, drinks, activities and everyday choices.</p>
-    </article>
+        <article class="pec-price-card">
+          <h3>Personalised &amp; Custom</h3>
+          <p class="price">From £2.50</p>
+          <p>Personalised wording, symbols or fully custom card requests can be confirmed by email.</p>
+        </article>
+      </div>
 
-    <article class="pec-price-card">
-      <h3>Custom Cards</h3>
-      <p class="price">£2.00 each</p>
-      <p>Custom wording, symbols or personalised card requests can be confirmed by email.</p>
-    </article>
-  </div>
+      <div class="bundle-price-strip">
+        <span>5 cards £8.99</span>
+        <span>10 cards £16.99</span>
+        <span>15 cards £23.99</span>
+        <span>20 cards £29.99</span>
+      </div>
 
-  <div class="bundle-price-strip">
-    <span>5 cards £10</span>
-    <span>10 cards £20</span>
-    <span>20 cards £40</span>
-    <span>40 cards £80</span>
-  </div>
-</section>
+      <div class="soft-note">
+        <p>
+          Photo cards are not currently available. We focus on clear, bold visual cards with simple symbols and wording so they print cleanly and stay easy to understand.
+        </p>
+      </div>
+    </section>
 
     <section class="pec-builder-section" id="pec-builder">
       <div class="section-heading">
         <p class="eyebrow">Your card choices</p>
         <h2>Tap or click the cards you want</h2>
         <p>
-           Your PECS basket will count your cards and estimate the total at £2.00 per card.
+           Your PECS basket will count your cards and estimate the total using the current bundle prices.
         </p>
       </div>
 
@@ -2050,42 +2047,60 @@
 
     
     function getBundlePrice(count) {
-  return count * 2;
-}
+      if (count <= 0) return 0;
+      if (count < 5) return count * 2;
+      if (count === 5) return 8.99;
+      if (count < 10) return Math.min(8.99 + ((count - 5) * 2), 16.99);
+      if (count === 10) return 16.99;
+      if (count < 15) return Math.min(16.99 + ((count - 10) * 2), 23.99);
+      if (count === 15) return 23.99;
+      if (count < 20) return Math.min(23.99 + ((count - 15) * 2), 29.99);
+      if (count === 20) return 29.99;
+      return 29.99 + ((count - 20) * 2);
+    }
 
     function getBundleMessage(count) {
       if (count === 0) {
         return 'Choose your cards and I’ll help you spot the best bundle option.';
       }
 
-      if (count < 10) {
+      if (count < 5) {
+        const remaining = 5 - count;
+        return `Add ${remaining} more card${remaining === 1 ? '' : 's'} to unlock the Mini Starter Set: 5 cards for £8.99.`;
+      }
+
+      if (count === 5) {
+        return 'Nice, you’ve unlocked the Mini Starter Set: 5 cards for £8.99.';
+      }
+
+      if (count > 5 && count < 10) {
         const remaining = 10 - count;
-        return `Add ${remaining} more card${remaining === 1 ? '' : 's'} to unlock the 10 cards from £10 bundle.`;
+        return `You’re on the Mini Starter Set, with extra cards estimated at £2.00 each. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach the Starter Set: 10 cards for £16.99.`;
       }
 
       if (count === 10) {
-        return 'Nice, you’ve unlocked the 10 cards from £10 bundle.';
+        return 'Lovely, you’ve unlocked the Starter Set: 10 cards for £16.99.';
       }
 
-      if (count > 10 && count < 20) {
+      if (count > 10 && count < 15) {
+        const remaining = 15 - count;
+        return `You’re on the Starter Set, with extra cards estimated at £2.00 each. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach the Everyday Set: 15 cards for £23.99.`;
+      }
+
+      if (count === 15) {
+        return 'Brilliant, you’ve unlocked the Everyday Set: 15 cards for £23.99.';
+      }
+
+      if (count > 15 && count < 20) {
         const remaining = 20 - count;
-        return `You’re on the 10 card bundle, with extra cards added at £1.50 each. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 20 cards from £19.`;
+        return `You’re on the Everyday Set, with extra cards estimated at £2.00 each. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach the Routine Set: 20 cards for £29.99.`;
       }
 
       if (count === 20) {
-        return 'Lovely, you’ve unlocked the 20 cards from £19 bundle.';
+        return 'Perfect, you’ve unlocked the Routine Set: 20 cards for £29.99.';
       }
 
-      if (count > 20 && count < 40) {
-        const remaining = 40 - count;
-        return `You’re on the 20 card bundle, with extra cards added at £1.50 each. Add ${remaining} more card${remaining === 1 ? '' : 's'} to reach 40 cards from £35.`;
-      }
-
-      if (count === 40) {
-        return 'Brilliant, you’ve unlocked the 40 cards from £35 bundle.';
-      }
-
-      return 'You’re over the 40 card bundle, with extra cards added at £1.50 each.';
+      return 'You’re over the 20 card Routine Set. Extra cards are estimated at £2.00 each, with the final price confirmed by email.';
     }
 
     function updateFloatingBasket(count, estimate) {
