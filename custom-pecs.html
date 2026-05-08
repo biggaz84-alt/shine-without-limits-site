@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Build Your PECS Set | Shine Without Limits</title>
+  <title>Build Your Visual Card Set | Shine Without Limits</title>
   <meta
     name="description"
-    content="Build your own PECS card set from Shine Without Limits. Choose the cards you need and send your selection by email."
+    content="Build your own PECS-style visual card set from Shine Without Limits. Choose the cards you need and send your selection by email."
   />
 
   <link rel="stylesheet" href="styles.css" />
@@ -54,6 +54,17 @@
       transform: translateY(-3px);
       background: #fff8d8;
       box-shadow: 0 14px 26px rgba(18, 57, 111, 0.18);
+    }
+
+    .builder-founder-note {
+      margin: 18px auto 0;
+      max-width: 760px;
+      padding: 14px 16px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.82);
+      color: #12396f;
+      font-weight: 850;
+      box-shadow: 0 10px 22px rgba(18, 57, 111, 0.1);
     }
 
     .pec-search-box {
@@ -309,6 +320,181 @@
       pointer-events: none;
     }
 
+
+
+    .builder-trust-panel {
+      width: min(1050px, 100%);
+      margin: 0 auto 28px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .builder-trust-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 3px solid rgba(255, 255, 255, 0.95);
+      border-radius: 24px;
+      padding: 18px;
+      color: #12396f;
+      box-shadow: 0 12px 26px rgba(18, 57, 111, 0.11);
+    }
+
+    .builder-trust-card h3 {
+      margin-bottom: 8px;
+      color: #12396f;
+      font-size: 1.02rem;
+      font-weight: 900;
+    }
+
+    .builder-trust-card p {
+      color: #24517f;
+      font-weight: 750;
+      line-height: 1.5;
+      font-size: 0.94rem;
+    }
+
+    .builder-small-print {
+      width: min(1050px, 100%);
+      margin: -8px auto 32px;
+      padding: 18px;
+      border-radius: 24px;
+      background: #fff8d8;
+      border: 3px solid #ffbf3f;
+      color: #12396f;
+      box-shadow: 0 12px 26px rgba(18, 57, 111, 0.11);
+      font-weight: 800;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .builder-small-print a {
+      color: #12396f;
+      font-weight: 900;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 12px 0;
+      font-size: 0.92rem;
+      font-weight: 850;
+    }
+
+    .footer-links a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+
+    .custom-estimate-panel {
+      width: min(1050px, 100%);
+      margin: 0 auto 26px;
+      padding: 22px 18px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 3px solid rgba(255, 255, 255, 0.95);
+      border-radius: 28px;
+      box-shadow: 0 14px 30px rgba(18, 57, 111, 0.12);
+      text-align: center;
+    }
+
+    .custom-estimate-panel h3 {
+      margin-bottom: 8px;
+      color: #12396f;
+      font-size: 1.35rem;
+    }
+
+    .custom-estimate-panel p {
+      color: #24517f;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .custom-estimate-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .custom-estimate-item {
+      display: grid;
+      gap: 8px;
+      padding: 16px;
+      border-radius: 22px;
+      background: #ffffff;
+      border: 2px solid #dff4ff;
+      color: #12396f;
+      font-weight: 900;
+    }
+
+    .custom-estimate-item span {
+      color: #ff6f9f;
+      font-size: 0.94rem;
+    }
+
+    .custom-estimate-item input {
+      width: 100%;
+      max-width: 120px;
+      margin: 0 auto;
+      border: 3px solid #ffbf3f;
+      border-radius: 999px;
+      padding: 10px 12px;
+      font: inherit;
+      font-weight: 900;
+      text-align: center;
+      color: #12396f;
+    }
+
+    .copy-selection-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 900;
+      text-decoration: none;
+      border: 3px solid #9fe7ff;
+      cursor: pointer;
+      background: #ffffff;
+      color: #12396f;
+      box-shadow: 0 10px 20px rgba(18, 57, 111, 0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .copy-selection-btn:hover {
+      transform: translateY(-3px);
+      background: #effaff;
+      box-shadow: 0 14px 26px rgba(18, 57, 111, 0.18);
+    }
+
+    .copy-status {
+      margin-top: 10px;
+      color: #24517f;
+      font-weight: 900;
+      text-align: center;
+      min-height: 22px;
+    }
+
+    .email-fallback-note {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: #fff8d8;
+      border: 2px solid #ffbf3f;
+      color: #12396f;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 750px) {
+      .custom-estimate-grid {
+        grid-template-columns: 1fr;
+      }
+    }
     @media (max-width: 850px) {
       #cardSections {
         gap: 34px;
@@ -326,7 +512,18 @@
 
     @media (max-width: 750px) {
       .pec-jump-box,
-      .pec-search-box {
+      .builder-founder-note {
+      margin: 18px auto 0;
+      max-width: 760px;
+      padding: 14px 16px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.82);
+      color: #12396f;
+      font-weight: 850;
+      box-shadow: 0 10px 22px rgba(18, 57, 111, 0.1);
+    }
+
+    .pec-search-box {
         border-radius: 22px;
         padding: 18px 12px;
       }
@@ -342,6 +539,10 @@
 
       .builder-actions {
         display: grid;
+      }
+
+      .builder-trust-panel {
+        grid-template-columns: 1fr;
       }
 
       .clear-selection-btn {
@@ -378,6 +579,7 @@
 
       <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
+        <a href="about.html">About</a>
         <a href="products.html">Products</a>
         <a href="custom-pecs.html" class="active">Build PECS Set</a>
         <a href="customer-info.html">Info</a>
@@ -390,11 +592,14 @@
     <section class="pec-builder-hero">
       <div class="pec-builder-hero-inner">
         <p class="eyebrow">Build your own set</p>
-        <h1>Choose Your PECS Cards</h1>
+        <h1>Choose Your Visual Cards</h1>
         <p>
           Pick the cards you would like, then send your selection by email.
           I’ll confirm the final price, postage and timescale before anything is made.
         </p>
+
+
+        <p class="builder-founder-note">Created by Gareth and Vicky, a UK family-led project shaped by lived experience, care-community insight and the need for visual cards that can handle real everyday use.</p>
 
         <div class="builder-hero-buttons">
           <a href="#pec-builder" class="btn primary-btn">Start Choosing</a>
@@ -440,6 +645,28 @@
         <span>20 cards £29.99</span>
       </div>
 
+
+      <div class="builder-trust-panel" aria-label="Ordering information">
+        <article class="builder-trust-card">
+          <h3>Payment</h3>
+          <p>Payment is made after your card choices, final total and postage are confirmed. We can send a secure Stripe card payment link once your final total is confirmed. PayPal and bank transfer are also available if preferred.</p>
+        </article>
+
+        <article class="builder-trust-card">
+          <h3>Making time</h3>
+          <p>Ready-made card selections usually dispatch within 3-5 working days. Custom wording or symbols usually take 5-10 working days after details and payment are confirmed.</p>
+        </article>
+
+        <article class="builder-trust-card">
+          <h3>Schools &amp; SEN settings</h3>
+          <p>Written quotes are available for schools, nurseries and SEN settings. Purchase order requests can be discussed before ordering.</p>
+        </article>
+      </div>
+
+      <p class="builder-small-print">
+        These are visual communication support items for supervised use. They are not toys, teethers, chew products, medical devices or official PECS® training materials. See our <a href="safety-info.html">safety information</a> before ordering.
+      </p>
+
       <div class="soft-note">
         <p>
           Photo cards are not currently available. We focus on clear, bold visual cards with simple symbols and wording so they print cleanly and stay easy to understand.
@@ -454,6 +681,23 @@
         <p>
            Your PECS basket will count your cards and estimate the total using the current bundle prices.
         </p>
+      </div>
+
+      <div class="custom-estimate-panel" aria-label="Custom card estimate options">
+        <h3>Add custom cards to your estimate</h3>
+        <p>If you need personalised wording or fully custom symbols, add a rough quantity here so your estimated total is closer before you email.</p>
+        <div class="custom-estimate-grid">
+          <label class="custom-estimate-item" for="personalisedCustomCount">
+            Personalised word or symbol cards
+            <span>from £2.50 each</span>
+            <input id="personalisedCustomCount" type="number" min="0" max="99" value="0" inputmode="numeric" />
+          </label>
+          <label class="custom-estimate-item" for="fullCustomCount">
+            Fully custom visual cards
+            <span>from £3.00 each</span>
+            <input id="fullCustomCount" type="number" min="0" max="99" value="0" inputmode="numeric" />
+          </label>
+        </div>
       </div>
 
       <div class="builder-summary">
@@ -481,19 +725,29 @@
           <a
             id="emailOrderBtn"
             class="btn primary-btn disabled"
-            href="mailto:shinewithoutlimits@hotmail.com"
+            href="mailto:orders@shinewithoutlimits.co.uk"
             aria-disabled="true"
           >
             Email My Selection
           </a>
+
+          <button class="copy-selection-btn" id="copySelectionBtn" type="button">
+            Copy My Selection
+          </button>
 
           <button class="clear-selection-btn" id="clearSelectionBtn" type="button">
             Clear Selection
           </button>
         </div>
 
+        <p class="copy-status" id="copyStatus" aria-live="polite"></p>
+
+        <p class="email-fallback-note">
+          If the email button does not open on your phone, use <strong>Copy My Selection</strong> and paste it into your own email app. Send it to orders@shinewithoutlimits.co.uk with your name and delivery postcode.
+        </p>
+
         <p class="basket-note">
-          Final price, postage and timescale will be confirmed by email before making.
+          Final price, postage, payment method and timescale will be confirmed by email before making. Payment can be made by secure Stripe card payment link where available, or by PayPal/bank transfer if preferred.
         </p>
       </div>
 
@@ -530,7 +784,7 @@
 
       <div class="floating-basket-bottom">
         <span id="floatingBasketEstimate">From £0.00</span>
-        <a id="floatingEmailBtn" href="mailto:shinewithoutlimits@hotmail.com" class="floating-email-btn disabled">
+        <a id="floatingEmailBtn" href="mailto:orders@shinewithoutlimits.co.uk" class="floating-email-btn disabled">
           Email
         </a>
       </div>
@@ -540,9 +794,9 @@
       <div class="pec-info-card">
         <h2>Need a custom card?</h2>
         <p>
-          Can’t see the word or symbol you need? Send me the wording and I can create a custom PECS card for you.
+          Can’t see the word or symbol you need? Send me the wording and I can create a custom PECS-style visual card for you.
         </p>
-        <a href="mailto:shinewithoutlimits@hotmail.com?subject=Custom%20PECS%20Card%20Request&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20to%20ask%20about%20custom%20PECS-style%20cards.%0A%0AMy%20name%3A%0AMy%20postcode%20for%20postage%3A%0ACard%20words%20or%20ideas%20needed%3A%0AQuantity%3A%0AColours%20or%20style%20preferred%3A%0AWho%20the%20cards%20are%20for%3A%0A%0APlease%20can%20you%20confirm%20the%20options%2C%20final%20price%2C%20postage%20and%20timescale%3F%0A%0AThank%20you" class="btn secondary-btn">
+        <a href="mailto:orders@shinewithoutlimits.co.uk?subject=Custom%20PECS%20Card%20Request&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20to%20ask%20about%20custom%20PECS-style%20cards.%0A%0AMy%20name%3A%0AMy%20postcode%20for%20postage%3A%0ACard%20words%20or%20ideas%20needed%3A%0AQuantity%3A%0AColours%20or%20style%20preferred%3A%0AWho%20the%20cards%20are%20for%3A%0A%0APlease%20can%20you%20confirm%20the%20options%2C%20final%20price%2C%20postage%20and%20timescale%3F%0A%0AThank%20you" class="btn secondary-btn">
           Ask About Custom Cards
         </a>
       </div>
@@ -553,8 +807,16 @@
     <div class="footer-inner">
       <img src="images/header-logo.png" alt="Shine Without Limits logo" class="footer-logo" />
       <p>Helping every child shine without limits.</p>
+      <p>Small UK-based family-led project creating visual communication support items.</p>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="delivery-returns.html">Delivery &amp; Returns</a>
+        <a href="safety-info.html">Safety Info</a>
+      </nav>
       <p>
-        <a href="mailto:shinewithoutlimits@hotmail.com">shinewithoutlimits@hotmail.com</a>
+        <a href="mailto:hello@shinewithoutlimits.co.uk">hello@shinewithoutlimits.co.uk</a> · <a href="mailto:orders@shinewithoutlimits.co.uk">orders@shinewithoutlimits.co.uk</a> · <a href="mailto:support@shinewithoutlimits.co.uk">support@shinewithoutlimits.co.uk</a>
       </p>
     </div>
   </footer>
@@ -2037,6 +2299,10 @@
     const selectedList = document.getElementById('selectedList');
     const emailOrderBtn = document.getElementById('emailOrderBtn');
     const clearSelectionBtn = document.getElementById('clearSelectionBtn');
+    const copySelectionBtn = document.getElementById('copySelectionBtn');
+    const copyStatus = document.getElementById('copyStatus');
+    const personalisedCustomCount = document.getElementById('personalisedCustomCount');
+    const fullCustomCount = document.getElementById('fullCustomCount');
     const bundleHelper = document.getElementById('bundleHelper');
     const basketEstimate = document.getElementById('basketEstimate');
     const floatingPecBasket = document.getElementById('floatingPecBasket');
@@ -2113,7 +2379,77 @@
       } else {
         floatingPecBasket.classList.remove('show');
         floatingEmailBtn.classList.add('disabled');
-        floatingEmailBtn.href = 'mailto:shinewithoutlimits@hotmail.com?subject=PECS%20Card%20Selection%20Help&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20some%20help%20choosing%20PECS%20cards.%0A%0AMy%20name%3A%0AMy%20postcode%20for%20postage%3A%0AWhat%20I%20need%20support%20with%3A%0AAny%20questions%3A%0A%0AThank%20you';
+        floatingEmailBtn.href = 'mailto:orders@shinewithoutlimits.co.uk?subject=PECS%20Card%20Selection%20Help&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20some%20help%20choosing%20PECS%20cards.%0A%0AMy%20name%3A%0AMy%20postcode%20for%20postage%3A%0AWhat%20I%20need%20support%20with%3A%0AAny%20questions%3A%0A%0AThank%20you';
+      }
+    }
+
+
+    function getCustomCounts() {
+      const personalised = Math.max(0, parseInt(personalisedCustomCount.value || '0', 10) || 0);
+      const fullCustom = Math.max(0, parseInt(fullCustomCount.value || '0', 10) || 0);
+      return { personalised, fullCustom };
+    }
+
+    function buildOrderText(selected, standardCount, customCounts, estimate) {
+      const emailCardList = selected.length
+        ? selected.map((card) => `- ${card.name} (${card.category})`).join('\n')
+        : '- No standard cards selected yet';
+
+      const customLines = [];
+      if (customCounts.personalised > 0) {
+        customLines.push(`- ${customCounts.personalised} personalised word/symbol card(s) from £2.50 each`);
+      }
+      if (customCounts.fullCustom > 0) {
+        customLines.push(`- ${customCounts.fullCustom} fully custom visual card(s) from £3.00 each`);
+      }
+
+      return `Hi Shine Without Limits,
+
+I would like to enquire about these visual cards:
+
+Standard card selection:
+${emailCardList}
+
+Custom card estimate:
+${customLines.length ? customLines.join('\n') : '- No custom cards added to estimate'}
+
+Standard selected card count: ${standardCount}
+Estimated card price: from £${estimate.toFixed(2)}
+
+My name:
+My postcode for postage:
+Any custom wording, colour or symbol notes:
+Any deadline:
+Any safety notes we should know:
+
+Please can you confirm the final price, postage, payment method and timescale? I understand payment can be made by secure Stripe card payment link where available, or by PayPal/bank transfer if preferred.
+
+Thank you.`;
+    }
+
+    async function copySelection() {
+      const selected = Array.from(checkboxes)
+        .filter((checkbox) => checkbox.checked)
+        .map((checkbox) => ({
+          name: checkbox.value,
+          category: checkbox.dataset.category
+        }));
+
+      const customCounts = getCustomCounts();
+      const estimate = getBundlePrice(selected.length) + (customCounts.personalised * 2.5) + (customCounts.fullCustom * 3);
+      const orderText = buildOrderText(selected, selected.length, customCounts, estimate);
+
+      try {
+        await navigator.clipboard.writeText(orderText);
+        copyStatus.textContent = 'Selection copied. Paste it into your email or message app.';
+      } catch (error) {
+        const tempTextArea = document.createElement('textarea');
+        tempTextArea.value = orderText;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextArea);
+        copyStatus.textContent = 'Selection copied. Paste it into your email or message app.';
       }
     }
 
@@ -2125,36 +2461,44 @@
           category: checkbox.dataset.category
         }));
 
-      const count = selected.length;
-      const estimate = getBundlePrice(count);
+      const customCounts = getCustomCounts();
+      const standardCount = selected.length;
+      const totalCardCount = standardCount + customCounts.personalised + customCounts.fullCustom;
+      const estimate = getBundlePrice(standardCount) + (customCounts.personalised * 2.5) + (customCounts.fullCustom * 3);
 
-      selectedCount.textContent = count;
+      selectedCount.textContent = totalCardCount;
       basketEstimate.textContent = `Estimated from £${estimate.toFixed(2)}`;
-      bundleHelper.textContent = getBundleMessage(count);
-      updateFloatingBasket(count, estimate);
+      bundleHelper.textContent = standardCount > 0
+        ? getBundleMessage(standardCount)
+        : 'Add standard cards, personalised cards or fully custom cards to build your estimate.';
+      updateFloatingBasket(totalCardCount, estimate);
 
-      if (count === 0) {
+      if (totalCardCount === 0) {
         selectedList.textContent = 'No cards selected yet.';
         emailOrderBtn.classList.add('disabled');
         emailOrderBtn.setAttribute('aria-disabled', 'true');
-        emailOrderBtn.href = 'mailto:shinewithoutlimits@hotmail.com?subject=PECS%20Card%20Selection%20Help&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20some%20help%20choosing%20PECS%20cards.%0A%0AMy%20name%3A%0AMy%20postcode%20for%20postage%3A%0AWhat%20I%20need%20support%20with%3A%0AAny%20questions%3A%0A%0AThank%20you';
+        emailOrderBtn.href = 'mailto:orders@shinewithoutlimits.co.uk?subject=PECS%20Card%20Selection%20Help&body=Hi%20Shine%20Without%20Limits%2C%0A%0AI%20would%20like%20some%20help%20choosing%20visual%20cards.%0A%0AMy%20name%3A%0AMy%20postcode%20for%20postage%3A%0AWhat%20I%20need%20support%20with%3A%0AAny%20questions%3A%0A%0AThank%20you';
+        floatingEmailBtn.classList.add('disabled');
+        floatingEmailBtn.href = emailOrderBtn.href;
         return;
       }
 
-      selectedList.innerHTML = selected
-        .map((card) => `<span>${card.name}</span>`)
-        .join('');
+      const selectedItemsHtml = [];
+      selected.forEach((card) => {
+        selectedItemsHtml.push(`<span>${card.name}</span>`);
+      });
+      if (customCounts.personalised > 0) {
+        selectedItemsHtml.push(`<span>${customCounts.personalised} personalised card${customCounts.personalised === 1 ? '' : 's'}</span>`);
+      }
+      if (customCounts.fullCustom > 0) {
+        selectedItemsHtml.push(`<span>${customCounts.fullCustom} fully custom card${customCounts.fullCustom === 1 ? '' : 's'}</span>`);
+      }
+      selectedList.innerHTML = selectedItemsHtml.join('');
 
-      const emailCardList = selected
-        .map((card) => `- ${card.name} (${card.category})`)
-        .join('\n');
+      const subject = encodeURIComponent('Visual Card Selection');
+      const body = encodeURIComponent(buildOrderText(selected, standardCount, customCounts, estimate));
 
-      const subject = encodeURIComponent('PECS Card Selection');
-      const body = encodeURIComponent(
-        `Hi Shine Without Limits,\n\nI would like to enquire about these PECS cards:\n\n${emailCardList}\n\nSelected card count: ${count}\nEstimated card price: from £${estimate.toFixed(2)}\n\nMy name:\nMy postcode for postage:\nAny custom wording, colour or symbol notes:\n\nPlease can you confirm the final price, postage and timescale?\n\nThank you.`
-      );
-
-      emailOrderBtn.href = `mailto:shinewithoutlimits@hotmail.com?subject=${subject}&body=${body}`;
+      emailOrderBtn.href = `mailto:orders@shinewithoutlimits.co.uk?subject=${subject}&body=${body}`;
       emailOrderBtn.classList.remove('disabled');
       emailOrderBtn.setAttribute('aria-disabled', 'false');
       floatingEmailBtn.href = emailOrderBtn.href;
@@ -2165,6 +2509,9 @@
       checkboxes.forEach((checkbox) => {
         checkbox.checked = false;
       });
+      personalisedCustomCount.value = 0;
+      fullCustomCount.value = 0;
+      copyStatus.textContent = '';
 
       updateSelection();
     }
@@ -2219,6 +2566,9 @@
     });
 
     clearSelectionBtn.addEventListener('click', clearSelection);
+    copySelectionBtn.addEventListener('click', copySelection);
+    personalisedCustomCount.addEventListener('input', updateSelection);
+    fullCustomCount.addEventListener('input', updateSelection);
     cardSearchInput.addEventListener('input', filterCards);
 
     updateSelection();
