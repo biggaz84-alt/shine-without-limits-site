@@ -2468,3 +2468,13 @@ footer p,
   }
 }
 
+
+
+/* Launch polish: keep the custom products section balanced on desktop */
+.custom-options-grid {
+  align-items: stretch;
+}
+
+.custom-options-grid .catalogue-card {
+  height: 100%;
+}
