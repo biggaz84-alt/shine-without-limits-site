@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shinewithoutlimits.co.uk/sitemap.xml
