@@ -1,0 +1,259 @@
+/* =========================================================
+   Shine Wear Coming Soon add-on styles
+   Keeps the clothing launch separate from your main styles.css
+   ========================================================= */
+
+.shine-wear-teaser,
+.shine-wear-products-section,
+.shine-wear-hero {
+  position: relative;
+}
+
+.shine-wear-teaser-panel,
+.shine-wear-products-panel,
+.shine-wear-hero-panel,
+.shine-wear-info-panel {
+  border-radius: 30px;
+  border: 1px solid rgba(127, 163, 224, 0.22);
+  box-shadow: 0 18px 46px rgba(75, 108, 180, 0.14);
+}
+
+.shine-wear-teaser {
+  padding: 30px 0 10px;
+}
+
+.shine-wear-teaser-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.75fr);
+  gap: 24px;
+  align-items: center;
+  padding: 34px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 222, 239, 0.95), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(180, 230, 255, 0.9), transparent 38%),
+    linear-gradient(135deg, rgba(255,255,255,0.95), rgba(247,252,255,0.96));
+}
+
+.shine-wear-teaser-copy h2,
+.shine-wear-products-copy h3,
+.shine-wear-hero-panel h1 {
+  color: #24304f;
+  line-height: 1.06;
+}
+
+.shine-wear-teaser-copy h2 {
+  margin-bottom: 14px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.shine-wear-teaser-copy p,
+.shine-wear-products-copy p,
+.shine-wear-hero-panel p,
+.shine-wear-info-panel p {
+  color: #5f6b87;
+  line-height: 1.7;
+}
+
+.shine-wear-preview-card {
+  padding: 28px;
+  border-radius: 26px;
+  background: rgba(255,255,255,0.88);
+  text-align: center;
+  box-shadow: 0 14px 30px rgba(75, 108, 180, 0.12);
+}
+
+.shine-wear-preview-bubble,
+.shine-wear-range-icon {
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 14px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #8bd7ff, #ffd7eb);
+  font-size: 2rem;
+}
+
+.shine-wear-size-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.shine-wear-size-pills span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid rgba(127, 163, 224, 0.24);
+  box-shadow: 0 10px 24px rgba(75, 108, 180, 0.08);
+  color: #24304f;
+  font-weight: 800;
+}
+
+.shine-wear-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.shine-wear-hero {
+  padding: 32px 0;
+}
+
+.shine-wear-hero-panel {
+  padding: clamp(34px, 6vw, 72px);
+  text-align: center;
+  background:
+    radial-gradient(circle at top left, rgba(255, 215, 235, 0.96), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(139, 215, 255, 0.9), transparent 38%),
+    linear-gradient(135deg, rgba(255,255,255,0.96), rgba(246,252,255,0.96));
+}
+
+.shine-wear-hero-panel h1 {
+  margin: 0 0 16px;
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+}
+
+.shine-wear-hero-panel p {
+  max-width: 830px;
+  margin: 0 auto 16px;
+  font-size: 1.08rem;
+}
+
+.shine-wear-hero-panel .shine-wear-size-pills,
+.shine-wear-hero-panel .shine-wear-actions {
+  justify-content: center;
+}
+
+.shine-wear-info-panel {
+  max-width: 930px;
+  margin: 0 auto;
+  padding: 28px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.96), rgba(250,253,255,0.96));
+  text-align: center;
+}
+
+.shine-wear-range-grid,
+.shine-wear-design-grid,
+.shine-wear-products-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.shine-wear-range-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.shine-wear-design-grid,
+.shine-wear-products-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.shine-wear-range-card,
+.shine-wear-mini-card {
+  height: 100%;
+  padding: 24px;
+  border-radius: 26px;
+  border: 1px solid rgba(127, 163, 224, 0.22);
+  background:
+    radial-gradient(circle at top left, rgba(255, 240, 168, 0.42), transparent 34%),
+    #ffffff;
+  box-shadow: 0 14px 30px rgba(75, 108, 180, 0.1);
+}
+
+.shine-wear-range-card {
+  text-align: center;
+}
+
+.shine-wear-mini-card h3,
+.shine-wear-mini-card h4,
+.shine-wear-range-card h3 {
+  margin-bottom: 10px;
+  color: #24304f;
+}
+
+.shine-wear-mini-card p,
+.shine-wear-range-card p {
+  color: #5f6b87;
+  line-height: 1.65;
+}
+
+.shine-wear-card-note {
+  margin-top: 14px;
+  font-weight: 800;
+  color: #24304f !important;
+}
+
+.shine-wear-products-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.2fr);
+  gap: 24px;
+  align-items: start;
+  padding: 30px;
+  background:
+    radial-gradient(circle at top right, rgba(234, 220, 255, 0.8), transparent 32%),
+    radial-gradient(circle at bottom left, rgba(223, 248, 216, 0.8), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,0.96), rgba(249,252,255,0.96));
+}
+
+.shine-wear-products-copy h3 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+
+@media (max-width: 960px) {
+  .shine-wear-teaser-panel,
+  .shine-wear-products-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .shine-wear-design-grid,
+  .shine-wear-products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .shine-wear-preview-card {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 660px) {
+  .shine-wear-teaser {
+    padding-top: 18px;
+  }
+
+  .shine-wear-teaser-panel,
+  .shine-wear-products-panel,
+  .shine-wear-hero-panel,
+  .shine-wear-info-panel {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .shine-wear-size-pills,
+  .shine-wear-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .shine-wear-size-pills span,
+  .shine-wear-actions a {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .shine-wear-range-grid,
+  .shine-wear-design-grid,
+  .shine-wear-products-grid {
+    grid-template-columns: 1fr;
+  }
+}
