@@ -3196,3 +3196,128 @@ footer p,
     border-radius: 24px;
   }
 }
+
+/* SHINE WEAR PRICE + COLOUR CLARITY */
+.shine-wear-quick-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0 14px;
+}
+
+.shine-wear-detail-card {
+  padding: 14px 12px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 3px solid rgba(255, 191, 63, 0.42);
+  box-shadow: 0 10px 22px rgba(18, 57, 111, 0.09);
+  text-align: center;
+}
+
+.shine-wear-detail-card strong,
+.shine-wear-detail-card span {
+  display: block;
+}
+
+.shine-wear-detail-card strong {
+  color: #0b469c;
+  font-size: 0.86rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.shine-wear-detail-card span {
+  color: #ff8a00;
+  font-size: 1.24rem;
+  font-weight: 900;
+}
+
+.shine-wear-colour-panel {
+  margin: 16px auto 18px;
+  padding: 16px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(232, 248, 255, 0.9));
+  border: 3px solid rgba(15, 75, 166, 0.12);
+  box-shadow: 0 10px 22px rgba(18, 57, 111, 0.08);
+}
+
+.shine-wear-colour-panel > strong {
+  display: block;
+  color: #0b469c;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.shine-wear-colour-panel p {
+  margin: 10px auto 0;
+  color: #375d8d;
+  font-size: 0.94rem;
+  font-weight: 800;
+}
+
+.shine-wear-colour-pills,
+.shine-wear-card-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  align-items: center;
+  justify-content: center;
+}
+
+.colour-pill,
+.shine-wear-card-details span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 900;
+  border: 2px solid rgba(15, 75, 166, 0.14);
+  box-shadow: 0 8px 16px rgba(18, 57, 111, 0.08);
+}
+
+.colour-white {
+  background: #ffffff;
+  color: #12396f;
+}
+
+.colour-black {
+  background: #17223b;
+  color: #ffffff;
+}
+
+.colour-blue {
+  background: #cfefff;
+  color: #12396f;
+}
+
+.colour-pink {
+  background: #ffe1ef;
+  color: #12396f;
+}
+
+.shine-wear-card-details {
+  justify-content: flex-start;
+  margin: 12px 0 14px;
+}
+
+.shine-wear-card-details span {
+  background: #fff8d8;
+  color: #12396f;
+  border-color: rgba(255, 191, 63, 0.68);
+}
+
+@media (max-width: 760px) {
+  .shine-wear-quick-details {
+    grid-template-columns: 1fr;
+  }
+
+  .shine-wear-card-details {
+    justify-content: center;
+  }
+}
+
