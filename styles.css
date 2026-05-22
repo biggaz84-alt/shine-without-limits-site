@@ -3291,8 +3291,8 @@ footer p,
 }
 
 .colour-blue {
-  background: #cfefff;
-  color: #12396f;
+  background: linear-gradient(135deg, #7c4dff, #b388ff);
+  color: #ffffff;
 }
 
 .colour-pink {
